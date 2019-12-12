@@ -3,80 +3,70 @@ package eg.edu.alexu.csd.oop.game.world;
 import eg.edu.alexu.csd.oop.game.GameObject;
 import eg.edu.alexu.csd.oop.game.World;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Circus implements World {
-    /**
-     * @return list of immovable object
-     */
+
+    private final List<GameObject> constant = new LinkedList<GameObject>(); //non moving objects in the game
+    private final List<GameObject> movable = new LinkedList<GameObject>(); //auto moving objects in the game
+    private final List<GameObject> controlable = new LinkedList<GameObject>(); //objects that the user control its movement in the game
+    private final int width ; //the width of the screen
+    private final int height ; //the height of the screen
+    private int score = 0 ; //current score
+    private final int MAX_TIME = 1 * 60 * 1000 ; //starting time 1 minute
+    private final long startTime = System.currentTimeMillis() ; //the system time when the game starts
+    private final int speed = 10 ; //frequency
+
+    public Circus (int width , int height) {
+        this.width = width ;
+        this.height = height ;
+        
+    }
+
+
     @Override
     public List<GameObject> getConstantObjects() {
         return null;
     }
 
-    /**
-     * @return list of moving object
-     */
+
     @Override
     public List<GameObject> getMovableObjects() {
         return null;
     }
 
-    /**
-     * @return list of user controlled object
-     */
     @Override
     public List<GameObject> getControlableObjects() {
         return null;
     }
 
-    /**
-     * @return screen width
-     */
     @Override
     public int getWidth() {
         return 0;
     }
 
-    /**
-     * @return screen height
-     */
     @Override
     public int getHeight() {
         return 0;
     }
 
-    /**
-     * refresh the world state and update locations
-     *
-     * @return false means game over
-     */
     @Override
     public boolean refresh() {
         return false;
     }
 
-    /**
-     * status bar content
-     *
-     * @return string to be shown at status bar
-     */
     @Override
     public String getStatus() {
-        return null;
+        String status = "Score= " + score + "   |   Time=" + Math.max(0, (MAX_TIME - (System.currentTimeMillis()-startTime))/1000);
+        return status ;
     }
 
-    /**
-     * @return frequency of calling refresh
-     */
     @Override
     public int getSpeed() {
         return 0;
     }
 
-    /**
-     * @return frequency of receiving user input
-     */
     @Override
     public int getControlSpeed() {
         return 0;
