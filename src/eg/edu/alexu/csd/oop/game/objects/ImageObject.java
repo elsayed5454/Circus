@@ -32,58 +32,42 @@ public class ImageObject implements GameObject{
             e.printStackTrace();
         }
     }
-    /**
-     * setter/getter for X position
-     */
+
     @Override
     public int getX() {
         return x;
     }
-    /**
-     * setter/getter for X position
-     */
+
     @Override
     public void setX(int mX) {
         this.x = mX;
     }
-    /**
-     * setter/getter for Y position
-     */
+
     @Override
     public int getY() {
         return y;
     }
-    /**
-     * setter/getter for Y position
-     */
+
     @Override
     public void setY(int mY) {
         this.y = mY;
     }
-    /**
-     * @return object movement frames
-     */
+
     @Override
     public BufferedImage[] getSpriteImages() {
         return spriteImages;
     }
-    /**
-     * @return object width
-     */
+
     @Override
     public int getWidth(){
         return spriteImages[0].getWidth();
     }
-    /**
-     * @return object height
-     */
+
     @Override
     public int getHeight() {
         return spriteImages[0].getHeight();
     }
-    /**
-     * @return object visible or not
-     */
+
     @Override
     public boolean isVisible() {
         return visible;
