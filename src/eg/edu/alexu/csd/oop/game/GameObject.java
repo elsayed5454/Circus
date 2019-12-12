@@ -31,7 +31,7 @@ public interface GameObject {
     boolean isVisible();
 
     /**
-     * @return object movement frames
+            * @return object movement frames
      */
     java.awt.image.BufferedImage[] getSpriteImages();
 }
