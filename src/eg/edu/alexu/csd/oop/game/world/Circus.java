@@ -2,90 +2,96 @@ package eg.edu.alexu.csd.oop.game.world;
 
 import eg.edu.alexu.csd.oop.game.GameObject;
 import eg.edu.alexu.csd.oop.game.World;
+import eg.edu.alexu.csd.oop.game.objects.BarObject;
+import eg.edu.alexu.csd.oop.game.objects.ImageObject;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 public class Circus implements World {
-    private static int MAX_TIME = 2 * 60 * 1000;    // Two minutes
-    private int score = 0;
-    private long endTime, startTime = System.currentTimeMillis();
-    private final int width;
-    private final int height;
-    private final List<GameObject> constant = new LinkedList<GameObject>();
-    private final List<GameObject> moving = new LinkedList<GameObject>();
-    private final List<GameObject> control = new LinkedList<GameObject>();
+    private final List<GameObject> constant = new LinkedList<GameObject>(); //non moving objects in the game
+    private final List<GameObject> movable = new LinkedList<GameObject>(); //auto moving objects in the game
+    private final List<GameObject> controllable = new LinkedList<GameObject>(); //objects that the user control its movement in the game
+    private final int width; //the width of the screen
+    private final int height; //the height of the screen
+    private int score = 0; //current score
+    private final int MAX_TIME = 1 * 60 * 1000; //starting time 1 minute
+    private final long startTime = System.currentTimeMillis(); //the system time when the game starts
+    private final int speed = 10; //frequency
 
-    public Circus(int screenWidth, int screenHeight) {
-        width = screenWidth;
-        height = screenHeight;
-        // Control objects (Clown)
-        //control.add(new ImageObject())
-        // Moving objects (Plate)
-        //control.add(new ImageObject())
-        // Constant objects (Bar)
-        //control.add(new ImageObject())
+    public Circus(int width, int height) {
+        this.width = width;
+        this.height = height;
+
+        Random rand = new Random();
+        // plates with random place to appear at and random color
+        for (int i = 0; i < 7; i++) {
+            this.movable.add(new ImageObject(rand.nextInt(width + 1), 0, randomPlate(rand.nextInt(3))));
+        }
+        //a clown
+        this.controllable.add(new ImageObject(width / 2, height, "clown.png"));
+
     }
 
-    private boolean intersect(GameObject o1, GameObject o2) {
-        return (Math.abs((o1.getX()+o1.getWidth()/2) - (o2.getX()+o2.getWidth()/2)) <= o1.getWidth()) &&
-               (Math.abs((o1.getY()+o1.getHeight()/2) - (o2.getY()+o2.getHeight()/2)) <= o1.getHeight());
-    }
-
-    @Override
-    public boolean refresh() {
-        // Time end and game over
-        boolean timeout = System.currentTimeMillis() - startTime > MAX_TIME;
-
-        return false;
-    }
-
-
-    @Override
-    public String getStatus() {
-        return "Please Use Arrows To Move   |   Score=" + score + "   |   Time=" + Math.max(0, (MAX_TIME - (endTime-startTime))/1000);	// update status
+    //deciding the color
+    private String randomPlate(int color) {
+        switch (color) {
+            case 0:
+                return "red.png";
+            case 1:
+                return "blue.png";
+            case 2:
+                return "green.png";
+        }
+        return null;
     }
 
     @Override
     public List<GameObject> getConstantObjects() {
-        return null;
+        return constant;
     }
 
 
     @Override
     public List<GameObject> getMovableObjects() {
-        return null;
+        return movable;
     }
-
 
     @Override
     public List<GameObject> getControlableObjects() {
-        return null;
+        return controllable;
     }
 
     @Override
     public int getWidth() {
-        return 0;
+        return width;
     }
-
 
     @Override
     public int getHeight() {
-        return 0;
+        return height;
     }
 
+    @Override
+    public boolean refresh() {
+        return false;
+    }
 
-
+    @Override
+    public String getStatus() {
+        String status = "Score= " + score + "   |   Time=" + Math.max(0, (MAX_TIME - (System.currentTimeMillis() - startTime)) / 1000);
+        return status;
+    }
 
 
     @Override
     public int getSpeed() {
-        return 0;
+        return speed;
     }
-
 
     @Override
     public int getControlSpeed() {
-        return 0;
+        return speed;
     }
 }
