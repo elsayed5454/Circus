@@ -7,25 +7,27 @@ import javax.imageio.ImageIO;
 
 import eg.edu.alexu.csd.oop.game.GameObject;
 
-public class ImageObject implements GameObject{
-    private static final int MAX_MSTATE = 1;
-    // an array of sprite images that are drawn sequentially
-    private BufferedImage[] spriteImages = new BufferedImage[MAX_MSTATE];
-    private int x;
-    private int y;
+public class ImageObject implements GameObject {
+    private static final int MAX_STATE = 1;
+    private static final int MOVING = 0;
+    // An array of sprite images that are drawn sequentially
+    private BufferedImage[] spriteImages = new BufferedImage[MAX_STATE];
+    private int x, y;
     private boolean visible;
     private int type;
+    private String path;
 
-    public ImageObject(int posX, int posY, String path){
-        this(posX, posY, path, 0);
+    public ImageObject(int posX, int posY, String path) {
+        this(posX, posY, path, MOVING);
     }
 
-    public ImageObject(int posX, int posY, String path, int type){
+    public ImageObject(int posX, int posY, String path, int type) {
         this.x = posX;
         this.y = posY;
+        this.path = path;
         this.type = type;
         this.visible = true;
-        // create a bunch of buffered images and place into an array, to be displayed sequentially
+        // Create a bunch of buffered images and place into an array, to be displayed sequentially
         try {
             spriteImages[0] = ImageIO.read(getClass().getResourceAsStream(path));
         } catch (IOException e) {
@@ -59,7 +61,7 @@ public class ImageObject implements GameObject{
     }
 
     @Override
-    public int getWidth(){
+    public int getWidth() {
         return spriteImages[0].getWidth();
     }
 
@@ -73,7 +75,7 @@ public class ImageObject implements GameObject{
         return visible;
     }
 
-    public void setVisible(boolean visible){
+    public void setVisible(boolean visible) {
         this.visible = visible;
     }
 
@@ -83,6 +85,10 @@ public class ImageObject implements GameObject{
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    public String getPath() {
+        return this.path;
     }
 
 }
