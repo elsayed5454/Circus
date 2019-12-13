@@ -31,7 +31,7 @@ public class Circus implements World {
         // plates with random place to appear at and random color
         Random rand = new Random();
         for (int i = 0; i < 7; i++) {
-            this.movable.add(new ImageObject(rand.nextInt(width + 1), 0, "/"+randomPlate(rand.nextInt(3))));
+            this.movable.add(new ImageObject(rand.nextInt(width + 1), 0, randomPlate(rand.nextInt(3))));
         }
         // The clown
         this.controllable.add(new ImageObject(width / 2, height, "/clown.png"));
