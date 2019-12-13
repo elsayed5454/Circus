@@ -31,27 +31,27 @@ public class Circus implements World {
         // plates with random place to appear at and random color
         Random rand = new Random();
         for (int i = 0; i < 7; i++) {
-            this.movable.add(new ImageObject(rand.nextInt(width + 1), 0, randomPlate(rand.nextInt(3))));
+            this.movable.add(new ImageObject(rand.nextInt(width + 1), 0, "/"+randomPlate(rand.nextInt(3))));
         }
         // The clown
-        this.controllable.add(new ImageObject(width / 2, height, "clown.png"));
+        this.controllable.add(new ImageObject(width / 2, height, "/clown.png"));
         // The two sticks
         // TODO: According to clown, initialize these variables
         int clownHandHeight = 10, clownHandPos = 5;
 
-        this.controllable.add(new ImageObject(width / 2 + clownHandPos, height - clownHandHeight, "rightStick.png"));
-        this.controllable.add(new ImageObject(width / 2 - clownHandPos, height - clownHandHeight, "leftStick.png"));
+        this.controllable.add(new ImageObject(width / 2 + clownHandPos, height - clownHandHeight, "/rightStick.png"));
+        this.controllable.add(new ImageObject(width / 2 - clownHandPos, height - clownHandHeight, "/leftStick.png"));
     }
 
     // Deciding the color
     private String randomPlate(int color) {
         switch (color) {
             case 0:
-                return "red.png";
+                return "/red.png";
             case 1:
-                return "blue.png";
+                return "/blue.png";
             case 2:
-                return "green.png";
+                return "/green.png";
         }
         return null;
     }
