@@ -18,10 +18,10 @@ public class Main {
         menu.add(pauseMenuItem);
         menu.add(resumeMenuItem);
         menuBar.add(menu);
-        final GameEngine.GameController gameController = GameEngine.start("GAME", new eg.edu.alexu.csd.oop.game.world.Circus(400, 700), menuBar, Color.WHITE);
+        final GameEngine.GameController gameController = GameEngine.start("GAME", new eg.edu.alexu.csd.oop.game.world.Circus(1500, 1500), menuBar, Color.WHITE);
         newMenuItem.addActionListener(new ActionListener() {
             @Override public void actionPerformed(ActionEvent e) {
-                gameController.changeWorld(new eg.edu.alexu.csd.oop.game.world.Circus(400, 700));
+                gameController.changeWorld(new eg.edu.alexu.csd.oop.game.world.Circus(1500, 1500));
             }
         });
         pauseMenuItem.addActionListener(new ActionListener() {
