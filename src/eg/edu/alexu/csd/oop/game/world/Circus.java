@@ -39,8 +39,8 @@ public class Circus implements World {
         // TODO: According to clown, initialize these variables
         int clownHandHeight = 10, clownHandPos = 5;
 
-        this.controllable.add(new ImageObject(width / 2 + clownHandPos, height - clownHandHeight, "/rightStick.png"));
-        this.controllable.add(new ImageObject(width / 2 - clownHandPos, height - clownHandHeight, "/leftStick.png"));
+        this.rightStickPlates.add(new ImageObject(width / 2 + clownHandPos, height - clownHandHeight, "/rightStick.png"));
+        this.leftStickPlates.add(new ImageObject(width / 2 - clownHandPos, height - clownHandHeight, "/leftStick.png"));
     }
 
     // Deciding the color
