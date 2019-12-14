@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class Main {
     public static void main(String[] args) {
 
-        JMenuBar menuBar = new JMenuBar();;
+        JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("File");
         JMenuItem newMenuItem = new JMenuItem("New");
         JMenuItem pauseMenuItem = new JMenuItem("Pause");
@@ -18,10 +18,10 @@ public class Main {
         menu.add(pauseMenuItem);
         menu.add(resumeMenuItem);
         menuBar.add(menu);
-        final GameEngine.GameController gameController = GameEngine.start("GAME", new eg.edu.alexu.csd.oop.game.world.Circus(1500, 1500), menuBar, Color.WHITE);
+        final GameEngine.GameController gameController = GameEngine.start("GAME", new eg.edu.alexu.csd.oop.game.world.Circus(1200, 600), menuBar, Color.WHITE);
         newMenuItem.addActionListener(new ActionListener() {
             @Override public void actionPerformed(ActionEvent e) {
-                gameController.changeWorld(new eg.edu.alexu.csd.oop.game.world.Circus(1500, 1500));
+                gameController.changeWorld(new eg.edu.alexu.csd.oop.game.world.Circus(1200, 600));
             }
         });
         pauseMenuItem.addActionListener(new ActionListener() {
