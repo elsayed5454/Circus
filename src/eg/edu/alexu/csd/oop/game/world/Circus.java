@@ -38,9 +38,9 @@ public class Circus implements World {
         ((ImageObject)controllable.get(0)).setHorizontalOnly();
 
         // The two sticks
-        int clownHandHeight = controllable.get(0).getY() + (int)(controllable.get(0).getHeight() * 0.03);
-        controllable.add(new ImageObject(0, clownHandHeight, "/rightStick.png"));
-        controllable.add(new ImageObject(0, clownHandHeight, "/leftStick.png"));
+        int clownHandHeight = controllable.get(0).getY() + (int)(controllable.get(0).getHeight() * 0.01);
+        controllable.add(new ImageObject(controllable.get(0).getX() + (int)(controllable.get(0).getWidth() * 0.7),clownHandHeight, "/rightStick.png"));
+        controllable.add(new ImageObject(controllable.get(0).getX() + (int)(controllable.get(0).getWidth() * 0.18), clownHandHeight, "/leftStick.png"));
         ((ImageObject)controllable.get(1)).setHorizontalOnly();
         ((ImageObject)controllable.get(2)).setHorizontalOnly();
 
@@ -73,8 +73,8 @@ public class Circus implements World {
         GameObject clown = controllable.get(0);
         GameObject rightStick = controllable.get(1);
         GameObject leftStick = controllable.get(2);
-        rightStick.setX(clown.getX() + (int)(clown.getWidth() * 0.8));
-        leftStick.setX(clown.getX() - (int)(clown.getWidth() * 0.15));
+        rightStick.setX(clown.getX() + (int)(clown.getWidth() * 0.7));
+        leftStick.setX(clown.getX() + (int)(clown.getWidth() * 0.18));
 
         for(GameObject plate : movable) {
             // If the plate is moving

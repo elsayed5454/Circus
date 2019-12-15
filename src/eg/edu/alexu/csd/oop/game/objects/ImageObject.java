@@ -24,6 +24,8 @@ public class ImageObject implements GameObject {
     }
 
     public ImageObject(int posX, int posY,String path, int type) {
+        this.x = posX;
+        this.y = posY;
         this.path = path;
         this.type = type;
         this.visible = true;
@@ -33,8 +35,6 @@ public class ImageObject implements GameObject {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        this.x = posX;
-        this.y = posY;
     }
 
     @Override
