@@ -17,6 +17,7 @@ public class ImageObject implements GameObject {
     private boolean visible;
     private int type;
     private String path;
+    private int distFromStick;
 
     public ImageObject(int posX, int posY, String path) {
         this(posX, posY, path, MOVING);
@@ -90,6 +91,14 @@ public class ImageObject implements GameObject {
 
     public String getPath() {
         return this.path;
+    }
+
+    public int getDistFromStick() {
+        return distFromStick;
+    }
+
+    public void setDistFromStick(int distFromStick) {
+        this.distFromStick = distFromStick;
     }
 
 }

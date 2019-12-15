@@ -7,6 +7,7 @@ import eg.edu.alexu.csd.oop.game.objects.ImageObject;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class Circus implements World {
     private final int MAX_TIME = 2 * 60 * 1000; // 2 minute
@@ -25,17 +26,11 @@ public class Circus implements World {
     private static final int CATCHED = 1;   // Plate is catched
     private boolean isRightStickEmpty = true;
     private boolean isLeftStickEmpty = true;
+    private final Random rand = new Random();
 
     public Circus(int width, int height) {
         this.width = width;
         this.height = height;
-
-        // Plates with random place to appear at and random color
-        Random rand = new Random();
-        for (int i = 0; i < 7; i++) {
-            movable.add(new ImageObject(0, 0, randomPlate(rand.nextInt(3))));
-            movable.get(i).setX(rand.nextInt(width - movable.get(i).getWidth()));
-        }
 
         // The clown
         controllable.add(new ImageObject(0, 0, "/clown.png"));
@@ -43,11 +38,15 @@ public class Circus implements World {
         controllable.get(0).setY(height - controllable.get(0).getHeight());
 
         // The two sticks
-        int clownHandHeight = controllable.get(0).getHeight();
-        int clownHandDist = (int)(controllable.get(0).getWidth() * 0.74);
-        int errorPixels = 8;
-        controllable.add(new ImageObject(width / 2 + clownHandDist / 2 - errorPixels, clownHandHeight, "/rightStick.png"));
-        controllable.add(new ImageObject(width / 2 - clownHandDist, clownHandHeight, "/leftStick.png"));
+        int clownHandHeight = controllable.get(0).getY() + (int)(controllable.get(0).getHeight() * 0.03);
+        controllable.add(new ImageObject(0, clownHandHeight, "/rightStick.png"));
+        controllable.add(new ImageObject(0, clownHandHeight, "/leftStick.png"));
+
+        // Plates with random place to appear at and random color
+        for (int i = 0; i < 14; i++) {
+            movable.add(new ImageObject(0, -1 * rand.nextInt(height), randomPlate(rand.nextInt(3))));
+            movable.get(i).setX(rand.nextInt(width - movable.get(i).getWidth()));
+        }
     }
 
     // Deciding the color
@@ -68,9 +67,17 @@ public class Circus implements World {
         // Time ends and game over
         boolean timeout = System.currentTimeMillis() - startTime > MAX_TIME;
 
+        // Bound sticks to clown position
+        GameObject clown = controllable.get(0);
+        GameObject rightStick = controllable.get(1);
+        GameObject leftStick = controllable.get(2);
+        rightStick.setX(clown.getX() + (int)(clown.getWidth() * 0.8));
+        leftStick.setX(clown.getX() - (int)(clown.getWidth() * 0.15));
+
         for(GameObject plate : movable) {
             // If the plate is moving
             if(((ImageObject)plate).getType() == MOVING) {
+
                 plate.setY(plate.getY() + 1);
                 // If the plate reaches bottom of the screen, reuse it
                 if(plate.getY() == getHeight()) {
@@ -81,7 +88,17 @@ public class Circus implements World {
                 // Check if a plate touches a stick or a plate and add it
                 plateTouchesStick(plate);
                 // Check if 3 plates of same color are on a stick
-                isThreeOfSameColor();
+                isThreeOfSameColor(rightStickPlates);
+                isThreeOfSameColor(leftStickPlates);
+            }
+            else {
+                if(rightStickPlates.contains(plate)) {
+                    plate.setX(rightStick.getX() + ((ImageObject) plate).getDistFromStick());
+                }
+                else if (leftStickPlates.contains(plate)) {
+                    plate.setX(leftStick.getX() + ((ImageObject) plate).getDistFromStick());
+                }
+
             }
         }
         return !timeout;
@@ -95,60 +112,58 @@ public class Circus implements World {
         // because we see if the last plate touches the new plate
         if(!isRightStickEmpty && intersect(plate, rightStickPlates.getLast())) {
             ((ImageObject) plate).setType(CATCHED);
+            ((ImageObject) plate).setDistFromStick(Math.abs(rightStick.getX() - plate.getX()));
             rightStickPlates.add(plate);
         }
         if(!isLeftStickEmpty && intersect(plate, leftStickPlates.getLast())) {
             ((ImageObject) plate).setType(CATCHED);
+            ((ImageObject) plate).setDistFromStick(Math.abs(leftStick.getX() - plate.getX()));
             leftStickPlates.add(plate);
         }
 
         // Check if plate touches the clown stick
-        if(intersect(plate, rightStick)) {
+        if(isRightStickEmpty && intersect(plate, rightStick)) {
             ((ImageObject) plate).setType(CATCHED);
+            plate.setY(rightStick.getY() - plate.getHeight());
             rightStickPlates.add(plate);
             isRightStickEmpty = false;
         }
-        if(intersect(plate, leftStick)) {
+        if(isLeftStickEmpty && intersect(plate, leftStick)) {
             ((ImageObject) plate).setType(CATCHED);
+            plate.setY(leftStick.getY() - plate.getHeight());
             leftStickPlates.add(plate);
             isLeftStickEmpty = false;
         }
     }
 
-    private boolean intersect(GameObject o1, GameObject o2){
-        return (Math.abs((o1.getX()+o1.getWidth()/2) - (o2.getX()+o2.getWidth()/2)) <= o1.getWidth()) &&
-                (Math.abs((o1.getY()+o1.getHeight()/2) - (o2.getY()+o2.getHeight()/2)) <= o1.getHeight());
+    private boolean intersect(GameObject higherObject, GameObject lowerObject){
+        int midX = higherObject.getX() + higherObject.getWidth() / 2;
+        return (higherObject.getY() + higherObject.getHeight() == lowerObject.getY()
+                && midX >= lowerObject.getX()
+                && midX <= lowerObject.getX() + lowerObject.getWidth());
     }
 
-    private void isThreeOfSameColor() {
-        if (leftStickPlates.size() < 3 && rightStickPlates.size() < 3) {
+    private void isThreeOfSameColor(LinkedList<GameObject> stickPlates) {
+        if (stickPlates.size() < 3) {
             return;
         }
 
-        // Check the right stick plates
-        int counter = 0;
-        String color = ((ImageObject)rightStickPlates.get(0)).getPath();
-        for(GameObject plate : rightStickPlates) {
-            if(color.equals(((ImageObject)plate).getPath())) {
-                counter++;
-            }
-            if(counter == 3) {
-                counter = 0;
-                if (removeUpperThreePlates(rightStickPlates)) isRightStickEmpty = true;
-                score += 30;
-            }
-        }
+        int counter = 0, len = stickPlates.size();
+        String color = ((ImageObject)stickPlates.get(0)).getPath();
 
-        // Check the left stick plates
-        counter = 0;
-        color = ((ImageObject)leftStickPlates.get(0)).getPath();
-        for(GameObject plate : leftStickPlates) {
-            if(color.equals(((ImageObject)plate).getPath())) {
+        // Check the last 3 plates if of same color
+        for(int i = len - 1; i >= len - 3; i--) {
+            if(color.equals(((ImageObject)stickPlates.get(i)).getPath())) {
                 counter++;
             }
             if(counter == 3) {
                 counter = 0;
-                if(removeUpperThreePlates(leftStickPlates)) isLeftStickEmpty = true;
+                if(stickPlates == rightStickPlates) {
+                    isRightStickEmpty = removeUpperThreePlates(stickPlates);
+                }
+                else {
+                    isLeftStickEmpty = removeUpperThreePlates(stickPlates);
+                }
                 score += 30;
             }
         }
@@ -156,9 +171,12 @@ public class Circus implements World {
 
     private boolean removeUpperThreePlates(LinkedList<GameObject> stickPlates) {
         int len = stickPlates.size();
-        for(int i = len - 1; i >= len - 4; i--) {
+        for(int i = len - 1; i >= len - 3; i--) {
             ((ImageObject)stickPlates.get(i)).setVisible(false);
             ((ImageObject)stickPlates.get(i)).setType(MOVING);
+            stickPlates.get(i).setX(rand.nextInt(width - movable.get(i).getWidth()));
+            stickPlates.get(i).setY(-1 * rand.nextInt(height));
+            stickPlates.remove(i);
         }
         return stickPlates.isEmpty();
     }
