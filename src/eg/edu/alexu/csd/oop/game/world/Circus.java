@@ -55,11 +55,11 @@ public class Circus implements World {
     private String randomPlate(int color) {
         switch (color) {
             case 0:
-                return "/red.png";
+                return "/reddd.png";
             case 1:
-                return "/blue.png";
+                return "/blueee.png";
             case 2:
-                return "/green.png";
+                return "/greennn.png";
         }
         return null;
     }
