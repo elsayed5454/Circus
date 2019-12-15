@@ -7,7 +7,6 @@ import eg.edu.alexu.csd.oop.game.objects.ImageObject;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 public class Circus implements World {
     private final int MAX_TIME = 2 * 60 * 1000; // 2 minute
@@ -35,12 +34,15 @@ public class Circus implements World {
         // The clown
         controllable.add(new ImageObject(0, 0, "/clown.png"));
         controllable.get(0).setX(width / 2 - controllable.get(0).getWidth() / 2);
-        controllable.get(0).setY(height - controllable.get(0).getHeight());
+        controllable.get(0).setY((int) (height * 0.96 - controllable.get(0).getHeight()));
+        ((ImageObject)controllable.get(0)).setHorizontalOnly();
 
         // The two sticks
         int clownHandHeight = controllable.get(0).getY() + (int)(controllable.get(0).getHeight() * 0.03);
         controllable.add(new ImageObject(0, clownHandHeight, "/rightStick.png"));
         controllable.add(new ImageObject(0, clownHandHeight, "/leftStick.png"));
+        ((ImageObject)controllable.get(1)).setHorizontalOnly();
+        ((ImageObject)controllable.get(2)).setHorizontalOnly();
 
         // Plates with random place to appear at and random color
         for (int i = 0; i < 14; i++) {

@@ -1,7 +1,6 @@
 package eg.edu.alexu.csd.oop.game.objects;
 
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -18,14 +17,13 @@ public class ImageObject implements GameObject {
     private int type;
     private String path;
     private int distFromStick;
+    private boolean horizontalOnly;
 
     public ImageObject(int posX, int posY, String path) {
-        this(posX, posY, path, MOVING);
+        this(posX, posY, path , MOVING);
     }
 
-    public ImageObject(int posX, int posY, String path, int type) {
-        this.x = posX;
-        this.y = posY;
+    public ImageObject(int posX, int posY,String path, int type) {
         this.path = path;
         this.type = type;
         this.visible = true;
@@ -35,6 +33,8 @@ public class ImageObject implements GameObject {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        this.x = posX;
+        this.y = posY;
     }
 
     @Override
@@ -54,6 +54,9 @@ public class ImageObject implements GameObject {
 
     @Override
     public void setY(int mY) {
+        if (horizontalOnly) {
+            return;
+        }
         this.y = mY;
     }
 
@@ -99,6 +102,10 @@ public class ImageObject implements GameObject {
 
     public void setDistFromStick(int distFromStick) {
         this.distFromStick = distFromStick;
+    }
+
+    public void setHorizontalOnly () {
+        this.horizontalOnly = true;
     }
 
 }
