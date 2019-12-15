@@ -39,10 +39,8 @@ public class Circus implements World {
 
         // The two sticks
         int clownHandHeight = controllable.get(0).getY() + (int)(controllable.get(0).getHeight() * 0.01);
-        controllable.add(new ImageObject(controllable.get(0).getX() + (int)(controllable.get(0).getWidth() * 0.7),clownHandHeight, "/rightStick.png"));
-        controllable.add(new ImageObject(controllable.get(0).getX() + (int)(controllable.get(0).getWidth() * 0.18), clownHandHeight, "/leftStick.png"));
-        ((ImageObject)controllable.get(1)).setHorizontalOnly();
-        ((ImageObject)controllable.get(2)).setHorizontalOnly();
+        controllable.add(new ImageObject(controllable.get(0).getX() + (int)(controllable.get(0).getWidth() * 0.7), clownHandHeight, "/rightStick.png", true));
+        controllable.add(new ImageObject(controllable.get(0).getX() + (int)(controllable.get(0).getWidth() * 0.18), clownHandHeight, "/leftStick.png", true));
 
         // Plates with random place to appear at and random color
         for (int i = 0; i < 14; i++) {
@@ -94,13 +92,26 @@ public class Circus implements World {
                 isThreeOfSameColor(leftStickPlates);
             }
             else {
+
+                // Set position of plates on each other and on stick
+                // or drop upper two plates if recent plate is too far from stick's mid
+                int midX = plate.getX() + plate.getWidth() / 2;
                 if(rightStickPlates.contains(plate)) {
-                    plate.setX(rightStick.getX() + ((ImageObject) plate).getDistFromStick());
+                    if(midX >= rightStick.getX() && midX <= rightStick.getX() + rightStick.getWidth()) {
+                        plate.setX(rightStick.getX() - ((ImageObject) plate).getDistFromStick());
+                    }
+                    else {
+                        isRightStickEmpty = dropFarPlate(rightStickPlates);
+                    }
                 }
                 else if (leftStickPlates.contains(plate)) {
-                    plate.setX(leftStick.getX() + ((ImageObject) plate).getDistFromStick());
+                    if(midX >= leftStick.getX() && midX <= leftStick.getX() + leftStick.getWidth()) {
+                        plate.setX(leftStick.getX() - ((ImageObject) plate).getDistFromStick());
+                    }
+                    else {
+                        isLeftStickEmpty = dropFarPlate(leftStickPlates);
+                    }
                 }
-
             }
         }
         return !timeout;
@@ -114,25 +125,25 @@ public class Circus implements World {
         // because we see if the last plate touches the new plate
         if(!isRightStickEmpty && intersect(plate, rightStickPlates.getLast())) {
             ((ImageObject) plate).setType(CATCHED);
-            ((ImageObject) plate).setDistFromStick(Math.abs(rightStick.getX() - plate.getX()));
+            ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
             rightStickPlates.add(plate);
         }
         if(!isLeftStickEmpty && intersect(plate, leftStickPlates.getLast())) {
             ((ImageObject) plate).setType(CATCHED);
-            ((ImageObject) plate).setDistFromStick(Math.abs(leftStick.getX() - plate.getX()));
+            ((ImageObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
             leftStickPlates.add(plate);
         }
 
         // Check if plate touches the clown stick
         if(isRightStickEmpty && intersect(plate, rightStick)) {
             ((ImageObject) plate).setType(CATCHED);
-            plate.setY(rightStick.getY() - plate.getHeight());
+            ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
             rightStickPlates.add(plate);
             isRightStickEmpty = false;
         }
         if(isLeftStickEmpty && intersect(plate, leftStick)) {
             ((ImageObject) plate).setType(CATCHED);
-            plate.setY(leftStick.getY() - plate.getHeight());
+            ((ImageObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
             leftStickPlates.add(plate);
             isLeftStickEmpty = false;
         }
@@ -179,6 +190,15 @@ public class Circus implements World {
             stickPlates.get(i).setY(-1 * rand.nextInt(height));
             stickPlates.remove(i);
         }
+        return stickPlates.isEmpty();
+    }
+
+    private boolean dropFarPlate(LinkedList<GameObject> stickPlates) {
+        int len = stickPlates.size();
+        ((ImageObject)stickPlates.get(len - 1)).setType(MOVING);
+        stickPlates.remove(len - 1);
+        ((ImageObject)stickPlates.get(len - 2)).setType(MOVING);
+        stickPlates.remove(len - 2);
         return stickPlates.isEmpty();
     }
 
