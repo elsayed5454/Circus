@@ -149,7 +149,7 @@ public class Circus implements World {
         }
 
         int counter = 0, len = stickPlates.size();
-        String color = ((ImageObject)stickPlates.get(0)).getPath();
+        String color = ((ImageObject)stickPlates.get(len - 1)).getPath();
 
         // Check the last 3 plates if of same color
         for(int i = len - 1; i >= len - 3; i--) {
@@ -172,7 +172,6 @@ public class Circus implements World {
     private boolean removeUpperThreePlates(LinkedList<GameObject> stickPlates) {
         int len = stickPlates.size();
         for(int i = len - 1; i >= len - 3; i--) {
-            ((ImageObject)stickPlates.get(i)).setVisible(false);
             ((ImageObject)stickPlates.get(i)).setType(MOVING);
             stickPlates.get(i).setX(rand.nextInt(width - movable.get(i).getWidth()));
             stickPlates.get(i).setY(-1 * rand.nextInt(height));
