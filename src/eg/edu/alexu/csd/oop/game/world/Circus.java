@@ -21,6 +21,7 @@ public class Circus implements World {
     private final int height;   // The height of the screen
     private int score = 0;      // Current score
     private final int speed = 10; // Frequency
+    private final int controlSpeed = 10; // Control Frequency
     private static final int MOVING = 0;    // Plate is moving
     private static final int CATCHED = 1;   // Plate is catched
     private boolean isRightStickEmpty = true;
@@ -219,6 +220,6 @@ public class Circus implements World {
 
     @Override
     public int getControlSpeed() {
-        return speed;
+        return controlSpeed;
     }
 }
