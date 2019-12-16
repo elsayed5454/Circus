@@ -1,6 +1,9 @@
 package eg.edu.alexu.csd.oop.game.world;
 
 import eg.edu.alexu.csd.oop.game.GameObject;
+import eg.edu.alexu.csd.oop.game.Iterator.IIterator;
+import eg.edu.alexu.csd.oop.game.Iterator.IList;
+import eg.edu.alexu.csd.oop.game.Iterator.Iterator;
 import eg.edu.alexu.csd.oop.game.World;
 import eg.edu.alexu.csd.oop.game.objects.ImageObject;
 
@@ -12,9 +15,13 @@ public class Circus implements World {
     private final int MAX_TIME = 2 * 60 * 1000; // 2 minute
     // The system time when the game starts
     private final long startTime = System.currentTimeMillis();
-    private final List<GameObject> constant = new LinkedList<>();       // Non moving objects in the game
+    private final List<GameObject> constant = new LinkedList<>();// Non moving objects in the game
     private final List<GameObject> movable = new LinkedList<>();        // Auto moving objects in the game
+    private IList movableList ;
+    private IIterator movableIterator;
     private final List<GameObject> controllable = new LinkedList<>();   // Objects that the user control its movement in the game
+    private IList controllableList ;
+    private IIterator controllableIterator;
     private final LinkedList<GameObject> rightStickPlates = new LinkedList<>();
     private final LinkedList<GameObject> leftStickPlates = new LinkedList<>();
     private final int width;    // The width of the screen
@@ -47,6 +54,11 @@ public class Circus implements World {
             movable.add(new ImageObject(0, -1 * rand.nextInt(height), randomPlate(rand.nextInt(3))));
             movable.get(i).setX(rand.nextInt(width - movable.get(i).getWidth()));
         }
+        IList movableList = new eg.edu.alexu.csd.oop.game.Iterator.List(movable);
+        IIterator movableIterator=movableList.createIterator();
+        controllableList = new eg.edu.alexu.csd.oop.game.Iterator.List(controllable);
+        controllableIterator=controllableList.createIterator();
+
     }
 
     // Deciding the color
