@@ -20,15 +20,20 @@ public class ImageObject implements GameObject {
     private boolean horizontalOnly;
 
     public ImageObject(int posX, int posY, String path) {
-        this(posX, posY, path , MOVING);
+        this(posX, posY, path, MOVING, false);
     }
 
-    public ImageObject(int posX, int posY,String path, int type) {
+    public ImageObject(int posX, int posY, String path, boolean horizontalOnly) {
+        this(posX, posY, path, MOVING, horizontalOnly);
+    }
+
+    public ImageObject(int posX, int posY, String path, int type, boolean horizontalOnly) {
         this.x = posX;
         this.y = posY;
         this.path = path;
         this.type = type;
         this.visible = true;
+        this.horizontalOnly = horizontalOnly;
         // Create a bunch of buffered images and place into an array, to be displayed sequentially
         try {
             spriteImages[0] = ImageIO.read(getClass().getResourceAsStream(path));
@@ -54,7 +59,7 @@ public class ImageObject implements GameObject {
 
     @Override
     public void setY(int mY) {
-        if (horizontalOnly) {
+        if(horizontalOnly) {
             return;
         }
         this.y = mY;
@@ -80,10 +85,6 @@ public class ImageObject implements GameObject {
         return visible;
     }
 
-    public void setVisible(boolean visible) {
-        this.visible = visible;
-    }
-
     public int getType() {
         return type;
     }
@@ -104,7 +105,7 @@ public class ImageObject implements GameObject {
         this.distFromStick = distFromStick;
     }
 
-    public void setHorizontalOnly () {
+    public void setHorizontalOnly() {
         this.horizontalOnly = true;
     }
 
