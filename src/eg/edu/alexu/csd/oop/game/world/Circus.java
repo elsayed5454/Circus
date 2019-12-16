@@ -196,10 +196,15 @@ public class Circus implements World {
 
     private boolean dropFarPlate(LinkedList<GameObject> stickPlates) {
         int len = stickPlates.size();
-        ((ImageObject)stickPlates.get(len - 1)).setType(MOVING);
-        stickPlates.remove(len - 1);
-        ((ImageObject)stickPlates.get(len - 2)).setType(MOVING);
-        stickPlates.remove(len - 2);
+        if(len==1){
+            ((ImageObject)stickPlates.get(len - 1)).setType(MOVING);
+            stickPlates.remove(len - 1);
+        }else {
+            ((ImageObject) stickPlates.get(len - 1)).setType(MOVING);
+            stickPlates.remove(len - 1);
+            ((ImageObject) stickPlates.get(len - 2)).setType(MOVING);
+            stickPlates.remove(len - 2);
+        }
         return stickPlates.isEmpty();
     }
 
