@@ -8,12 +8,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+import static eg.edu.alexu.csd.oop.game.model.ShapesFactory.getShape;
+
 public class Circus implements World {
     private final int MAX_TIME = 2 * 60 * 1000; // 2 minute
     // The system time when the game starts
     private final long startTime = System.currentTimeMillis();
     private final List<GameObject> constant = new LinkedList<>();       // Non moving objects in the game
-    private final List<GameObject> movable = new LinkedList<>();        // Auto moving objects in the game
+    private static final List<GameObject> movable = new LinkedList<>();        // Auto moving objects in the game
     private final List<GameObject> controllable = new LinkedList<>();   // Objects that the user control its movement in the game
     private final LinkedList<GameObject> rightStickPlates = new LinkedList<>();
     private final LinkedList<GameObject> leftStickPlates = new LinkedList<>();
@@ -25,7 +27,7 @@ public class Circus implements World {
     private static final int CATCHED = 1;   // Plate is catched
     private boolean isRightStickEmpty = true;
     private boolean isLeftStickEmpty = true;
-    private final Random rand = new Random();
+    private Random rand = new Random();
 
     public Circus(int width, int height) {
         this.width = width;
@@ -44,8 +46,7 @@ public class Circus implements World {
 
         // Plates with random place to appear at and random color
         for (int i = 0; i < 14; i++) {
-            movable.add(new ImageObject(0, -1 * rand.nextInt(height), randomPlate(rand.nextInt(3))));
-            movable.get(i).setX(rand.nextInt(width - movable.get(i).getWidth()));
+            movable.add(getShape(randomPlate(rand.nextInt(3))));
         }
     }
 
@@ -97,6 +98,7 @@ public class Circus implements World {
                 // or drop upper two plates if recent plate is too far from stick's mid
                 int midX = plate.getX() + plate.getWidth() / 2;
                 if(rightStickPlates.contains(plate)) {
+                    int tmp = rightStick.getX() + rightStick.getWidth();
                     if(midX >= rightStick.getX() && midX <= rightStick.getX() + rightStick.getWidth()) {
                         plate.setX(rightStick.getX() - ((ImageObject) plate).getDistFromStick());
                     }
