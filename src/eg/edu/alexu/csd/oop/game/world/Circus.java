@@ -5,7 +5,6 @@ import eg.edu.alexu.csd.oop.game.Flyweight.FlyweightimageFactory;
 import eg.edu.alexu.csd.oop.game.GameObject;
 import eg.edu.alexu.csd.oop.game.Iterator.IIterator;
 import eg.edu.alexu.csd.oop.game.Iterator.IList;
-import eg.edu.alexu.csd.oop.game.Iterator.Iterator;
 import eg.edu.alexu.csd.oop.game.World;
 import eg.edu.alexu.csd.oop.game.objects.ImageObject;
 
@@ -30,19 +29,27 @@ public class Circus implements World {
     private final int width;    // The width of the screen
     private final int height;   // The height of the screen
     private int score = 0;      // Current score
-    private final int speed = 10; // Frequency
-    private final int controlSpeed = 10; // Control Frequency
     private static final int MOVING = 0;    // Plate is moving
     private static final int CATCHED = 1;   // Plate is catched
     private static final int FALLING = 2;   // Plate is catched
     private boolean isRightStickEmpty = true;
     private boolean isLeftStickEmpty = true;
     private final Random rand = new Random();
+
     FlyweightimageFactory FlyweightimageFactory=new FlyweightimageFactory();
 
-    public Circus(int width, int height) {
+    private final int speed ; // Frequency
+    private final int controlSpeed ; // Control Frequency
+    private final int differenceBetweenPlateAndStick;
+    private final int differenceBetweenPlateAndPlate;
+
+
+
+    public Circus(int width, int height, int gameLevel) {
         this.width = width;
         this.height = height;
+
+        constant.add(FlyweightimageFactory.getimageFromFactory(0, 0, "/circus.jpg" ));
 
         // The clown
         controllable.add( FlyweightimageFactory.getimageFromFactory(0, 0, "/clown.png"));
@@ -64,7 +71,24 @@ public class Circus implements World {
         IIterator movableIterator=movableList.createIterator();
         controllableList = new eg.edu.alexu.csd.oop.game.Iterator.List(controllable);
         controllableIterator=controllableList.createIterator();
-
+        if (gameLevel == 0){
+            this.speed = 10 ;
+            this.controlSpeed = 15;
+            this.differenceBetweenPlateAndStick = 40;
+            this.differenceBetweenPlateAndPlate = 60;
+        }
+        else if (gameLevel == 1){
+            this.speed = 8 ;
+            this.controlSpeed = 10;
+            this.differenceBetweenPlateAndStick = 30;
+            this.differenceBetweenPlateAndPlate = 40;
+        }
+        else {
+            this.speed = 6 ;
+            this.controlSpeed = 7;
+            this.differenceBetweenPlateAndStick = 20;
+            this.differenceBetweenPlateAndPlate = 25;
+        }
     }
 
     // Deciding the color
@@ -141,7 +165,7 @@ public class Circus implements World {
         if (isRightStickEmpty){
             if (plate.getY() + plate.getHeight() == rightStick.getY()){
                 int difference = Math.abs(rightStick.getX() - plate.getX() - 27);
-                    if (difference < 15){
+                    if (difference < differenceBetweenPlateAndStick){
                         ((ImageObject) plate).setType(CATCHED);
                         ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                         rightStickPlates.add(plate);
@@ -152,12 +176,12 @@ public class Circus implements World {
         else{
             if (plate.getY() + plate.getHeight() == rightStickPlates.getLast().getY()){
                 int difference = Math.abs(plate.getX() - (rightStickPlates.getLast().getX()));
-                if (difference < 20){
+                if (difference < differenceBetweenPlateAndPlate){
                     ((ImageObject) plate).setType(CATCHED);
                     ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                     rightStickPlates.add(plate);
                 }
-                else if (difference < 35) {
+                else if (difference < plate.getWidth() - 22) {
                     ((ImageObject) plate).setType(FALLING);
                     ((ImageObject) rightStickPlates.getLast()).setType(FALLING);
                     rightStickPlates.remove(rightStickPlates.size() -1);
@@ -168,7 +192,7 @@ public class Circus implements World {
         if (isLeftStickEmpty){
             if (plate.getY() + plate.getHeight() == leftStick.getY()){
                 int difference = Math.abs(leftStick.getX() - plate.getX() - 27);
-                if (difference < 15){
+                if (difference < differenceBetweenPlateAndStick){
                     ((ImageObject) plate).setType(CATCHED);
                     ((ImageObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
                     leftStickPlates.add(plate);
@@ -179,12 +203,12 @@ public class Circus implements World {
         else{
             if (plate.getY() + plate.getHeight() == leftStickPlates.getLast().getY()){
                 int difference = Math.abs(plate.getX() - (leftStickPlates.getLast().getX()));
-                if (difference < 20){
+                if (difference < differenceBetweenPlateAndPlate){
                     ((ImageObject) plate).setType(CATCHED);
                     ((ImageObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
                     leftStickPlates.add(plate);
                 }
-                else if (difference < 35) {
+                else if (difference < plate.getWidth() - 22) {
                     ((ImageObject) plate).setType(FALLING);
                     ((ImageObject) leftStickPlates.getLast()).setType(FALLING);
                     leftStickPlates.remove(leftStickPlates.size() -1);
