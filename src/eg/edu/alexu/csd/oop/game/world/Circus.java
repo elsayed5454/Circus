@@ -1,5 +1,7 @@
 package eg.edu.alexu.csd.oop.game.world;
 
+import eg.edu.alexu.csd.oop.game.Flyweight.FlyweightimageFactory;
+import eg.edu.alexu.csd.oop.game.Flyweight.FlyweightimageFactory;
 import eg.edu.alexu.csd.oop.game.GameObject;
 import eg.edu.alexu.csd.oop.game.Iterator.IIterator;
 import eg.edu.alexu.csd.oop.game.Iterator.IList;
@@ -7,6 +9,7 @@ import eg.edu.alexu.csd.oop.game.Iterator.Iterator;
 import eg.edu.alexu.csd.oop.game.World;
 import eg.edu.alexu.csd.oop.game.objects.ImageObject;
 
+import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -35,25 +38,26 @@ public class Circus implements World {
     private boolean isRightStickEmpty = true;
     private boolean isLeftStickEmpty = true;
     private final Random rand = new Random();
+    FlyweightimageFactory FlyweightimageFactory=new FlyweightimageFactory();
 
     public Circus(int width, int height) {
         this.width = width;
         this.height = height;
 
         // The clown
-        controllable.add(new ImageObject(0, 0, "/clown.png"));
+        controllable.add( FlyweightimageFactory.getimageFromFactory(0, 0, "/clown.png"));
         controllable.get(0).setX(width / 2 - controllable.get(0).getWidth() / 2);
         controllable.get(0).setY((int) (height * 0.96 - controllable.get(0).getHeight()));
         ((ImageObject)controllable.get(0)).setHorizontalOnly();
 
         // The two sticks
         int clownHandHeight = controllable.get(0).getY() + (int)(controllable.get(0).getHeight() * 0.01);
-        controllable.add(new ImageObject(controllable.get(0).getX() + (int)(controllable.get(0).getWidth() * 0.7), clownHandHeight, "/rightStick.png", true));
-        controllable.add(new ImageObject(controllable.get(0).getX() + (int)(controllable.get(0).getWidth() * 0.18), clownHandHeight, "/leftStick.png", true));
+        controllable.add(FlyweightimageFactory.getimageFromFactory(controllable.get(0).getX() + (int)(controllable.get(0).getWidth() * 0.7), clownHandHeight, "/rightStick.png"));
+        controllable.add(FlyweightimageFactory.getimageFromFactory(controllable.get(0).getX() + (int)(controllable.get(0).getWidth() * 0.18), clownHandHeight, "/leftStick.png"));
 
         // Plates with random place to appear at and random color
         for (int i = 0; i < 14; i++) {
-            movable.add(new ImageObject(0, -1 * rand.nextInt(height), randomPlate(rand.nextInt(3))));
+            movable.add(FlyweightimageFactory.getimageFromFactory(0, -1 * rand.nextInt(height), randomPlate(rand.nextInt(3))));
             movable.get(i).setX(rand.nextInt(width - movable.get(i).getWidth()));
         }
         IList movableList = new eg.edu.alexu.csd.oop.game.Iterator.List(movable);
@@ -195,11 +199,11 @@ public class Circus implements World {
         }
 
         int counter = 0, len = stickPlates.size();
-        String color = ((ImageObject)stickPlates.get(len - 1)).getPath();
+        BufferedImage[] color = ((ImageObject)stickPlates.get(len - 1)).getSpriteImages();
 
         // Check the last 3 plates if of same color
         for(int i = len - 1; i >= len - 3; i--) {
-            if(color.equals(((ImageObject)stickPlates.get(i)).getPath())) {
+            if(color.equals(((ImageObject)stickPlates.get(i)).getSpriteImages())) {
                 counter++;
             }
             if(counter == 3) {

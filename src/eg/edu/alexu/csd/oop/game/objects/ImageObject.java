@@ -11,35 +11,22 @@ public class ImageObject implements GameObject {
     private static final int MAX_STATE = 1;
     private static final int MOVING = 0;
     // An array of sprite images that are drawn sequentially
-    private BufferedImage[] spriteImages = new BufferedImage[MAX_STATE];
+    private BufferedImage[] spriteImages;
     private int x, y;
     private boolean visible;
     private int type;
-    private String path;
     private int distFromStick;
     private boolean horizontalOnly;
 
-    public ImageObject(int posX, int posY, String path) {
-        this(posX, posY, path, MOVING, false);
-    }
-
-    public ImageObject(int posX, int posY, String path, boolean horizontalOnly) {
-        this(posX, posY, path, MOVING, horizontalOnly);
-    }
-
-    public ImageObject(int posX, int posY, String path, int type, boolean horizontalOnly) {
+    public ImageObject(int posX, int posY, int type, boolean horizontalOnly, BufferedImage[] spriteImage) {
         this.x = posX;
         this.y = posY;
-        this.path = path;
         this.type = type;
         this.visible = true;
         this.horizontalOnly = horizontalOnly;
         // Create a bunch of buffered images and place into an array, to be displayed sequentially
-        try {
-            spriteImages[0] = ImageIO.read(getClass().getResourceAsStream(path));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.spriteImages = spriteImage;
+
     }
 
     @Override
@@ -91,10 +78,6 @@ public class ImageObject implements GameObject {
 
     public void setType(int type) {
         this.type = type;
-    }
-
-    public String getPath() {
-        return this.path;
     }
 
     public int getDistFromStick() {
