@@ -79,6 +79,11 @@ public class View
                 easyButton2.setSize(0,0);
                 easyButton.setSize(220,40);
             }
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new Main().Main(0);
+            }
         });
 
         JLabel mediumButton = new JLabel("MEDIUM");
@@ -115,6 +120,10 @@ public class View
                 mediumButton2.setSize(0,0);
                 mediumButton.setSize(220,40);
             }
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new Main().Main(1);
+            }
         });
 
 
@@ -150,6 +159,10 @@ public class View
             public void mouseExited(MouseEvent e) {
                 hardButton2.setSize(0,0);
                 hardButton.setSize(220,40);
+            }
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new Main().Main(2);
             }
         });
 
