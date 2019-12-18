@@ -2,6 +2,7 @@ package eg.edu.alexu.csd.oop.game.world;
 
 import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
 import eg.edu.alexu.csd.oop.game.GameObject;
+import eg.edu.alexu.csd.oop.game.model.Iterator.GameObjectList;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IIterator;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IList;
 import eg.edu.alexu.csd.oop.game.model.Pool.ImagePool;
@@ -34,12 +35,8 @@ public class Circus implements World {
 
     private final Random rand = new Random();
 
+    private ImagePool imagePool;
     private IList movableList;
-    private IIterator movableIterator;
-    private IList controllableList;
-    private IIterator controllableIterator;
-    FlyweightImageFactory FlyweightimageFactory = new FlyweightImageFactory();
-    ImagePool imagePool;
 
     private final int speed; // Frequency
     private final int controlSpeed; // Control Frequency
@@ -50,6 +47,7 @@ public class Circus implements World {
         this.width = width;
         this.height = height;
         imagePool = new ImagePool(width, height);
+        FlyweightImageFactory FlyweightimageFactory = new FlyweightImageFactory();
 
         constant.add(FlyweightimageFactory.getImageObject(0, 0, "/circus.jpg"));
 
@@ -69,10 +67,7 @@ public class Circus implements World {
             movable.add(imagePool.getGameObject());
         }
 
-        IList movableList = new eg.edu.alexu.csd.oop.game.model.Iterator.List(movable);
-        IIterator movableIterator = movableList.createIterator();
-        controllableList = new eg.edu.alexu.csd.oop.game.model.Iterator.List(controllable);
-        controllableIterator = controllableList.createIterator();
+        movableList = new GameObjectList(movable);
 
         if (gameLevel == 0) {
             this.speed = 10;
@@ -104,7 +99,9 @@ public class Circus implements World {
         rightStick.setX(clown.getX() + (int) (clown.getWidth() * 0.7));
         leftStick.setX(clown.getX() + (int) (clown.getWidth() * 0.18));
 
-        for (GameObject plate : movable) {
+        IIterator movableIterator = movableList.createIterator();
+        while(movableIterator.hasNext()) {
+            GameObject plate = movableIterator.currentItem();
 
             // If the plate is moving
             if (((ImageObject) plate).getType() == MOVING) {
@@ -143,6 +140,9 @@ public class Circus implements World {
                     ((ImageObject) plate).setType(MOVING);
                 }
             }
+
+            // Move to next element in list of plates
+            movableIterator.next();
         }
         return !timeout;
     }
