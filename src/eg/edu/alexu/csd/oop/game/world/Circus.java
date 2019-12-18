@@ -2,6 +2,7 @@ package eg.edu.alexu.csd.oop.game.world;
 
 import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
 import eg.edu.alexu.csd.oop.game.GameObject;
+import eg.edu.alexu.csd.oop.game.model.Iterator.GameObjectIterator;
 import eg.edu.alexu.csd.oop.game.model.Iterator.GameObjectList;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IIterator;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IList;
@@ -37,6 +38,7 @@ public class Circus implements World {
 
     private ImagePool imagePool;
     private IList movableList;
+    private IList controllableList;
 
     private final int speed; // Frequency
     private final int controlSpeed; // Control Frequency
@@ -68,7 +70,7 @@ public class Circus implements World {
         }
 
         movableList = new GameObjectList(movable);
-
+        controllableList = new GameObjectList(controllable);
         if (gameLevel == 0) {
             this.speed = 10;
             this.controlSpeed = 15;
@@ -100,9 +102,8 @@ public class Circus implements World {
         leftStick.setX(clown.getX() + (int) (clown.getWidth() * 0.18));
 
         IIterator movableIterator = movableList.createIterator();
-        while(movableIterator.hasNext()) {
+        while (movableIterator.hasNext()) {
             GameObject plate = movableIterator.currentItem();
-
             // If the plate is moving
             if (((ImageObject) plate).getType() == MOVING) {
                 plate.setY(plate.getY() + 1);
@@ -143,6 +144,7 @@ public class Circus implements World {
 
             // Move to next element in list of plates
             movableIterator.next();
+
         }
         return !timeout;
     }
