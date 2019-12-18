@@ -1,6 +1,6 @@
 package eg.edu.alexu.csd.oop.game.model.Iterator;
 
-import eg.edu.alexu.csd.oop.game.engineInterfaces.GameObject;
+import eg.edu.alexu.csd.oop.game.GameObject;
 
 public interface IIterator {
     void first();//Reset to first element

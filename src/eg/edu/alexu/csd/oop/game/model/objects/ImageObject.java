@@ -2,7 +2,7 @@ package eg.edu.alexu.csd.oop.game.model.objects;
 
 import java.awt.image.BufferedImage;
 
-import eg.edu.alexu.csd.oop.game.engineInterfaces.GameObject;
+import eg.edu.alexu.csd.oop.game.GameObject;
 
 public class ImageObject implements GameObject {
     private static final int MAX_STATE = 1;

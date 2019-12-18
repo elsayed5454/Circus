@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.oop.game.engineInterfaces;
+package eg.edu.alexu.csd.oop.game;
 
 public interface GameObject {
     /**

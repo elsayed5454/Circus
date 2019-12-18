@@ -1,19 +1,20 @@
 package eg.edu.alexu.csd.oop.game.model.Pool;
 
-import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightimageFactory;
-import eg.edu.alexu.csd.oop.game.engineInterfaces.GameObject;
+import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
+import eg.edu.alexu.csd.oop.game.GameObject;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+// Object Pool Pattern to reuse created objects when time objects expire
+// or they reaches the height of the screen
 public class ImagePool {
-    private long expTime = 6000;
     public HashMap<GameObject, Long> available = new HashMap<>();
     public HashMap<GameObject, Long> inUse = new HashMap<>();
     private int width, height;
     private Random rand = new Random();
-    private FlyweightimageFactory flyweightimageFactory = new FlyweightimageFactory();
+    private FlyweightImageFactory flyweightimageFactory = new FlyweightImageFactory();
 
     public ImagePool(int width, int height) {
         this.width = width;
@@ -24,6 +25,7 @@ public class ImagePool {
         long now = System.currentTimeMillis();
         if (!available.isEmpty()) {
             for (Map.Entry<GameObject, Long> entry : available.entrySet()) {
+                long expTime = 6000;
                 if (now - entry.getValue() > expTime) {
                     popElement(available);
                 } else {
@@ -37,7 +39,7 @@ public class ImagePool {
     }
 
     private GameObject createGameObject(long now) {
-        GameObject po = flyweightimageFactory.getimageFromFactory(0, -1 * rand.nextInt(height), randomPlate(rand.nextInt(3)));
+        GameObject po = flyweightimageFactory.getImageObject(0, -1 * rand.nextInt(height), randomPlate(rand.nextInt(3)));
         po.setX(rand.nextInt(width - po.getWidth()));
         push(inUse, po, now);
         return po;

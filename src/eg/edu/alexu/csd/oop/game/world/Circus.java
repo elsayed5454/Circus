@@ -1,11 +1,11 @@
 package eg.edu.alexu.csd.oop.game.world;
 
-import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightimageFactory;
-import eg.edu.alexu.csd.oop.game.engineInterfaces.GameObject;
+import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
+import eg.edu.alexu.csd.oop.game.GameObject;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IIterator;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IList;
 import eg.edu.alexu.csd.oop.game.model.Pool.ImagePool;
-import eg.edu.alexu.csd.oop.game.engineInterfaces.World;
+import eg.edu.alexu.csd.oop.game.World;
 import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
 
 import java.awt.image.BufferedImage;
@@ -38,7 +38,7 @@ public class Circus implements World {
     private IIterator movableIterator;
     private IList controllableList;
     private IIterator controllableIterator;
-    FlyweightimageFactory FlyweightimageFactory = new FlyweightimageFactory();
+    FlyweightImageFactory FlyweightimageFactory = new FlyweightImageFactory();
     ImagePool imagePool;
 
     private final int speed; // Frequency
@@ -51,18 +51,18 @@ public class Circus implements World {
         this.height = height;
         imagePool = new ImagePool(width, height);
 
-        constant.add(FlyweightimageFactory.getimageFromFactory(0, 0, "/circus.jpg"));
+        constant.add(FlyweightimageFactory.getImageObject(0, 0, "/circus.jpg"));
 
         // The clown
-        controllable.add(FlyweightimageFactory.getimageFromFactory(0, 0, "/clown.png"));
+        controllable.add(FlyweightimageFactory.getImageObject(0, 0, "/clown.png"));
         controllable.get(0).setX(width / 2 - controllable.get(0).getWidth() / 2);
         controllable.get(0).setY((int) (height * 0.96 - controllable.get(0).getHeight()));
         ((ImageObject) controllable.get(0)).setHorizontalOnly();
 
         // The two sticks
         int clownHandHeight = controllable.get(0).getY() + (int) (controllable.get(0).getHeight() * 0.01);
-        controllable.add(FlyweightimageFactory.getimageFromFactory(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.7), clownHandHeight, "/rightStick.png"));
-        controllable.add(FlyweightimageFactory.getimageFromFactory(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.18), clownHandHeight, "/leftStick.png"));
+        controllable.add(FlyweightimageFactory.getImageObject(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.7), clownHandHeight, "/rightStick.png"));
+        controllable.add(FlyweightimageFactory.getImageObject(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.18), clownHandHeight, "/leftStick.png"));
 
         // Plates with random place to appear at and random color
         for (int i = 0; i < 14; i++) {
