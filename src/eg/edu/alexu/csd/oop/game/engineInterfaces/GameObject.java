@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.oop.game;
+package eg.edu.alexu.csd.oop.game.engineInterfaces;
 
 public interface GameObject {
     /**
@@ -31,7 +31,7 @@ public interface GameObject {
     boolean isVisible();
 
     /**
-            * @return object movement frames
+     * @return object movement frames
      */
     java.awt.image.BufferedImage[] getSpriteImages();
 }

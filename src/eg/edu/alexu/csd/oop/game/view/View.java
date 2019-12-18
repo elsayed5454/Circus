@@ -1,4 +1,6 @@
-package eg.edu.alexu.csd.oop.game;
+package eg.edu.alexu.csd.oop.game.view;
+
+import eg.edu.alexu.csd.oop.game.Main;
 
 import javax.swing.*;
 import java.awt.*;

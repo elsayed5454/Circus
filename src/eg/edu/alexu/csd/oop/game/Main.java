@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import eg.edu.alexu.csd.oop.game.world.Circus;
+
 public class Main {
     public static void Main(int gameLevel) {
 
@@ -29,7 +31,7 @@ public class Main {
         final GameEngine.GameController gameController = GameEngine.start("GAME", new eg.edu.alexu.csd.oop.game.world.Circus((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth() - 14 , (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 54, gameLevel), menuBar, Color.DARK_GRAY);
         newMenuItem.addActionListener(new ActionListener() {
             @Override public void actionPerformed(ActionEvent e) {
-                gameController.changeWorld(new eg.edu.alexu.csd.oop.game.world.Circus((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight(), gameLevel));
+                gameController.changeWorld((World) new eg.edu.alexu.csd.oop.game.world.Circus((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight(), gameLevel));
             }
         });
         pauseMenuItem.addActionListener(new ActionListener() {

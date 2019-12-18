@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.oop.game.Iterator;
+package eg.edu.alexu.csd.oop.game.model.Iterator;
 
 public interface IList {
     IIterator createIterator();
