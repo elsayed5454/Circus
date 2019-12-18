@@ -2,6 +2,7 @@ package eg.edu.alexu.csd.oop.game.world;
 
 import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
 import eg.edu.alexu.csd.oop.game.GameObject;
+import eg.edu.alexu.csd.oop.game.model.Iterator.GameObjectList;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IIterator;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IList;
 import eg.edu.alexu.csd.oop.game.model.Pool.ImagePool;
@@ -69,9 +70,8 @@ public class Circus implements World {
             movable.add(imagePool.getGameObject());
         }
 
-        IList movableList = new eg.edu.alexu.csd.oop.game.model.Iterator.List(movable);
-        IIterator movableIterator = movableList.createIterator();
-        controllableList = new eg.edu.alexu.csd.oop.game.model.Iterator.List(controllable);
+        movableList = new GameObjectList(movable);
+        controllableList = new GameObjectList(controllable);
         controllableIterator = controllableList.createIterator();
 
         if (gameLevel == 0) {
@@ -104,8 +104,9 @@ public class Circus implements World {
         rightStick.setX(clown.getX() + (int) (clown.getWidth() * 0.7));
         leftStick.setX(clown.getX() + (int) (clown.getWidth() * 0.18));
 
-        for (GameObject plate : movable) {
-
+        movableIterator = movableList.createIterator();
+        while (movableIterator.hasNext()){
+            GameObject plate=movableIterator.currentItem();
             // If the plate is moving
             if (((ImageObject) plate).getType() == MOVING) {
                 plate.setY(plate.getY() + 1);
@@ -143,6 +144,7 @@ public class Circus implements World {
                     ((ImageObject) plate).setType(MOVING);
                 }
             }
+            movableIterator.next();
         }
         return !timeout;
     }

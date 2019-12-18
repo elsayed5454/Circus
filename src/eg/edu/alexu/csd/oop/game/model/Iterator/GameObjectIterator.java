@@ -2,22 +2,20 @@ package eg.edu.alexu.csd.oop.game.model.Iterator;
 
 import eg.edu.alexu.csd.oop.game.GameObject;
 
-import java.util.LinkedList;
 import java.util.List;
 
-public class Iterator implements  IIterator {
-    private  List<GameObject> List = new LinkedList<>();
+public class GameObjectIterator implements IIterator {
+    private List<GameObject> List;
     private int position;
 
-    public Iterator(List<GameObject> List){
-        this.List=List;
-        position=0;
+    public GameObjectIterator(List<GameObject> List) {
+        this.List = List;
+        position = 0;
     }
-
 
     @Override
     public void first() {
-        position =0;
+        position = 0;
     }
 
     @Override
@@ -37,13 +35,11 @@ public class Iterator implements  IIterator {
 
     @Override
     public boolean hasNext() {
-        if(position >= List.size())
-            return false;
-        return true;
+        return position < List.size();
     }
 
     @Override
     public int size() {
-        return (position+1);
+        return (position + 1);
     }
 }
