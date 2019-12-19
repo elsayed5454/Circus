@@ -5,15 +5,13 @@ import eg.edu.alexu.csd.oop.game.GameObject;
 import eg.edu.alexu.csd.oop.game.model.Iterator.GameObjectList;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IIterator;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IList;
+import eg.edu.alexu.csd.oop.game.model.Observer.IObserver;
 import eg.edu.alexu.csd.oop.game.model.Pool.ImagePool;
 import eg.edu.alexu.csd.oop.game.World;
 import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
 
 import java.awt.image.BufferedImage;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Circus implements World {
     private final int MAX_TIME = 2 * 60 * 1000; // 2 minute
@@ -32,6 +30,8 @@ public class Circus implements World {
     private static final int FALLING = 2;   // Plate is falling
     private boolean isRightStickEmpty = true;
     private boolean isLeftStickEmpty = true;
+
+    private List<IObserver> observers = new ArrayList<IObserver>();
 
     private final Random rand = new Random();
 
@@ -282,4 +282,23 @@ public class Circus implements World {
     public int getControlSpeed() {
         return controlSpeed;
     }
+
+    public List<IObserver> getObservers() {
+        return observers;
+    }
+    public void register(IObserver observer) {
+        //GameLogger.getInstance().log.debug("Observer registered");
+        observers.add(observer);
+    }
+    public void unregister(IObserver observer){
+        //GameLogger.getInstance().log.debug("Observer unregistered");
+        observers.remove(observer);
+    }
+
+    public void notifyRegisteredUsers(int updatedValue)
+    {
+        for (IObserver observer : observers)
+            observer.update(updatedValue);
+    }
+
 }
