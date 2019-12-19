@@ -1,6 +1,7 @@
 package eg.edu.alexu.csd.oop.game.view;
 
 import eg.edu.alexu.csd.oop.game.Main;
+import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +11,6 @@ import java.awt.event.MouseEvent;
 public class View
 {
     private JFrame frame;
-
     /**
      * Launch the application.
      */
@@ -42,7 +42,6 @@ public class View
         frame.setBounds(0 , 0 , Toolkit.getDefaultToolkit().getScreenSize().width , Toolkit.getDefaultToolkit().getScreenSize().height);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
         ImageIcon bgImg = new ImageIcon(getClass().getResource("/background.jpg"));
         JLabel bg = new JLabel("" ,  bgImg , JLabel.CENTER) ;
         bg.setSize(frame.getWidth(), frame.getHeight());
