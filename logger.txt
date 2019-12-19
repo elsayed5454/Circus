@@ -44,3 +44,17 @@ Dec 19, 2019 7:39:48 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
 Dec 19, 2019 7:39:52 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
+Dec 19, 2019 11:59:36 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
+Dec 19, 2019 11:59:37 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
+Dec 19, 2019 11:59:40 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
+Dec 19, 2019 11:59:43 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
+Dec 19, 2019 11:59:47 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
+Dec 19, 2019 11:59:47 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: 3 plates of same color 
+Dec 19, 2019 11:59:47 PM eg.edu.alexu.csd.oop.game.model.Observer.Score update
+INFO: Score: 30

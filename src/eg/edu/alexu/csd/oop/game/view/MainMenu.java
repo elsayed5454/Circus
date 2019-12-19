@@ -39,7 +39,7 @@ public class MainMenu {
         //label works as a button for easy level
         //first button for before hovering
         JLabel easyButton = new JLabel("EASY");
-        easyButton.setBounds(width / 2 - 110 , height / 2 - 45 , 220, 40 );
+        easyButton.setBounds(width / 2 - 110 , height / 2 + 45 , 220, 40 );
         easyButton.setBackground(new Color(0, 0, 0, 200));
         easyButton.setForeground(Color.WHITE);
         easyButton.setFont(new Font("Tahoma", Font.BOLD,15));
@@ -49,7 +49,7 @@ public class MainMenu {
 
         //second buttons for after hovering
         JLabel easyButton2 = new JLabel("EASY");
-        easyButton2.setBounds(width / 2 - 110 , height / 2 - 45 , 220, 40 );
+        easyButton2.setBounds(width / 2 - 110 , height / 2 + 45 , 220, 40 );
         easyButton2.setSize(0,0);
         easyButton2.setBackground(new Color(169, 169, 169, 200));
         easyButton2.setForeground(new Color(212,175,55));
@@ -83,7 +83,7 @@ public class MainMenu {
         });
 
         JLabel mediumButton = new JLabel("MEDIUM");
-        mediumButton.setBounds(width / 2 - 110 , height / 2  , 220, 40 );
+        mediumButton.setBounds(width / 2 - 110 , height / 2 +90 , 220, 40 );
         mediumButton.setBackground(new Color(0, 0, 0, 200));
         mediumButton.setForeground(Color.WHITE);
         mediumButton.setFont(new Font("Tahoma", Font.BOLD,15));
@@ -92,7 +92,7 @@ public class MainMenu {
         bg.add(mediumButton);
 
         JLabel mediumButton2 = new JLabel("MEDIUM");
-        mediumButton2.setBounds(width / 2 - 110 , height / 2 , 220, 40 );
+        mediumButton2.setBounds(width / 2 - 110 , height / 2 +90 , 220, 40 );
         mediumButton2.setSize(0,0);
         mediumButton2.setBackground(new Color(169, 169, 169, 200));
         mediumButton2.setForeground(new Color(212,175,55));
@@ -124,7 +124,7 @@ public class MainMenu {
 
 
         JLabel hardButton = new JLabel("HARD");
-        hardButton.setBounds(width / 2 - 110 , height / 2 + 45 , 220, 40 );
+        hardButton.setBounds(width / 2 - 110 , height / 2 + 135 , 220, 40 );
         hardButton.setBackground(new Color(0, 0, 0, 200));
         hardButton.setForeground(Color.WHITE);
         hardButton.setFont(new Font("Tahoma", Font.BOLD,15));
@@ -133,7 +133,7 @@ public class MainMenu {
         bg.add(hardButton);
 
         JLabel hardButton2 = new JLabel("HARD");
-        hardButton2.setBounds(width / 2 - 110 , height / 2 + 45 , 220, 40 );
+        hardButton2.setBounds(width / 2 - 110 , height / 2 + 135 , 220, 40 );
         hardButton2.setSize(0,0);
         hardButton2.setBackground(new Color(169, 169, 169, 200));
         hardButton2.setForeground(new Color(212,175,55));
