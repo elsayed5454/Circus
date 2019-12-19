@@ -14,7 +14,7 @@ public class Score implements IObserver {
     @Override
     public void update(int updatedValue) {
 
-        System.out.println("Score: "+ updatedValue);
+        //System.out.println("Score: "+ updatedValue);
         GameLogger.getInstance().logger.info("Score: "+ updatedValue );
     }
 }
