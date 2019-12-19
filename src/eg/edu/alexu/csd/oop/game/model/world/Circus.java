@@ -1,21 +1,25 @@
-package eg.edu.alexu.csd.oop.game.world;
+package eg.edu.alexu.csd.oop.game.model.world;
 
+import eg.edu.alexu.csd.oop.game.World;
 import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
+import eg.edu.alexu.csd.oop.game.model.Observer.IObserver;
+import eg.edu.alexu.csd.oop.game.model.Observer.Plates;
+import eg.edu.alexu.csd.oop.game.model.Observer.Score;
+import eg.edu.alexu.csd.oop.game.model.Observer.Time;
+import eg.edu.alexu.csd.oop.game.model.State.Caught;
+import eg.edu.alexu.csd.oop.game.model.State.Falling;
+import eg.edu.alexu.csd.oop.game.model.State.Moving;
+import eg.edu.alexu.csd.oop.game.model.Strategy.IStrategy;
 import eg.edu.alexu.csd.oop.game.GameObject;
 import eg.edu.alexu.csd.oop.game.model.Iterator.GameObjectList;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IIterator;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IList;
 import eg.edu.alexu.csd.oop.game.model.Pool.ImagePool;
-import eg.edu.alexu.csd.oop.game.World;
-import eg.edu.alexu.csd.oop.game.model.ImageObject;
+import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
 
 import java.awt.image.BufferedImage;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Circus implements World {
     private final int MAX_TIME = 2 * 60 * 1000; // 2 minute
@@ -30,29 +34,29 @@ public class Circus implements World {
     private final int height;   // The height of the screen
     private int score = 0;      // Current score
     private static final int MOVING = 0;    // Plate is moving
-    private static final int CATCHED = 1;   // Plate is catched
+    private static final int CAUGHT = 1;   // Plate is caught
     private static final int FALLING = 2;   // Plate is falling
     private boolean isRightStickEmpty = true;
     private boolean isLeftStickEmpty = true;
 
     private final Random rand = new Random();
 
-    private ImagePool imagePool;
     private IList movableList;
+    private IIterator movableIterator;
     private IList controllableList;
-    private FlyweightImageFactory flyweightImageFactory = new FlyweightImageFactory();
+    private IIterator controllableIterator;
+    FlyweightImageFactory FlyweightimageFactory = new FlyweightImageFactory();
+    ImagePool imagePool;
+    IStrategy strategy;
+    private List<IObserver> observers = new ArrayList<>();
+    IObserver Scoreobserver, Timeobserver, Platesobserver;
 
-    private final int speed; // Frequency
-    private final int controlSpeed; // Control Frequency
-    private final int differenceBetweenPlateAndStick;
-    private final int differenceBetweenPlateAndPlate;
-
-    public Circus(int width, int height, int gameLevel) {
+    public Circus(int width, int height, IStrategy strategy) {
         this.width = width;
         this.height = height;
         imagePool = new ImagePool(width, height);
-        FlyweightImageFactory FlyweightimageFactory = new FlyweightImageFactory();
 
+        //background
         constant.add(FlyweightimageFactory.getImageObject(0, 0, "/circus.jpg"));
 
         // The clown
@@ -69,38 +73,23 @@ public class Circus implements World {
         // Plates with random place to appear at and random color
         for (int i = 0; i < 14; i++) {
             //movable.add(imagePool.getGameObject());
-
             try {
-                movable.add(flyweightImageFactory.getShape(rand.nextInt(width), -1 * rand.nextInt(height), randomColor()));
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (InvocationTargetException e) {
-                e.printStackTrace();
-            } catch (InstantiationException e) {
+                movable.add(FlyweightImageFactory.getShape(rand.nextInt(width), -1 * rand.nextInt(height), randomColor()));
+            } catch (NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
                 e.printStackTrace();
             }
         }
 
         movableList = new GameObjectList(movable);
         controllableList = new GameObjectList(controllable);
-        if (gameLevel == 0) {
-            this.speed = 10;
-            this.controlSpeed = 15;
-            this.differenceBetweenPlateAndStick = 40;
-            this.differenceBetweenPlateAndPlate = 60;
-        } else if (gameLevel == 1) {
-            this.speed = 8;
-            this.controlSpeed = 10;
-            this.differenceBetweenPlateAndStick = 30;
-            this.differenceBetweenPlateAndPlate = 40;
-        } else {
-            this.speed = 6;
-            this.controlSpeed = 7;
-            this.differenceBetweenPlateAndStick = 20;
-            this.differenceBetweenPlateAndPlate = 25;
-        }
+        controllableIterator = controllableList.createIterator();
+
+        //game level constructor according to the strategy
+        this.strategy = strategy;
+
+        Scoreobserver = new Score(this);
+        Timeobserver = new Time(this);
+        Platesobserver = new Plates(this);
     }
 
     @Override
@@ -115,20 +104,11 @@ public class Circus implements World {
         rightStick.setX(clown.getX() + (int) (clown.getWidth() * 0.7));
         leftStick.setX(clown.getX() + (int) (clown.getWidth() * 0.18));
 
-        IIterator movableIterator = movableList.createIterator();
+        movableIterator = movableList.createIterator();
         while (movableIterator.hasNext()) {
             GameObject plate = movableIterator.currentItem();
-
-            /*
-            int requiredType = 0;
-            try {
-                requiredType = getReturnValueFromMethod(plate, "getType");
-            } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
-                e.printStackTrace();
-            }*/
-
             // If the plate is moving
-            if (((ImageObject)plate).getType() == MOVING) {
+            if (((ImageObject) plate).getState() == MOVING) {
                 plate.setY(plate.getY() + 1);
 
                 // If the plate reaches bottom of the screen, reuse it
@@ -145,8 +125,9 @@ public class Circus implements World {
                 isThreeOfSameColor(leftStickPlates);
             }
 
-            // If plate is catched by the clown
-            else if (((ImageObject) plate).getType() == CATCHED) {
+            // If plate is caught by the clown
+            else if (((ImageObject) plate).getState() == CAUGHT) {
+                //set the new x
                 if (rightStickPlates.contains(plate)) {
                     plate.setX(rightStick.getX() - ((ImageObject) plate).getDistFromStick());
                 } else if (leftStickPlates.contains(plate)) {
@@ -155,19 +136,16 @@ public class Circus implements World {
             }
 
             // If plate is falling from the clown
-            else if (((ImageObject) plate).getType() == FALLING) {
+            else if (((ImageObject) plate).getState() == FALLING) {
                 plate.setY(plate.getY() + 1);
                 if (plate.getY() == getHeight()) {
                     imagePool.releaseObject(plate);
                     plate.setY(-1 * (int) (Math.random() * getHeight()));
                     plate.setX((int) (Math.random() * getWidth()));
-                    ((ImageObject) plate).setType(MOVING);
+                    ((ImageObject) plate).setState(new Moving());
                 }
             }
-
-            // Move to next element in list of plates
             movableIterator.next();
-
         }
         return !timeout;
     }
@@ -176,28 +154,39 @@ public class Circus implements World {
         GameObject rightStick = controllable.get(1);
         GameObject leftStick = controllable.get(2);
 
-        // Check if stick is not empty first
-        // because we see if the last plate touches the new plate
         if (isRightStickEmpty) {
+            //check if plate touches the right stick
             if (plate.getY() + plate.getHeight() == rightStick.getY()) {
+                //the error between the center of the plate and the center of the stick
                 int difference = Math.abs(rightStick.getX() - plate.getX() - 27);
-                if (difference < differenceBetweenPlateAndStick) {
-                    ((ImageObject) plate).setType(CATCHED);
+                //catch the plate if the difference is acceptable
+                if (difference < strategy.differenceBetweenPlateAndStick()) {
+                    ((ImageObject) plate).setState(new Caught());
                     ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                     rightStickPlates.add(plate);
+                    this.registerOnly(Platesobserver);
+                    this.notifyRegisteredUsers(1);
+                    this.registerall();
                     isRightStickEmpty = false;
                 }
             }
         } else {
+            //check if the plate touches the last plate on the stick
             if (plate.getY() + plate.getHeight() == rightStickPlates.getLast().getY()) {
+                //the error between the center of the 2 plates
                 int difference = Math.abs(plate.getX() - (rightStickPlates.getLast().getX()));
-                if (difference < differenceBetweenPlateAndPlate) {
-                    ((ImageObject) plate).setType(CATCHED);
+                //catch the plate if the difference is acceptable
+                if (difference < strategy.differenceBetweenPlateAndPlate()) {
+                    ((ImageObject) plate).setState(new Caught());
+                    this.registerOnly(Platesobserver);
+                    this.notifyRegisteredUsers(1);
+                    this.registerall();
                     ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                     rightStickPlates.add(plate);
+                    //drop the plates if the difference isn't acceptable
                 } else if (difference < plate.getWidth() - 22) {
-                    ((ImageObject) plate).setType(FALLING);
-                    ((ImageObject) rightStickPlates.getLast()).setType(FALLING);
+                    ((ImageObject) plate).setState(new Falling());
+                    ((ImageObject) rightStickPlates.getLast()).setState(new Falling());
                     rightStickPlates.remove(rightStickPlates.size() - 1);
                     isRightStickEmpty = rightStickPlates.isEmpty();
                 }
@@ -206,23 +195,29 @@ public class Circus implements World {
         if (isLeftStickEmpty) {
             if (plate.getY() + plate.getHeight() == leftStick.getY()) {
                 int difference = Math.abs(leftStick.getX() - plate.getX() - 27);
-                if (difference < differenceBetweenPlateAndStick) {
-                    ((ImageObject) plate).setType(CATCHED);
+                if (difference < strategy.differenceBetweenPlateAndStick()) {
+                    ((ImageObject) plate).setState(new Caught());
                     ((ImageObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
                     leftStickPlates.add(plate);
+                    this.registerOnly(Platesobserver);
+                    this.notifyRegisteredUsers(1);
+                    this.registerall();
                     isLeftStickEmpty = false;
                 }
             }
         } else {
             if (plate.getY() + plate.getHeight() == leftStickPlates.getLast().getY()) {
                 int difference = Math.abs(plate.getX() - (leftStickPlates.getLast().getX()));
-                if (difference < differenceBetweenPlateAndPlate) {
-                    ((ImageObject) plate).setType(CATCHED);
+                if (difference < strategy.differenceBetweenPlateAndPlate()) {
+                    ((ImageObject) plate).setState(new Caught());
                     ((ImageObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
+                    this.registerOnly(Platesobserver);
+                    this.notifyRegisteredUsers(1);
+                    this.registerall();
                     leftStickPlates.add(plate);
                 } else if (difference < plate.getWidth() - 22) {
-                    ((ImageObject) plate).setType(FALLING);
-                    ((ImageObject) leftStickPlates.getLast()).setType(FALLING);
+                    ((ImageObject) plate).setState(new Falling());
+                    ((ImageObject) leftStickPlates.getLast()).setState(new Falling());
                     leftStickPlates.remove(leftStickPlates.size() - 1);
                     isLeftStickEmpty = leftStickPlates.isEmpty();
                 }
@@ -250,7 +245,13 @@ public class Circus implements World {
                 } else {
                     isLeftStickEmpty = removeUpperThreePlates(stickPlates);
                 }
+                this.registerOnly(Platesobserver);
+                this.notifyRegisteredUsers(2);
+                this.registerall();
                 score += 30;
+                this.registerOnly(Scoreobserver);
+                this.notifyRegisteredUsers(score);
+                this.registerall();
             }
         }
     }
@@ -258,7 +259,7 @@ public class Circus implements World {
     private boolean removeUpperThreePlates(LinkedList<GameObject> stickPlates) {
         int len = stickPlates.size();
         for (int i = len - 1; i >= len - 3; i--) {
-            ((ImageObject) stickPlates.get(i)).setType(MOVING);
+            ((ImageObject) stickPlates.get(i)).setState(new Moving());
             stickPlates.get(i).setX(rand.nextInt(width - movable.get(i).getWidth()));
             stickPlates.get(i).setY(-1 * rand.nextInt(height));
             stickPlates.remove(i);
@@ -289,12 +290,6 @@ public class Circus implements World {
                 return "yellow";
         }
     }
-
-    /*
-    private int getReturnValueFromMethod(GameObject plate, String methodName) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Method method = plate.getClass().getDeclaredMethod(methodName, null);
-        return (int) method.invoke(plate, null);
-    }*/
 
     @Override
     public List<GameObject> getConstantObjects() {
@@ -328,11 +323,45 @@ public class Circus implements World {
 
     @Override
     public int getSpeed() {
-        return speed;
+        return strategy.speed();
     }
 
     @Override
     public int getControlSpeed() {
-        return controlSpeed;
+        return strategy.controlSpeed();
     }
+
+    public List<IObserver> getObservers() {
+        return observers;
+    }
+
+    public void register(IObserver observer) {
+        //GameLogger.getInstance().log.debug("Observer registered");
+        observers.add(observer);
+    }
+
+    public void registerOnly(IObserver observer) {
+        //GameLogger.getInstance().log.debug("Observer registered");
+        observers.clear();
+        observers.add(observer);
+    }
+
+    public void registerall() {
+        observers.clear();
+        observers.add(this.Scoreobserver);
+        observers.add(this.Timeobserver);
+        observers.add(this.Platesobserver);
+
+    }
+
+    public void unregister(IObserver observer) {
+        //GameLogger.getInstance().log.debug("Observer unregistered");
+        observers.remove(observer);
+    }
+
+    public void notifyRegisteredUsers(int updatedValue) {
+        for (IObserver observer : observers)
+            observer.update(updatedValue);
+    }
+
 }

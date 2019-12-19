@@ -1,7 +1,8 @@
-package eg.edu.alexu.csd.oop.game.model;
+package eg.edu.alexu.csd.oop.game.model.objects;
 
 import eg.edu.alexu.csd.oop.game.GameObject;
 import eg.edu.alexu.csd.oop.game.model.Shapes.IShape;
+import eg.edu.alexu.csd.oop.game.model.State.IState;
 
 import java.awt.image.BufferedImage;
 
@@ -11,18 +12,18 @@ public class ImageObject implements GameObject {
     private BufferedImage[] spriteImages;
     private int x, y;
     private boolean visible;
-    private int type;
+    private int state;
     private int distFromStick;
     private boolean horizontalOnly;
 
-    public ImageObject(int posX, int posY, int type, IShape shape) {
-        this(posX, posY, type, false, shape.getImage());
+    public ImageObject(int posX, int posY, IState state, IShape shape) {
+        this(posX, posY, state, false, shape.getImage());
     }
 
-    public ImageObject(int posX, int posY, int type, boolean horizontalOnly, BufferedImage[] spriteImage) {
+    public ImageObject(int posX, int posY, IState state, boolean horizontalOnly, BufferedImage[] spriteImage) {
         this.x = posX;
         this.y = posY;
-        this.type = type;
+        this.state = state.setState();
         this.visible = true;
         this.horizontalOnly = horizontalOnly;
         // Create a bunch of buffered images and place into an array, to be displayed sequentially
@@ -46,7 +47,7 @@ public class ImageObject implements GameObject {
 
     @Override
     public void setY(int mY) {
-        if(horizontalOnly) {
+        if (horizontalOnly) {
             return;
         }
         this.y = mY;
@@ -72,12 +73,12 @@ public class ImageObject implements GameObject {
         return visible;
     }
 
-    public int getType() {
-        return type;
+    public int getState() {
+        return state;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public void setState(IState state) {
+        this.state = state.setState();
     }
 
     public int getDistFromStick() {
