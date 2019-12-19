@@ -1,5 +1,6 @@
 package eg.edu.alexu.csd.oop.game.model.Observer;
 
+import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
 import eg.edu.alexu.csd.oop.game.world.Circus;
 
 public class Score implements IObserver {
@@ -14,6 +15,6 @@ public class Score implements IObserver {
     public void update(int updatedValue) {
 
         System.out.println("Score: "+ updatedValue);
-        //GameLogger.getInstance().log.info("Score: "+ updatedValue );
+        GameLogger.getInstance().logger.info("Score: "+ updatedValue );
     }
 }

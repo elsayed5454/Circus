@@ -6,6 +6,9 @@ import eg.edu.alexu.csd.oop.game.model.Iterator.GameObjectList;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IIterator;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IList;
 import eg.edu.alexu.csd.oop.game.model.Observer.IObserver;
+import eg.edu.alexu.csd.oop.game.model.Observer.Plates;
+import eg.edu.alexu.csd.oop.game.model.Observer.Score;
+import eg.edu.alexu.csd.oop.game.model.Observer.Time;
 import eg.edu.alexu.csd.oop.game.model.Pool.ImagePool;
 import eg.edu.alexu.csd.oop.game.World;
 import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
@@ -46,6 +49,9 @@ public class Circus implements World {
     private final int controlSpeed; // Control Frequency
     private final int differenceBetweenPlateAndStick;
     private final int differenceBetweenPlateAndPlate;
+
+    IObserver Scoreobserver,Timeobserver,Platesobserver;
+
 
     public Circus(int width, int height, int gameLevel) {
         this.width = width;
@@ -90,6 +96,10 @@ public class Circus implements World {
             this.differenceBetweenPlateAndStick = 20;
             this.differenceBetweenPlateAndPlate = 25;
         }
+
+        Scoreobserver = new Score(this);
+        Timeobserver = new Time(this);
+        Platesobserver = new Plates(this);
     }
 
     @Override
@@ -162,6 +172,9 @@ public class Circus implements World {
                     ((ImageObject) plate).setType(CATCHED);
                     ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                     rightStickPlates.add(plate);
+                    this.registerOnly(Platesobserver);
+                    this.notifyRegisteredUsers(1);
+                    this.registerall();
                     isRightStickEmpty = false;
                 }
             }
@@ -170,6 +183,9 @@ public class Circus implements World {
                 int difference = Math.abs(plate.getX() - (rightStickPlates.getLast().getX()));
                 if (difference < differenceBetweenPlateAndPlate) {
                     ((ImageObject) plate).setType(CATCHED);
+                    this.registerOnly(Platesobserver);
+                    this.notifyRegisteredUsers(1);
+                    this.registerall();
                     ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                     rightStickPlates.add(plate);
                 } else if (difference < plate.getWidth() - 22) {
@@ -185,6 +201,9 @@ public class Circus implements World {
                 int difference = Math.abs(leftStick.getX() - plate.getX() - 27);
                 if (difference < differenceBetweenPlateAndStick) {
                     ((ImageObject) plate).setType(CATCHED);
+                    this.registerOnly(Platesobserver);
+                    this.notifyRegisteredUsers(1);
+                    this.registerall();
                     ((ImageObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
                     leftStickPlates.add(plate);
                     isLeftStickEmpty = false;
@@ -195,6 +214,9 @@ public class Circus implements World {
                 int difference = Math.abs(plate.getX() - (leftStickPlates.getLast().getX()));
                 if (difference < differenceBetweenPlateAndPlate) {
                     ((ImageObject) plate).setType(CATCHED);
+                    this.registerOnly(Platesobserver);
+                    this.notifyRegisteredUsers(1);
+                    this.registerall();
                     ((ImageObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
                     leftStickPlates.add(plate);
                 } else if (difference < plate.getWidth() - 22) {
@@ -227,7 +249,16 @@ public class Circus implements World {
                 } else {
                     isLeftStickEmpty = removeUpperThreePlates(stickPlates);
                 }
+                this.registerOnly(Platesobserver);
+                this.notifyRegisteredUsers(2);
+                this.registerall();
                 score += 30;
+                this.registerOnly(Scoreobserver);
+                this.notifyRegisteredUsers(score);
+                this.registerall();
+
+
+
             }
         }
     }
@@ -289,6 +320,18 @@ public class Circus implements World {
     public void register(IObserver observer) {
         //GameLogger.getInstance().log.debug("Observer registered");
         observers.add(observer);
+    }
+    public void registerOnly(IObserver observer) {
+        //GameLogger.getInstance().log.debug("Observer registered");
+        observers.clear();
+        observers.add(observer);
+    }
+    public void registerall() {
+        observers.clear();
+        observers.add(this.Scoreobserver);
+        observers.add(this.Timeobserver);
+        observers.add(this.Platesobserver);
+
     }
     public void unregister(IObserver observer){
         //GameLogger.getInstance().log.debug("Observer unregistered");
