@@ -1,5 +1,6 @@
 package eg.edu.alexu.csd.oop.game.model.Flyweight;
 
+import eg.edu.alexu.csd.oop.game.model.State.Moving;
 import eg.edu.alexu.csd.oop.game.GameObject;
 import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
 
@@ -12,8 +13,7 @@ import java.util.Map;
 // Flyweight pattern to create objects faster by storing them in
 // a hash map and get them faster
 public class FlyweightImageFactory {
-    static Map<String, BufferedImage[]> platesFactory = new HashMap<String, BufferedImage[]>();
-    private static final int MOVING = 0;
+    static Map<String, BufferedImage[]> platesFactory = new HashMap<>();
 
     public FlyweightImageFactory() {
         try {
@@ -30,6 +30,6 @@ public class FlyweightImageFactory {
     }
 
     public GameObject getImageObject(int x, int y, String path) {
-        return new ImageObject(x, y, MOVING, path.equals("/rightStick.png") || path.equals("/leftStick.png"), platesFactory.get(path));
+        return new ImageObject(x, y, new Moving(), path.equals("/rightStick.png") || path.equals("/leftStick.png"), platesFactory.get(path));
     }
 }

@@ -1,55 +1,43 @@
 package eg.edu.alexu.csd.oop.game.view;
 
-import eg.edu.alexu.csd.oop.game.Main;
+import eg.edu.alexu.csd.oop.game.control.GameMenu;
+import eg.edu.alexu.csd.oop.game.model.Strategy.EasyStrategy;
+import eg.edu.alexu.csd.oop.game.model.Strategy.HardStrategy;
+import eg.edu.alexu.csd.oop.game.model.Strategy.MediumStrategy;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class View
-{
-    private JFrame frame;
+public class MainMenu {
 
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    View window = new View();
-                    window.frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+    private int width;
+    private int height;
+
+    public MainMenu (int width, int height){
+        this.width = width;
+        this.height = height;
     }
 
-    /**
-     * Create the application.
-     */
-    public View() {
-        initialize();
-    }
-
-    /**
-     * Initialize the contents of the frame.
-     */
-    private void initialize() {
-        frame = new JFrame();
-        frame.setBounds(0 , 0 , Toolkit.getDefaultToolkit().getScreenSize().width , Toolkit.getDefaultToolkit().getScreenSize().height);
+    public void start() {
+        //the frame that contains the main menu
+        JFrame frame = new JFrame();
+        //set the menu in fullscreen
+        frame.setBounds(0 , 0 , width , height);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
+        //label covering the frame for the background
         ImageIcon bgImg = new ImageIcon(getClass().getResource("/background.jpg"));
         JLabel bg = new JLabel("" ,  bgImg , JLabel.CENTER) ;
         bg.setSize(frame.getWidth(), frame.getHeight());
         frame.add(bg);
 
+        //label works as a button for easy level
+        //first button for before hovering
         JLabel easyButton = new JLabel("EASY");
-        easyButton.setBounds(frame.getWidth() / 2 - 110 , frame.getHeight() / 2 - 45 , 220, 40 );
+        easyButton.setBounds(width / 2 - 110 , height / 2 - 45 , 220, 40 );
         easyButton.setBackground(new Color(0, 0, 0, 200));
         easyButton.setForeground(Color.WHITE);
         easyButton.setFont(new Font("Tahoma", Font.BOLD,15));
@@ -57,8 +45,9 @@ public class View
         easyButton.setOpaque(true);
         bg.add(easyButton);
 
+        //second buttons for after hovering
         JLabel easyButton2 = new JLabel("EASY");
-        easyButton2.setBounds(frame.getWidth() / 2 - 110 , frame.getHeight() / 2 - 45 , 220, 40 );
+        easyButton2.setBounds(width / 2 - 110 , height / 2 - 45 , 220, 40 );
         easyButton2.setSize(0,0);
         easyButton2.setBackground(new Color(169, 169, 169, 200));
         easyButton2.setForeground(new Color(212,175,55));
@@ -67,6 +56,7 @@ public class View
         easyButton2.setOpaque(true);
         bg.add(easyButton2);
 
+        //when the mouse is hovering make the first button vanish and the second button appears
         easyButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -75,6 +65,7 @@ public class View
             }
         });
 
+        //when the mouse hovers out the button the second button vanishes and the first appears
         easyButton2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseExited(MouseEvent e) {
@@ -82,14 +73,15 @@ public class View
                 easyButton.setSize(220,40);
             }
 
+            //start the game at easy level
             @Override
             public void mouseClicked(MouseEvent e) {
-                new Main().Main(0);
+                new GameMenu(new EasyStrategy(), width, height).start();
             }
         });
 
         JLabel mediumButton = new JLabel("MEDIUM");
-        mediumButton.setBounds(frame.getWidth() / 2 - 110 , frame.getHeight() / 2  , 220, 40 );
+        mediumButton.setBounds(width / 2 - 110 , height / 2  , 220, 40 );
         mediumButton.setBackground(new Color(0, 0, 0, 200));
         mediumButton.setForeground(Color.WHITE);
         mediumButton.setFont(new Font("Tahoma", Font.BOLD,15));
@@ -98,7 +90,7 @@ public class View
         bg.add(mediumButton);
 
         JLabel mediumButton2 = new JLabel("MEDIUM");
-        mediumButton2.setBounds(frame.getWidth() / 2 - 110 , frame.getHeight() / 2 , 220, 40 );
+        mediumButton2.setBounds(width / 2 - 110 , height / 2 , 220, 40 );
         mediumButton2.setSize(0,0);
         mediumButton2.setBackground(new Color(169, 169, 169, 200));
         mediumButton2.setForeground(new Color(212,175,55));
@@ -124,13 +116,13 @@ public class View
             }
             @Override
             public void mouseClicked(MouseEvent e) {
-                new Main().Main(1);
+                new GameMenu(new MediumStrategy(), width, height).start();
             }
         });
 
 
         JLabel hardButton = new JLabel("HARD");
-        hardButton.setBounds(frame.getWidth() / 2 - 110 , frame.getHeight() / 2 + 45 , 220, 40 );
+        hardButton.setBounds(width / 2 - 110 , height / 2 + 45 , 220, 40 );
         hardButton.setBackground(new Color(0, 0, 0, 200));
         hardButton.setForeground(Color.WHITE);
         hardButton.setFont(new Font("Tahoma", Font.BOLD,15));
@@ -139,7 +131,7 @@ public class View
         bg.add(hardButton);
 
         JLabel hardButton2 = new JLabel("HARD");
-        hardButton2.setBounds(frame.getWidth() / 2 - 110 , frame.getHeight() / 2 + 45 , 220, 40 );
+        hardButton2.setBounds(width / 2 - 110 , height / 2 + 45 , 220, 40 );
         hardButton2.setSize(0,0);
         hardButton2.setBackground(new Color(169, 169, 169, 200));
         hardButton2.setForeground(new Color(212,175,55));
@@ -164,11 +156,11 @@ public class View
             }
             @Override
             public void mouseClicked(MouseEvent e) {
-                new Main().Main(2);
+                new GameMenu(new HardStrategy(), width, height).start();
             }
         });
 
-
+        //set fullscreen
         frame.setUndecorated(true);
         frame.setVisible(true);
     }
