@@ -2,15 +2,16 @@ package eg.edu.alexu.csd.oop.game.world;
 
 import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
 import eg.edu.alexu.csd.oop.game.GameObject;
-import eg.edu.alexu.csd.oop.game.model.Iterator.GameObjectIterator;
 import eg.edu.alexu.csd.oop.game.model.Iterator.GameObjectList;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IIterator;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IList;
 import eg.edu.alexu.csd.oop.game.model.Pool.ImagePool;
 import eg.edu.alexu.csd.oop.game.World;
-import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
+import eg.edu.alexu.csd.oop.game.model.ImageObject;
 
 import java.awt.image.BufferedImage;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -39,6 +40,7 @@ public class Circus implements World {
     private ImagePool imagePool;
     private IList movableList;
     private IList controllableList;
+    private FlyweightImageFactory flyweightImageFactory = new FlyweightImageFactory();
 
     private final int speed; // Frequency
     private final int controlSpeed; // Control Frequency
@@ -66,7 +68,19 @@ public class Circus implements World {
 
         // Plates with random place to appear at and random color
         for (int i = 0; i < 14; i++) {
-            movable.add(imagePool.getGameObject());
+            //movable.add(imagePool.getGameObject());
+
+            try {
+                movable.add(flyweightImageFactory.getShape(rand.nextInt(width), -1 * rand.nextInt(height), randomColor()));
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            }
         }
 
         movableList = new GameObjectList(movable);
@@ -104,8 +118,17 @@ public class Circus implements World {
         IIterator movableIterator = movableList.createIterator();
         while (movableIterator.hasNext()) {
             GameObject plate = movableIterator.currentItem();
+
+            /*
+            int requiredType = 0;
+            try {
+                requiredType = getReturnValueFromMethod(plate, "getType");
+            } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+                e.printStackTrace();
+            }*/
+
             // If the plate is moving
-            if (((ImageObject) plate).getType() == MOVING) {
+            if (((ImageObject)plate).getType() == MOVING) {
                 plate.setY(plate.getY() + 1);
 
                 // If the plate reaches bottom of the screen, reuse it
@@ -242,6 +265,36 @@ public class Circus implements World {
         }
         return stickPlates.isEmpty();
     }
+
+    // Randomizing the color
+    private String randomColor() {
+        switch (rand.nextInt(9)) {
+            case 0:
+                return "black";
+            case 1:
+                return "blue";
+            case 2:
+                return "cyan";
+            case 3:
+                return "green";
+            case 4:
+                return "orange";
+            case 5:
+                return "pink";
+            case 6:
+                return "purple";
+            case 7:
+                return "red";
+            default:
+                return "yellow";
+        }
+    }
+
+    /*
+    private int getReturnValueFromMethod(GameObject plate, String methodName) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Method method = plate.getClass().getDeclaredMethod(methodName, null);
+        return (int) method.invoke(plate, null);
+    }*/
 
     @Override
     public List<GameObject> getConstantObjects() {

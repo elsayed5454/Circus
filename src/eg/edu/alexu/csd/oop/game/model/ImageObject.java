@@ -1,12 +1,12 @@
-package eg.edu.alexu.csd.oop.game.model.objects;
+package eg.edu.alexu.csd.oop.game.model;
+
+import eg.edu.alexu.csd.oop.game.GameObject;
+import eg.edu.alexu.csd.oop.game.model.Shapes.IShape;
 
 import java.awt.image.BufferedImage;
 
-import eg.edu.alexu.csd.oop.game.GameObject;
-
 public class ImageObject implements GameObject {
-    private static final int MAX_STATE = 1;
-    private static final int MOVING = 0;
+
     // An array of sprite images that are drawn sequentially
     private BufferedImage[] spriteImages;
     private int x, y;
@@ -14,6 +14,10 @@ public class ImageObject implements GameObject {
     private int type;
     private int distFromStick;
     private boolean horizontalOnly;
+
+    public ImageObject(int posX, int posY, int type, IShape shape) {
+        this(posX, posY, type, false, shape.getImage());
+    }
 
     public ImageObject(int posX, int posY, int type, boolean horizontalOnly, BufferedImage[] spriteImage) {
         this.x = posX;
@@ -23,7 +27,6 @@ public class ImageObject implements GameObject {
         this.horizontalOnly = horizontalOnly;
         // Create a bunch of buffered images and place into an array, to be displayed sequentially
         this.spriteImages = spriteImage;
-
     }
 
     @Override
