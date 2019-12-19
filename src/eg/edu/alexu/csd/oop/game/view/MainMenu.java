@@ -5,12 +5,14 @@ import eg.edu.alexu.csd.oop.game.model.Strategy.EasyStrategy;
 import eg.edu.alexu.csd.oop.game.model.Strategy.HardStrategy;
 import eg.edu.alexu.csd.oop.game.model.Strategy.MediumStrategy;
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class MainMenu {
+
 
     private int width;
     private int height;

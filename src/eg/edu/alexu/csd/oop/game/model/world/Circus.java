@@ -2,6 +2,10 @@ package eg.edu.alexu.csd.oop.game.model.world;
 
 import eg.edu.alexu.csd.oop.game.World;
 import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
+import eg.edu.alexu.csd.oop.game.model.Observer.IObserver;
+import eg.edu.alexu.csd.oop.game.model.Observer.Plates;
+import eg.edu.alexu.csd.oop.game.model.Observer.Score;
+import eg.edu.alexu.csd.oop.game.model.Observer.Time;
 import eg.edu.alexu.csd.oop.game.model.State.Caught;
 import eg.edu.alexu.csd.oop.game.model.State.Falling;
 import eg.edu.alexu.csd.oop.game.model.State.Moving;
@@ -14,10 +18,7 @@ import eg.edu.alexu.csd.oop.game.model.Pool.ImagePool;
 import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
 
 import java.awt.image.BufferedImage;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Circus implements World {
     private final int MAX_TIME = 2 * 60 * 1000; // 2 minute
@@ -46,6 +47,8 @@ public class Circus implements World {
     FlyweightImageFactory FlyweightimageFactory = new FlyweightImageFactory();
     ImagePool imagePool;
     IStrategy strategy ;
+    private List<IObserver> observers = new ArrayList<IObserver>();
+    IObserver Scoreobserver,Timeobserver,Platesobserver;
 
     public Circus(int width, int height, IStrategy strategy) {
         this.width = width;
@@ -77,6 +80,10 @@ public class Circus implements World {
 
         //game level constructor according to the strategy
         this.strategy = strategy ;
+
+        Scoreobserver = new Score(this);
+        Timeobserver = new Time(this);
+        Platesobserver = new Plates(this);
     }
 
     @Override
@@ -151,6 +158,9 @@ public class Circus implements World {
                     ((ImageObject) plate).setState(new Caught());
                     ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                     rightStickPlates.add(plate);
+                    this.registerOnly(Platesobserver);
+                    this.notifyRegisteredUsers(1);
+                    this.registerall();
                     isRightStickEmpty = false;
                 }
             }
@@ -162,6 +172,9 @@ public class Circus implements World {
                 //catch the plate if the difference is acceptable
                 if (difference < strategy.differenceBetweenPlateAndPlate()) {
                     ((ImageObject) plate).setState(new Caught());
+                    this.registerOnly(Platesobserver);
+                    this.notifyRegisteredUsers(1);
+                    this.registerall();
                     ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                     rightStickPlates.add(plate);
                     //drop the plates if the difference isn't acceptable
@@ -180,6 +193,9 @@ public class Circus implements World {
                     ((ImageObject) plate).setState(new Caught());
                     ((ImageObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
                     leftStickPlates.add(plate);
+                    this.registerOnly(Platesobserver);
+                    this.notifyRegisteredUsers(1);
+                    this.registerall();
                     isLeftStickEmpty = false;
                 }
             }
@@ -189,6 +205,9 @@ public class Circus implements World {
                 if (difference < strategy.differenceBetweenPlateAndPlate()) {
                     ((ImageObject) plate).setState(new Caught());
                     ((ImageObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
+                    this.registerOnly(Platesobserver);
+                    this.notifyRegisteredUsers(1);
+                    this.registerall();
                     leftStickPlates.add(plate);
                 } else if (difference < plate.getWidth() - 22) {
                     ((ImageObject) plate).setState(new Falling());
@@ -220,7 +239,13 @@ public class Circus implements World {
                 } else {
                     isLeftStickEmpty = removeUpperThreePlates(stickPlates);
                 }
+                this.registerOnly(Platesobserver);
+                this.notifyRegisteredUsers(2);
+                this.registerall();
                 score += 30;
+                this.registerOnly(Scoreobserver);
+                this.notifyRegisteredUsers(score);
+                this.registerall();
             }
         }
     }
@@ -275,4 +300,35 @@ public class Circus implements World {
     public int getControlSpeed() {
         return strategy.controlSpeed();
     }
+
+    public List<IObserver> getObservers() {
+        return observers;
+    }
+    public void register(IObserver observer) {
+        //GameLogger.getInstance().log.debug("Observer registered");
+        observers.add(observer);
+    }
+    public void registerOnly(IObserver observer) {
+        //GameLogger.getInstance().log.debug("Observer registered");
+        observers.clear();
+        observers.add(observer);
+    }
+    public void registerall() {
+        observers.clear();
+        observers.add(this.Scoreobserver);
+        observers.add(this.Timeobserver);
+        observers.add(this.Platesobserver);
+
+    }
+    public void unregister(IObserver observer){
+        //GameLogger.getInstance().log.debug("Observer unregistered");
+        observers.remove(observer);
+    }
+
+    public void notifyRegisteredUsers(int updatedValue)
+    {
+        for (IObserver observer : observers)
+            observer.update(updatedValue);
+    }
+
 }
