@@ -26,7 +26,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 public class Circus implements World {
-    private final int MAX_TIME =  10 * 1000; // 2 minute
+    private final int MAX_TIME =  60 * 1000; // 1 minute
     // The system time when the game starts
     private final long startTime = System.currentTimeMillis();
     private final List<GameObject> constant = new LinkedList<>();       // Non moving objects in the game
@@ -47,10 +47,6 @@ public class Circus implements World {
     private final Random rand = new Random();
 
     private GameLogger gameLogger = GameLogger.getInstance();
-    private IList movableList;
-    private IIterator movableIterator;
-    private IList controllableList;
-    private IIterator controllableIterator;
     FlyweightImageFactory FlyweightimageFactory;
     ImagePool imagePool;
     IStrategy strategy;
@@ -61,7 +57,6 @@ public class Circus implements World {
 
     int SavedFiles=0;
     int CurrentFile=0;
-    private List<String> jars;
 
     boolean gameOver = false;
 
@@ -71,8 +66,8 @@ public class Circus implements World {
 
         FlyweightimageFactory = new FlyweightImageFactory(jars);
         try {
-            imagePool = new ImagePool(width, height, 7);
-            movable = imagePool.getMovingPlates();
+            imagePool = new ImagePool(width, height, 14);
+
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
@@ -90,21 +85,6 @@ public class Circus implements World {
         int clownHandHeight = controllable.get(0).getY() + (int) (controllable.get(0).getHeight() * 0.01);
         controllable.add(FlyweightimageFactory.getImageObject(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.7), clownHandHeight, "/rightStick.png"));
         controllable.add(FlyweightimageFactory.getImageObject(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.18), clownHandHeight, "/leftStick.png"));
-
-        // Plates with random place to appear at and random color
-        /*for (int i = 0; i < 14; i++) {
-            //movable.add(imagePool.getGameObject());
-            try {
-                movable.add(FlyweightImageFactory.getShape(rand.nextInt(width), -1 * rand.nextInt(height), randomColor()));
-            } catch (NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
-                e.printStackTrace();
-            }
-        }*/
-
-
-
-        controllableList = new GameObjectList(controllable);
-        controllableIterator = controllableList.createIterator();
 
         //game level constructor according to the strategy
         this.strategy = strategy;
@@ -126,10 +106,11 @@ public class Circus implements World {
         rightStick.setX(clown.getX() + (int) (clown.getWidth() * 0.7));
         leftStick.setX(clown.getX() + (int) (clown.getWidth() * 0.18));
 
-        movableList = new GameObjectList(movable);
-        movableIterator = movableList.createIterator();
+        movable = imagePool.getInUse();
+        IList movableList = new GameObjectList(movable);
+        IIterator movableIterator = movableList.createIterator();
 
-        while (movableIterator.hasNext()) {
+        while(movableIterator.hasNext()) {
             GameObject plate = movableIterator.currentItem();
             // If the plate is moving
             if (((ImageObject) plate).getState() == MOVING) {
@@ -152,8 +133,6 @@ public class Circus implements World {
             // If plate is caught by the clown
             else if (((ImageObject) plate).getState() == CAUGHT) {
 
-                imagePool.plateUsedByUser(plate);
-
                 // Set the new x
                 if (rightStickPlates.contains(plate)) {
                     plate.setX(rightStick.getX() - ((ImageObject) plate).getDistFromStick());
@@ -165,8 +144,6 @@ public class Circus implements World {
             // If plate is falling from the clown
             else if (((ImageObject) plate).getState() == FALLING) {
                 plate.setY(plate.getY() + 1);
-
-                imagePool.releaseToMovingPlates(plate);
 
                 if (plate.getY() == getHeight()) {
                     ((ImageObject) plate).setState(new Moving());
@@ -273,7 +250,7 @@ public class Circus implements World {
 
         int counter = 0, len = stickPlates.size();
         String color = ((ImageObject) stickPlates.get(len - 1)).getColor();
-        Object BoolObserver = false;
+        Object BoolObserver;
         // Check the last 3 plates if of same color
         for (int i = len - 1; i >= len - 3; i--) {
             if (color.equals(((ImageObject) stickPlates.get(i)).getColor())) {
@@ -305,33 +282,13 @@ public class Circus implements World {
             ((ImageObject) stickPlates.get(i)).setState(new Moving());
             stickPlates.get(i).setX(rand.nextInt(width - movable.get(i).getWidth()));
             stickPlates.get(i).setY(-1 * rand.nextInt(height));
+
+            // Release this plate back to pool
+            imagePool.releaseToPool(stickPlates.get(i));
+
             stickPlates.remove(i);
         }
         return stickPlates.isEmpty();
-    }
-
-    // Randomizing the color
-    private String randomColor() {
-        switch (rand.nextInt(9)) {
-            case 0:
-                return "black";
-            case 1:
-                return "blue";
-            case 2:
-                return "cyan";
-            case 3:
-                return "green";
-            case 4:
-                return "orange";
-            case 5:
-                return "pink";
-            case 6:
-                return "purple";
-            case 7:
-                return "red";
-            default:
-                return "yellow";
-        }
     }
 
     @Override
@@ -375,9 +332,6 @@ public class Circus implements World {
     }
 
 
-    public List<IObserver> getObservers() {
-        return observers;
-    }
 
     public void register(IObserver observer) {
         //GameLogger.getInstance().log.debug("Observer registered");
@@ -396,11 +350,6 @@ public class Circus implements World {
         observers.add(this.Timeobserver);
         observers.add(this.Platesobserver);
 
-    }
-
-    public void unregister(IObserver observer) {
-        //GameLogger.getInstance().log.debug("Observer unregistered");
-        observers.remove(observer);
     }
 
     public void notifyRegisteredUsers(Object updatedValue) {

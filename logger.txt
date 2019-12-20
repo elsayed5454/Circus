@@ -1,536 +1,82 @@
-Dec 20, 2019 3:35:23 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:35:26 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:35:38 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:35:42 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:35:43 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:35:43 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:41:50 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:41:53 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:43:06 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:43:10 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:44:52 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:44:57 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:45:01 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:45:01 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:46:56 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:47:00 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:47:02 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:00:13 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:00:16 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:02:53 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:02:56 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:03:02 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:12:04 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:12:07 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:12:15 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:12:40 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:12:43 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:12:51 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:12:52 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:12:54 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:14:49 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:14:50 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:16:47 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:16:51 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:17:56 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:17:58 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:19:39 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:20:02 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:20:04 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:59:29 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 4:59:34 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 5:05:15 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 5:05:17 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 5:06:24 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 5:06:27 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 5:07:57 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 5:09:02 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 5:09:14 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 5:10:22 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 5:11:49 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 5:11:51 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:01:34 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:01:36 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:01:38 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:01:45 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:01:46 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:01:47 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 3:11:18 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 6:15:41 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:15:43 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:15:45 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:15:45 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:16:22 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:26:13 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:26:14 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 6:26:21 PM eg.edu.alexu.csd.oop.game.view.MainMenu$4 mouseClicked
-INFO:  the game is in Medium Mode -_- 
-Dec 20, 2019 6:26:23 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:26:23 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 6:27:02 PM eg.edu.alexu.csd.oop.game.view.MainMenu$4 mouseClicked
-INFO:  the game is in Medium Mode -_- 
-Dec 20, 2019 6:27:04 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:27:04 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 6:27:53 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:27:57 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates without Base 
-Dec 20, 2019 6:27:57 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Base 
-Dec 20, 2019 6:27:57 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:27:57 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Pots 
-Dec 20, 2019 6:27:57 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 6:28:39 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:28:41 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:28:41 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Pots 
-Dec 20, 2019 6:28:54 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 6:28:57 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:28:59 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:28:59 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Pots 
-Dec 20, 2019 6:29:44 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:29:45 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:29:45 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Pots 
-Dec 20, 2019 6:30:18 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:30:19 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:30:19 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Pots 
-Dec 20, 2019 6:31:47 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:31:50 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:31:50 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Pots 
-Dec 20, 2019 6:33:37 PM eg.edu.alexu.csd.oop.game.view.MainMenu$4 mouseClicked
-INFO:  the game is in Medium Mode -_- 
-Dec 20, 2019 6:33:39 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:33:39 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Pots 
-Dec 20, 2019 6:33:42 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:33:42 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Pots 
-Dec 20, 2019 6:35:18 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:35:20 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:35:20 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Pots 
-Dec 20, 2019 6:35:58 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:35:59 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:35:59 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Pots 
-Dec 20, 2019 6:36:46 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:36:56 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:38:59 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:39:01 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:39:03 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:39:29 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:39:30 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:41:05 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:41:06 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:41:27 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:41:28 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:43:16 PM eg.edu.alexu.csd.oop.game.view.MainMenu$4 mouseClicked
-INFO:  the game is in Medium Mode -_- 
-Dec 20, 2019 6:43:18 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:43:18 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 6:43:23 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 6:43:23 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First green Plate Touches The Right Stick 
-Dec 20, 2019 6:43:52 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:43:54 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:43:54 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Pots 
-Dec 20, 2019 6:43:55 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 6:43:59 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 6:43:59 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First red Plate Touches The Right Stick 
-Dec 20, 2019 6:44:30 PM eg.edu.alexu.csd.oop.game.view.MainMenu$4 mouseClicked
-INFO:  the game is in Medium Mode -_- 
-Dec 20, 2019 6:44:31 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:44:32 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 6:44:37 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 6:44:37 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First green Plate Touches The Right Stick 
-Dec 20, 2019 6:47:06 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:47:07 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:47:08 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 6:47:12 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 6:47:12 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First red Plate Touches The Right Stick 
-Dec 20, 2019 6:47:40 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:47:41 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:47:47 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 6:48:34 PM eg.edu.alexu.csd.oop.game.view.MainMenu$6 mouseClicked
-INFO:  the game is in Hard Mode '_' 
-Dec 20, 2019 6:48:35 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 6:48:35 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 6:48:39 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 6:48:39 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First red Plate Touches The Right Stick 
-Dec 20, 2019 7:01:08 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
+Dec 20, 2019 9:02:06 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
 INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 7:01:10 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
+Dec 20, 2019 9:02:09 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
 INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 7:01:10 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
+Dec 20, 2019 9:02:09 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
 INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 7:01:17 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 9:02:14 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 7:01:17 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First blue Plate Touches The Right Stick 
-Dec 20, 2019 7:09:14 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 7:09:16 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 7:09:17 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 7:09:23 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 7:09:23 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
+Dec 20, 2019 9:02:14 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
 INFO:  The First blue Plate Touches The Left Stick 
-Dec 20, 2019 7:09:30 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 9:02:16 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 7:09:30 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First blue Plate Touches The Right Stick 
-Dec 20, 2019 7:10:24 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 7:10:26 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 7:10:27 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 7:10:37 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 9:02:16 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
+INFO:  A New blue Plate Touches The Left Stick 
+Dec 20, 2019 9:02:16 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 7:10:37 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First green Plate Touches The Right Stick 
-Dec 20, 2019 8:06:30 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:06:32 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:06:32 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:06:38 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 9:02:16 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
+INFO:  A New blue Plate Touches The Left Stick 
+Dec 20, 2019 9:02:16 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: 3 plates of same color 
+Dec 20, 2019 9:02:16 PM eg.edu.alexu.csd.oop.game.model.Observer.Score update
+INFO: Score: 30
+Dec 20, 2019 9:02:16 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 8:06:38 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First green Plate Touches The Right Stick 
-Dec 20, 2019 8:07:05 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:07:07 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:07:07 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:07:20 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 8:07:20 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First blue Plate Touches The Right Stick 
-Dec 20, 2019 8:08:32 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:08:34 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:08:34 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:08:58 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:08:59 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:09:00 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:11:19 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:11:21 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:11:21 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:11:29 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 8:11:29 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First green Plate Touches The Right Stick 
-Dec 20, 2019 8:11:30 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 8:11:30 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  A New red Plate Touches The Right Stick 
-Dec 20, 2019 8:13:32 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:13:34 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:13:35 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:19:28 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:19:30 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:19:30 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:19:37 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 8:19:37 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First green Plate Touches The Left Stick 
-Dec 20, 2019 8:19:41 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 8:19:41 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First blue Plate Touches The Right Stick 
-Dec 20, 2019 8:19:44 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 8:19:44 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First green Plate Touches The Left Stick 
-Dec 20, 2019 8:21:15 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:21:17 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:21:17 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:21:22 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 8:21:22 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First green Plate Touches The Right Stick 
-Dec 20, 2019 8:22:08 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:22:10 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:22:10 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:22:59 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:23:01 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:23:01 PM eg.edu.alexu.csd.oop.game.view.MainMenu$8 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:23:10 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 8:23:10 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First blue Plate Touches The Left Stick 
-Dec 20, 2019 8:23:12 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 8:23:12 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First green Plate Touches The Right Stick 
-Dec 20, 2019 8:30:06 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:35:33 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:35:38 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:35:38 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:36:20 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:36:21 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:36:22 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:36:36 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:36:38 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:36:38 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:36:48 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:36:50 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:36:50 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:37:00 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:37:03 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:37:03 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:37:12 PM eg.edu.alexu.csd.oop.game.view.MainMenu$4 mouseClicked
-INFO:  the game is in Medium Mode -_- 
-Dec 20, 2019 8:37:14 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:37:14 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:37:21 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:37:23 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:37:24 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:37:33 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:37:35 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:37:35 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:37:47 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 8:37:47 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First red Plate Touches The Right Stick 
-Dec 20, 2019 8:40:48 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:40:50 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:40:51 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:43:44 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:43:45 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:43:46 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:43:52 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 8:43:52 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First blue Plate Touches The Right Stick 
-Dec 20, 2019 8:43:54 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 8:43:54 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
+Dec 20, 2019 9:02:16 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
 INFO:  The First red Plate Touches The Left Stick 
-Dec 20, 2019 8:44:01 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:44:04 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Base 
-Dec 20, 2019 8:44:04 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:44:17 PM eg.edu.alexu.csd.oop.game.view.MainMenu$4 mouseClicked
+Dec 20, 2019 9:02:17 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
+Dec 20, 2019 9:02:17 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
+INFO:  A New red Plate Touches The Left Stick 
+Dec 20, 2019 9:02:19 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
+Dec 20, 2019 9:02:19 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
+INFO:  A New green Plate Touches The Left Stick 
+Dec 20, 2019 9:02:20 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
+Dec 20, 2019 9:02:20 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
+INFO:  A New green Plate Touches The Left Stick 
+Dec 20, 2019 9:02:26 PM eg.edu.alexu.csd.oop.game.view.MainMenu$4 mouseClicked
 INFO:  the game is in Medium Mode -_- 
-Dec 20, 2019 8:44:19 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
+Dec 20, 2019 9:02:26 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
+Dec 20, 2019 9:02:26 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
+INFO:  A New green Plate Touches The Left Stick 
+Dec 20, 2019 9:02:26 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: 3 plates of same color 
+Dec 20, 2019 9:02:26 PM eg.edu.alexu.csd.oop.game.model.Observer.Score update
+INFO: Score: 60
+Dec 20, 2019 9:02:30 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
+Dec 20, 2019 9:02:30 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
+INFO:  A New blue Plate Touches The Left Stick 
+Dec 20, 2019 9:02:31 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
+Dec 20, 2019 9:02:31 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
+INFO:  A New blue Plate Touches The Left Stick 
+Dec 20, 2019 9:02:31 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
+Dec 20, 2019 9:02:31 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
+INFO:  The First red Plate Touches The Right Stick 
+Dec 20, 2019 9:02:35 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
+INFO:  the game starts with Plates with Base 
+Dec 20, 2019 9:02:35 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
 INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:44:19 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
+Dec 20, 2019 9:02:35 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
+INFO:  the game starts with Pots 
+Dec 20, 2019 9:02:35 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
 INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:44:21 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 9:05:22 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
+INFO:  the game is in Easy Mode ^_^ 
+Dec 20, 2019 9:05:27 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
+INFO:  the game starts with Pots 
+Dec 20, 2019 9:05:28 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
+INFO:  The Game starts successfully ^_^ 
+Dec 20, 2019 9:05:32 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 8:44:21 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First green Plate Touches The Right Stick 
-Dec 20, 2019 8:44:22 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 9:05:32 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
+INFO:  The First red Plate Touches The Right Stick 
+Dec 20, 2019 9:05:36 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 8:44:22 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First blue Plate Touches The Left Stick 
-Dec 20, 2019 8:44:23 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 8:44:23 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
+Dec 20, 2019 9:05:36 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
 INFO:  A New red Plate Touches The Right Stick 
-Dec 20, 2019 8:46:09 PM eg.edu.alexu.csd.oop.game.view.MainMenu$2 mouseClicked
-INFO:  the game is in Easy Mode ^_^ 
-Dec 20, 2019 8:46:11 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Deep Base 
-Dec 20, 2019 8:46:12 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:46:24 PM eg.edu.alexu.csd.oop.game.view.MainMenu$4 mouseClicked
-INFO:  the game is in Medium Mode -_- 
-Dec 20, 2019 8:46:26 PM eg.edu.alexu.csd.oop.game.view.OptionsMenu start
-INFO:  the game starts with Plates with Base 
-Dec 20, 2019 8:46:26 PM eg.edu.alexu.csd.oop.game.view.MainMenu$10 mouseClicked
-INFO:  The Game starts successfully ^_^ 
-Dec 20, 2019 8:46:33 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 8:46:33 PM eg.edu.alexu.csd.oop.game.model.world.Circus plateTouchesStick
-INFO:  The First blue Plate Touches The Left Stick 

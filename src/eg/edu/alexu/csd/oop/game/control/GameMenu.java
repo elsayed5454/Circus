@@ -30,6 +30,6 @@ public class GameMenu {
         World circus = new Circus((int) (width * 0.99), (int) (height * 0.892), strategy, jars);
 
         //generate menu bar for the engine
-        new MenuBar(circus, strategy, jars, height, width);
+        new MenuBar(circus, strategy, jars, width, height);
     }
 }
