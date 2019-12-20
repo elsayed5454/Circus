@@ -1,6 +1,7 @@
 package eg.edu.alexu.csd.oop.game.view;
 
 import eg.edu.alexu.csd.oop.game.control.GameMenu;
+import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
 import eg.edu.alexu.csd.oop.game.model.Strategy.EasyStrategy;
 import eg.edu.alexu.csd.oop.game.model.Strategy.HardStrategy;
 import eg.edu.alexu.csd.oop.game.model.Strategy.IStrategy;
@@ -14,7 +15,7 @@ import java.awt.event.MouseEvent;
 
 public class MainMenu {
 
-
+    private GameLogger gameLogger = GameLogger.getInstance();
     private int width;
     private int height;
     private int[] chosen = {0,0,0,0};
@@ -110,6 +111,7 @@ public class MainMenu {
                 }
                 start.setSize(220,40);
                 strategy = new EasyStrategy();
+                gameLogger.logger.info(" the game is in Easy Mode ^_^ ");
             }
         });
 
@@ -140,6 +142,7 @@ public class MainMenu {
                 }
                 start.setSize(220,40);
                 strategy = new MediumStrategy();
+                gameLogger.logger.info(" the game is in Medium Mode -_- ");
             }
         });
 
@@ -170,6 +173,7 @@ public class MainMenu {
                 }
                 start.setSize(220,40);
                 strategy = new HardStrategy();
+                gameLogger.logger.info(" the game is in Hard Mode '_' ");
             }
         });
 
@@ -193,6 +197,7 @@ public class MainMenu {
             @Override
             public void mouseClicked(MouseEvent e) {
                 optionsMenu.start(chosen, strategy);
+                gameLogger.logger.info(" The Game starts successfully ^_^ ");
             }
         });
 
