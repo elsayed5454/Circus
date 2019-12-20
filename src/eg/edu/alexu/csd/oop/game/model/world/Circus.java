@@ -25,7 +25,6 @@ import eg.edu.alexu.csd.oop.game.view.EndMenu;
 import eg.edu.alexu.csd.oop.game.view.ScreenResolution;
 
 import java.util.*;
-import java.util.logging.Level;
 
 public class Circus implements World {
     private final int MAX_TIME =  60 * 1000; // 1 minute
@@ -95,7 +94,9 @@ public class Circus implements World {
     public boolean refresh() {
         // Time ends and game over
         boolean timeout = System.currentTimeMillis() - startTime > MAX_TIME;
-
+        if(timeout){
+            gameLogger.logger.info("Game Over");
+        }
         // Bound sticks to clown position
         GameObject clown = controllable.get(0);
         GameObject rightStick = controllable.get(1);
@@ -206,13 +207,10 @@ public class Circus implements World {
                     gameLogger.logger.info(" A New "+((MovableObject)rightStickPlates.get(rightStickPlates.size()-1)).getColor()+" Plate Touches The Right Stick ");
                     //drop the plates if the difference isn't acceptable
                 } else if (difference < plate.getWidth() - 22) {
-<<<<<<< HEAD
                     gameLogger.logger.info( "The "+((MovableObject)rightStickPlates.get(rightStickPlates.size()-1)).getColor()+" Plate is dropped");
-=======
                     if (score >= 10) {
                         score -= 10 ;
                     }
->>>>>>> cbc739d234102af9e829405edd8e154e0f93c81f
                     ((MovableObject) plate).setState(new Falling());
                     ((MovableObject) rightStickPlates.getLast()).setState(new Falling());
                     rightStickPlates.remove(rightStickPlates.size() - 1);
@@ -244,13 +242,10 @@ public class Circus implements World {
                     leftStickPlates.add(plate);
                     gameLogger.logger.info(" A New "+((MovableObject)leftStickPlates.get(leftStickPlates.size()-1)).getColor()+" Plate Touches The Left Stick ");
                 } else if (difference < plate.getWidth() - 22) {
-<<<<<<< HEAD
                     gameLogger.logger.info( "The "+((MovableObject)leftStickPlates.get(leftStickPlates.size()-1)).getColor()+" Plate is dropped");
-=======
                     if (score >= 10) {
                         score -= 10 ;
                     }
->>>>>>> cbc739d234102af9e829405edd8e154e0f93c81f
                     ((MovableObject) plate).setState(new Falling());
                     ((MovableObject) leftStickPlates.getLast()).setState(new Falling());
                     leftStickPlates.remove(leftStickPlates.size() - 1);
