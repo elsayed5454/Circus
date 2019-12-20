@@ -16,10 +16,13 @@ public class ImagePool {
 
     public ImagePool(int width, int height, int size) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
 
-        initialize();
         this.sizeOnScreen = size;
         this.width = width;
         this.height = height;
+
+
+        initialize();
+
     }
 
     private void initialize() throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
@@ -50,7 +53,7 @@ public class ImagePool {
 
         // Reset released gameObject
         po.setX(rand.nextInt(width - po.getWidth()));
-        po.setY(rand.nextInt(-1 * rand.nextInt(height)));
+        po.setY(-1 * rand.nextInt(height));
 
         available.add(po);
         movingPlates.remove(po);

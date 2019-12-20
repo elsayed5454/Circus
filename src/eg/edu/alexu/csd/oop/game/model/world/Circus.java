@@ -28,7 +28,7 @@ public class Circus implements World {
     // The system time when the game starts
     private final long startTime = System.currentTimeMillis();
     private final List<GameObject> constant = new LinkedList<>();       // Non moving objects in the game
-    private List<GameObject> movable;        // Auto moving objects in the game
+    private List<GameObject> movable = new LinkedList<>();        // Auto moving objects in the game
     private final List<GameObject> controllable = new LinkedList<>();   // Objects that the user control its movement in the game
     private final LinkedList<GameObject> rightStickPlates = new LinkedList<>();
     private final LinkedList<GameObject> leftStickPlates = new LinkedList<>();
@@ -60,18 +60,17 @@ public class Circus implements World {
     int SavedFiles=0;
     int CurrentFile=0;
     private List<String> jars;
-    
+
     public Circus(int width, int height, IStrategy strategy, List<String> jars) {
         this.width = width;
         this.height = height;
 
+        FlyweightimageFactory = new FlyweightImageFactory(jars);
         try {
             imagePool = new ImagePool(width, height, 7);
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
-
-        FlyweightimageFactory = new FlyweightImageFactory(jars);
 
         //background
         constant.add(FlyweightimageFactory.getImageObject(0, 0, "/circus.jpg"));
@@ -97,6 +96,8 @@ public class Circus implements World {
             }
         }*/
 
+
+
         controllableList = new GameObjectList(controllable);
         controllableIterator = controllableList.createIterator();
 
@@ -120,7 +121,8 @@ public class Circus implements World {
         rightStick.setX(clown.getX() + (int) (clown.getWidth() * 0.7));
         leftStick.setX(clown.getX() + (int) (clown.getWidth() * 0.18));
 
-        movableList = new GameObjectList(imagePool.getMovingPlates());
+        movable = imagePool.getMovingPlates();
+        movableList = new GameObjectList(movable);
         movableIterator = movableList.createIterator();
 
         while (movableIterator.hasNext()) {
@@ -410,7 +412,7 @@ public class Circus implements World {
         return originator.restoreFromMemento(caretaker.getMemento(CurrentFile));
     }
 
-    public void Save(){
+    /*public void Save(){
         if(SavedFiles==caretaker.getSizee()) {
             originator.set(clone(this));
             caretaker.addMemento(originator.storeInMemento());
@@ -465,6 +467,6 @@ public class Circus implements World {
         cloned.imagePool = new ImagePool(cloned.width, cloned.height, cloned.jars);
         cloned.strategy = circus.strategy;
         return cloned;
-    }
+    }*/
 
 }
