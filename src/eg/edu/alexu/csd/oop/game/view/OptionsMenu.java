@@ -52,53 +52,85 @@ public class OptionsMenu {
         choices[0].addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                choices[0].setIcon(new ImageIcon(getClass().getResource("/redplatewithoutbase.png")));
-                chosen[0] = 1 ;
+                if (chosen[0] == 0){
+                    choices[0].setIcon(new ImageIcon(getClass().getResource("/redplatewithoutbase.png")));
+                    chosen[0] = 1 ;
+                }
+                else {
+                    choices[0].setIcon(new ImageIcon(getClass().getResource("/blackplatewithoutbase.png")));
+                    chosen[0] = 0 ;
+                }
             }
         });
         choices[1].addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                choices[1].setIcon(new ImageIcon(getClass().getResource("/redplatewithbase.png")));
-                chosen[1] = 1 ;
+                if (chosen[1] == 0){
+                    choices[1].setIcon(new ImageIcon(getClass().getResource("/redplatewithbase.png")));
+                    chosen[1] = 1 ;
+                }
+                else {
+                    choices[1].setIcon(new ImageIcon(getClass().getResource("/blackplatewithbase.png")));
+                    chosen[1] = 0 ;
+                }
             }
         });
         choices[2].addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                choices[2].setIcon(new ImageIcon(getClass().getResource("/redplatewithdeepbase.png")));
-                chosen[2] = 1 ;
+                if (chosen[2] == 0){
+                    choices[2].setIcon(new ImageIcon(getClass().getResource("/redplatewithdeepbase.png")));
+                    chosen[2] = 1 ;
+                }
+                else {
+                    choices[2].setIcon(new ImageIcon(getClass().getResource("/blackplatewithdeepbase.png")));
+                    chosen[2] = 0 ;
+                }
 
             }
         });
         choices[3].addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                choices[3].setIcon(new ImageIcon(getClass().getResource("/redpot.png")));
-                chosen[3] = 1 ;
+                if (chosen[3] == 0){
+                    choices[3].setIcon(new ImageIcon(getClass().getResource("/redpot.png")));
+                    chosen[3] = 1 ;
+                }
+                else {
+                    choices[3].setIcon(new ImageIcon(getClass().getResource("/blackpot.png")));
+                    chosen[3] = 0 ;
+                }
             }
         });
     }
 
-    public void start (int[] chosen, IStrategy strategy){
+    public void start (int[] chosen, IStrategy strategy, JFrame frame){
         List<String> jars = new LinkedList<>();
+        boolean valid = false;
         if (chosen[0] == 1){
+            valid = true;
             jars.add("plateWithoutBase.jar");
             gameLogger.logger.info(" the game starts with Plates without Base ");
         }
         if (chosen[1] == 1){
+            valid = true ;
             jars.add("plateWithBase.jar");
             gameLogger.logger.info(" the game starts with Plates with Base ");
         }
         if (chosen[2] == 1){
+            valid = true;
             jars.add("plateWithDeepBase.jar");
             gameLogger.logger.info(" the game starts with Plates with Deep Base ");
         }
         if (chosen[3] == 1){
+            valid = true;
             jars.add("pot.jar");
             gameLogger.logger.info(" the game starts with Pots ");
         }
 
-        new GameMenu(jars, strategy, width, height).start();
+        if (valid){
+            new GameMenu(jars, strategy, width, height);
+            frame.setVisible(false);
+        }
     }
 }

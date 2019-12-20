@@ -15,8 +15,8 @@ import java.util.*;
 // Flyweight pattern to create objects faster by storing them in
 // a hash map and get them faster
 public class FlyweightImageFactory {
+
     private Map<String, BufferedImage[]> platesFactory = new HashMap<>();
-    private DynamicLinkage shapesLoader = new DynamicLinkage();
     private static LinkedList<Class<?>> shapesClasses = new LinkedList<>();
 
     public FlyweightImageFactory(List<String> jars) {
@@ -26,6 +26,7 @@ public class FlyweightImageFactory {
             platesFactory.put("/leftStick.png", new BufferedImage[]{ImageIO.read(getClass().getResourceAsStream("/leftStick.png"))});
             platesFactory.put("/circus.jpg", new BufferedImage[]{ImageIO.read(getClass().getResourceAsStream("/circus.jpg"))});
 
+            DynamicLinkage shapesLoader = new DynamicLinkage();
             shapesClasses = shapesLoader.loadShapesClasses(jars);
 
         } catch (IOException | ClassNotFoundException e) {

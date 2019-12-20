@@ -24,6 +24,8 @@ public class MainMenu {
     public MainMenu (int width, int height){
         this.width = width;
         this.height = height;
+
+        start();
     }
 
     public void start() {
@@ -177,6 +179,32 @@ public class MainMenu {
             }
         });
 
+        JLabel exit = buttonGenerator.generateFirst("Exit", width - 280, height - 100, 220, 40);
+        JLabel exit2 = buttonGenerator.generateSecond("Exit", width - 280, height - 100);
+        bg.add(exit);
+        bg.add(exit2);
+
+        exit.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                exit.setSize(0, 0);
+                exit2.setSize(220, 40);
+            }
+        });
+
+        exit2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                exit2.setSize(0,0);
+                exit.setSize(220,40);
+            }
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.exit(0);
+            }
+        });
+
         optionsMenu.chosen(choices, chosen);
 
         start.addMouseListener(new MouseAdapter() {
@@ -196,13 +224,14 @@ public class MainMenu {
 
             @Override
             public void mouseClicked(MouseEvent e) {
-                optionsMenu.start(chosen, strategy);
+                optionsMenu.start(chosen, strategy, frame);
                 gameLogger.logger.info(" The Game starts successfully ^_^ ");
             }
         });
 
         //set fullscreen
         frame.setUndecorated(true);
+        //make the frame visible
         frame.setVisible(true);
     }
 }

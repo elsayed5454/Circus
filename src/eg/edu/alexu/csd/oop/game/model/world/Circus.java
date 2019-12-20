@@ -19,12 +19,14 @@ import eg.edu.alexu.csd.oop.game.model.Iterator.IIterator;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IList;
 import eg.edu.alexu.csd.oop.game.model.Pool.ImagePool;
 import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
+import eg.edu.alexu.csd.oop.game.view.EndMenu;
+import eg.edu.alexu.csd.oop.game.view.ScreenResolution;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 public class Circus implements World {
-    private final int MAX_TIME = 2 * 60 * 1000; // 2 minute
+    private final int MAX_TIME =  60 * 1000; // 1 minute
     // The system time when the game starts
     private final long startTime = System.currentTimeMillis();
     private final List<GameObject> constant = new LinkedList<>();       // Non moving objects in the game
@@ -45,8 +47,6 @@ public class Circus implements World {
     private final Random rand = new Random();
 
     private GameLogger gameLogger = GameLogger.getInstance();
-    private IList controllableList;
-    private IIterator controllableIterator;
     FlyweightImageFactory FlyweightimageFactory;
     ImagePool imagePool;
     IStrategy strategy;
@@ -57,7 +57,8 @@ public class Circus implements World {
 
     int SavedFiles=0;
     int CurrentFile=0;
-    private List<String> jars;
+
+    boolean gameOver = false;
 
     public Circus(int width, int height, IStrategy strategy, List<String> jars) {
         this.width = width;
@@ -66,6 +67,7 @@ public class Circus implements World {
         FlyweightimageFactory = new FlyweightImageFactory(jars);
         try {
             imagePool = new ImagePool(width, height, 14);
+
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
@@ -83,19 +85,6 @@ public class Circus implements World {
         int clownHandHeight = controllable.get(0).getY() + (int) (controllable.get(0).getHeight() * 0.01);
         controllable.add(FlyweightimageFactory.getImageObject(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.7), clownHandHeight, "/rightStick.png"));
         controllable.add(FlyweightimageFactory.getImageObject(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.18), clownHandHeight, "/leftStick.png"));
-
-        // Plates with random place to appear at and random color
-        /*for (int i = 0; i < 14; i++) {
-            //movable.add(imagePool.getGameObject());
-            try {
-                movable.add(FlyweightImageFactory.getShape(rand.nextInt(width), -1 * rand.nextInt(height), randomColor()));
-            } catch (NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
-                e.printStackTrace();
-            }
-        }*/
-
-        controllableList = new GameObjectList(controllable);
-        controllableIterator = controllableList.createIterator();
 
         //game level constructor according to the strategy
         this.strategy = strategy;
@@ -163,7 +152,13 @@ public class Circus implements World {
                     //plate.setX((int) (Math.random() * getWidth()));
                 }
             }
-            movableIterator.next();
+            if (movableIterator.hasNext()){
+                movableIterator.next();
+            }
+        }
+        if (timeout && !gameOver){
+            gameOver = true ;
+            new EndMenu(score, new ScreenResolution().getWidth(), new ScreenResolution().getHeight());
         }
         return !timeout;
     }
@@ -296,30 +291,6 @@ public class Circus implements World {
         return stickPlates.isEmpty();
     }
 
-    // Randomizing the color
-    private String randomColor() {
-        switch (rand.nextInt(9)) {
-            case 0:
-                return "black";
-            case 1:
-                return "blue";
-            case 2:
-                return "cyan";
-            case 3:
-                return "green";
-            case 4:
-                return "orange";
-            case 5:
-                return "pink";
-            case 6:
-                return "purple";
-            case 7:
-                return "red";
-            default:
-                return "yellow";
-        }
-    }
-
     @Override
     public List<GameObject> getConstantObjects() {
         return constant;
@@ -360,9 +331,7 @@ public class Circus implements World {
         return strategy.controlSpeed();
     }
 
-    public List<IObserver> getObservers() {
-        return observers;
-    }
+
 
     public void register(IObserver observer) {
         //GameLogger.getInstance().log.debug("Observer registered");
@@ -381,11 +350,6 @@ public class Circus implements World {
         observers.add(this.Timeobserver);
         observers.add(this.Platesobserver);
 
-    }
-
-    public void unregister(IObserver observer) {
-        //GameLogger.getInstance().log.debug("Observer unregistered");
-        observers.remove(observer);
     }
 
     public void notifyRegisteredUsers(Object updatedValue) {
