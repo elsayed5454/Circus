@@ -11,4 +11,12 @@ public class Caretaker {
     public Memento getMemento(int index){
         return SavedCircus.get(index);
     }
+    public void RemoveAfterIndex(int index){
+        for(int i = index-1 ; i< SavedCircus.size() ; i++){
+            SavedCircus.remove(i);
+        }
+    }
+    public int getSizee(){
+        return SavedCircus.size();
+    }
 }
