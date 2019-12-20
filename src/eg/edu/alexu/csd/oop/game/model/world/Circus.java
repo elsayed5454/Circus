@@ -231,11 +231,11 @@ public class Circus implements World {
         }
 
         int counter = 0, len = stickPlates.size();
-        BufferedImage[] color = stickPlates.get(len - 1).getSpriteImages();
+        String color = ((ImageObject)stickPlates.get(len - 1)).getColor();
 
         // Check the last 3 plates if of same color
         for (int i = len - 1; i >= len - 3; i--) {
-            if (Arrays.equals(color, stickPlates.get(i).getSpriteImages())) {
+            if (color.equals(((ImageObject)stickPlates.get(i)).getColor())) {
                 counter++;
             }
             if (counter == 3) {
