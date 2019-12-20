@@ -2,14 +2,17 @@ package eg.edu.alexu.csd.oop.game.view;
 
 import eg.edu.alexu.csd.oop.game.GameEngine;
 import eg.edu.alexu.csd.oop.game.World;
+import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
 import eg.edu.alexu.csd.oop.game.model.Strategy.IStrategy;
 import eg.edu.alexu.csd.oop.game.model.world.Circus;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public class MenuBar {
-
+    private GameLogger gameLogger = GameLogger.getInstance();
     private World circus;
     private IStrategy strategy;
     private  int width;
@@ -60,17 +63,38 @@ public class MenuBar {
 
         final GameEngine.GameController gameController = GameEngine.start("Game", circus, menuBar);
 
-        newMenuItem.addActionListener(e -> gameController.changeWorld(new Circus(width, height, strategy, jars)));
+        newMenuItem.addActionListener(e -> {
+            gameController.changeWorld(new Circus(width, height, strategy, jars));
+            gameLogger.logger.info(" New Game is started ");
+        });
 
-        pauseMenuItem.addActionListener(e -> gameController.pause());
+        pauseMenuItem.addActionListener(e -> {
+            gameController.pause();
+            gameLogger.logger.info(" The Game is paused ");
+        });
 
-        resumeMenuItem.addActionListener(e -> gameController.resume());
+        resumeMenuItem.addActionListener(e -> {
+            gameController.resume();
+            gameLogger.logger.info(" The Game is resumed");
+        });
 
-        exitMenuItem.addActionListener(e -> System.exit(0));
+        exitMenuItem.addActionListener(e -> {
+            System.exit(0);
+            gameLogger.logger.info(" The User Exits From The Game ");
+        });
 
-        undoItem.addActionListener(e -> setCircus(((Circus)circus).Undo()));
+        undoItem.addActionListener(e -> {
+                    setCircus(((Circus) circus).Undo());
+                    gameController.changeWorld(circus);
+                    gameLogger.logger.info(" Undo Step is Done ");
+        });
 
-        redoItem.addActionListener(e -> setCircus(((Circus)circus).Redo()));
+
+        redoItem.addActionListener(e -> {
+            setCircus(((Circus)circus).Redo());
+            gameController.changeWorld(circus);
+            gameLogger.logger.info(" Redo Step is Done ");
+        });
     }
 
     public void setCircus(World circus) {

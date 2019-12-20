@@ -2,6 +2,7 @@ package eg.edu.alexu.csd.oop.game.model.world;
 
 import eg.edu.alexu.csd.oop.game.World;
 import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
+import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
 import eg.edu.alexu.csd.oop.game.model.Observer.IObserver;
 import eg.edu.alexu.csd.oop.game.model.Observer.Plates;
 import eg.edu.alexu.csd.oop.game.model.Observer.Score;
@@ -33,6 +34,7 @@ public class Circus implements World {
     private final LinkedList<GameObject> leftStickPlates = new LinkedList<>();
     private final int width;    // The width of the screen
     private final int height;   // The height of the screen
+
     private int score = 0;      // Current score
     private static final int MOVING = 0;    // Plate is moving
     private static final int CAUGHT = 1;   // Plate is caught
@@ -42,6 +44,7 @@ public class Circus implements World {
 
     private final Random rand = new Random();
 
+    private GameLogger gameLogger = GameLogger.getInstance();
     private IList movableList;
     private IIterator movableIterator;
     private IList controllableList;
@@ -53,9 +56,11 @@ public class Circus implements World {
     IObserver Scoreobserver, Timeobserver, Platesobserver;
     Caretaker caretaker = new Caretaker();
     Originator originator = new Originator();
-    int SavedFiles = 0;
-    int CurrentFile = 0;
 
+    int SavedFiles=0;
+    int CurrentFile=0;
+    private List<String> jars;
+    
     public Circus(int width, int height, IStrategy strategy, List<String> jars) {
         this.width = width;
         this.height = height;
@@ -187,6 +192,7 @@ public class Circus implements World {
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     isRightStickEmpty = false;
+                    gameLogger.logger.info(" The First "+((ImageObject)rightStickPlates.get(0)).getColor()+" Plate Touches The Right Stick ");
                 }
             }
         } else {
@@ -202,6 +208,7 @@ public class Circus implements World {
                     this.registerall();
                     ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                     rightStickPlates.add(plate);
+                    gameLogger.logger.info(" A New "+((ImageObject)rightStickPlates.get(rightStickPlates.size()-1)).getColor()+" Plate Touches The Right Stick ");
                     //drop the plates if the difference isn't acceptable
                 } else if (difference < plate.getWidth() - 22) {
                     ((ImageObject) plate).setState(new Falling());
@@ -222,6 +229,7 @@ public class Circus implements World {
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     isLeftStickEmpty = false;
+                    gameLogger.logger.info(" The First "+((ImageObject)leftStickPlates.get(0)).getColor()+" Plate Touches The Left Stick ");
                 }
             }
         } else {
@@ -234,6 +242,7 @@ public class Circus implements World {
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     leftStickPlates.add(plate);
+                    gameLogger.logger.info(" A New "+((ImageObject)leftStickPlates.get(leftStickPlates.size()-1)).getColor()+" Plate Touches The Left Stick ");
                 } else if (difference < plate.getWidth() - 22) {
                     ((ImageObject) plate).setState(new Falling());
                     ((ImageObject) leftStickPlates.getLast()).setState(new Falling());
@@ -243,7 +252,6 @@ public class Circus implements World {
             }
         }
 
-        this.Save();
     }
 
     private void isThreeOfSameColor(LinkedList<GameObject> stickPlates) {
@@ -402,21 +410,61 @@ public class Circus implements World {
         return originator.restoreFromMemento(caretaker.getMemento(CurrentFile));
     }
 
-    public void Save() {
-        if (SavedFiles == caretaker.getSizee()) {
-            originator.set(this);
+    public void Save(){
+        if(SavedFiles==caretaker.getSizee()) {
+            originator.set(clone(this));
             caretaker.addMemento(originator.storeInMemento());
             SavedFiles++;
             CurrentFile++;
         } else {
             caretaker.RemoveAfterIndex(CurrentFile);
-            SavedFiles = caretaker.getSizee();
-            originator.set(this);
+            SavedFiles=caretaker.getSizee();
+            originator.set(clone(this));
             caretaker.addMemento(originator.storeInMemento());
             SavedFiles++;
             CurrentFile++;
 
         }
+    }
+
+    public Circus clone (Circus circus){
+        Circus cloned = new Circus();
+        cloned.constant = circus.constant ;
+        for (GameObject gameObject : circus.movable){
+            cloned.movable.add(gameObject);
+        }
+        cloned.controllable = circus.controllable;
+        for (GameObject gameObject : circus.rightStickPlates){
+            cloned.rightStickPlates.add(gameObject);
+            cloned.isRightStickEmpty = false;
+        }
+        for (GameObject gameObject : circus.leftStickPlates){
+            cloned.leftStickPlates.add(gameObject);
+            cloned.isLeftStickEmpty = false;
+        }
+        cloned.width = circus.width;
+        cloned.height = circus.height;
+        cloned.score = circus.score;
+        cloned.Scoreobserver = new Score(cloned);
+        cloned.Timeobserver = new Time(cloned);
+        cloned.Platesobserver = new Plates(cloned);
+
+        cloned.movableList = new GameObjectList(cloned.movable);
+        cloned.controllableList = new GameObjectList(cloned.controllable);
+        cloned.controllableIterator = cloned.controllableList.createIterator();
+
+
+        cloned.caretaker = circus.caretaker;
+        cloned.originator = circus.originator;
+        cloned.SavedFiles = circus.SavedFiles;
+        cloned.CurrentFile = circus.CurrentFile;
+
+        cloned.jars = circus.jars;
+
+        cloned.FlyweightimageFactory = new FlyweightImageFactory(cloned.jars);
+        cloned.imagePool = new ImagePool(cloned.width, cloned.height, cloned.jars);
+        cloned.strategy = circus.strategy;
+        return cloned;
     }
 
 }
