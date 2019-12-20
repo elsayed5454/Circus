@@ -20,14 +20,16 @@ public class GameMenu {
         this.strategy = strategy;
         this.width = width;
         this.height = height;
+
+        start();
     }
 
     public void start () {
 
         //generate the circus world
-        World circus = new Circus((int) (width * 0.99), (int) (height * 0.94), strategy, jars);
+        World circus = new Circus((int) (width * 0.99), (int) (height * 0.892), strategy, jars);
 
         //generate menu bar for the engine
-        new MenuBar(circus, strategy, jars, height, width).generate();
+        new MenuBar(circus, strategy, jars, height, width);
     }
 }

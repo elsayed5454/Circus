@@ -19,12 +19,14 @@ import eg.edu.alexu.csd.oop.game.model.Iterator.IIterator;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IList;
 import eg.edu.alexu.csd.oop.game.model.Pool.ImagePool;
 import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
+import eg.edu.alexu.csd.oop.game.view.EndMenu;
+import eg.edu.alexu.csd.oop.game.view.ScreenResolution;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 public class Circus implements World {
-    private final int MAX_TIME = 2 * 60 * 1000; // 2 minute
+    private final int MAX_TIME =  10 * 1000; // 2 minute
     // The system time when the game starts
     private final long startTime = System.currentTimeMillis();
     private final List<GameObject> constant = new LinkedList<>();       // Non moving objects in the game
@@ -61,6 +63,8 @@ public class Circus implements World {
     int CurrentFile=0;
     private List<String> jars;
 
+    boolean gameOver = false;
+
     public Circus(int width, int height, IStrategy strategy, List<String> jars) {
         this.width = width;
         this.height = height;
@@ -68,6 +72,7 @@ public class Circus implements World {
         FlyweightimageFactory = new FlyweightImageFactory(jars);
         try {
             imagePool = new ImagePool(width, height, 7);
+            movable = imagePool.getMovingPlates();
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
@@ -121,7 +126,6 @@ public class Circus implements World {
         rightStick.setX(clown.getX() + (int) (clown.getWidth() * 0.7));
         leftStick.setX(clown.getX() + (int) (clown.getWidth() * 0.18));
 
-        movable = imagePool.getMovingPlates();
         movableList = new GameObjectList(movable);
         movableIterator = movableList.createIterator();
 
@@ -171,7 +175,13 @@ public class Circus implements World {
                     //plate.setX((int) (Math.random() * getWidth()));
                 }
             }
-            movableIterator.next();
+            if (movableIterator.hasNext()){
+                movableIterator.next();
+            }
+        }
+        if (timeout && !gameOver){
+            gameOver = true ;
+            new EndMenu(score, new ScreenResolution().getWidth(), new ScreenResolution().getHeight());
         }
         return !timeout;
     }
@@ -363,6 +373,7 @@ public class Circus implements World {
     public int getControlSpeed() {
         return strategy.controlSpeed();
     }
+
 
     public List<IObserver> getObservers() {
         return observers;

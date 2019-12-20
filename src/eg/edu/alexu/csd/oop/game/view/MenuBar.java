@@ -26,9 +26,11 @@ public class MenuBar {
         this.width = width;
         this.height = height;
         this.jars = jars ;
+
+        start();
     }
 
-    public void generate() {
+    public void start() {
 
         JMenuBar menuBar = new JMenuBar();
 

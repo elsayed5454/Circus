@@ -10,10 +10,8 @@ public class GameMain {
         //the screen resolution for any use for screen width or height
         ScreenResolution sr = new ScreenResolution();
 
-        //main menu
-        MainMenu mainMenu = new MainMenu(sr.getWidth(), sr.getHeight());
+        //start main menu
+        new MainMenu(sr.getWidth(), sr.getHeight());
 
-        //start the main menu user interface
-        mainMenu.start();
     }
 }
