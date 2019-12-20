@@ -4,6 +4,7 @@ import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
 import eg.edu.alexu.csd.oop.game.GameObject;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -14,11 +15,12 @@ public class ImagePool {
     public HashMap<GameObject, Long> inUse = new HashMap<>();
     private int width, height;
     private Random rand = new Random();
-    private FlyweightImageFactory flyweightimageFactory = new FlyweightImageFactory();
+    private FlyweightImageFactory flyweightimageFactory;
 
-    public ImagePool(int width, int height) {
+    public ImagePool(int width, int height, List<String> jars) {
         this.width = width;
         this.height = height;
+        flyweightimageFactory = new FlyweightImageFactory(jars);
     }
 
     public GameObject getGameObject() {

@@ -2,7 +2,7 @@ package eg.edu.alexu.csd.oop.game.model.Flyweight;
 
 import eg.edu.alexu.csd.oop.game.model.State.Moving;
 import eg.edu.alexu.csd.oop.game.GameObject;
-import eg.edu.alexu.csd.oop.game.model.DynamicLinkage;
+import eg.edu.alexu.csd.oop.game.model.DynamicLinkage.DynamicLinkage;
 import eg.edu.alexu.csd.oop.game.model.Shapes.IShape;
 import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
 
@@ -10,10 +10,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 // Flyweight pattern to create objects faster by storing them in
 // a hash map and get them faster
@@ -22,14 +19,14 @@ public class FlyweightImageFactory {
     private DynamicLinkage shapesLoader = new DynamicLinkage();
     private static LinkedList<Class<?>> shapesClasses = new LinkedList<>();
 
-    public FlyweightImageFactory() {
+    public FlyweightImageFactory(List<String> jars) {
         try {
             platesFactory.put("/clown.png", new BufferedImage[]{ImageIO.read(getClass().getResourceAsStream("/clown.png"))});
             platesFactory.put("/rightStick.png", new BufferedImage[]{ImageIO.read(getClass().getResourceAsStream("/rightStick.png"))});
             platesFactory.put("/leftStick.png", new BufferedImage[]{ImageIO.read(getClass().getResourceAsStream("/leftStick.png"))});
             platesFactory.put("/circus.jpg", new BufferedImage[]{ImageIO.read(getClass().getResourceAsStream("/circus.jpg"))});
 
-            shapesClasses = shapesLoader.loadShapesClasses();
+            shapesClasses = shapesLoader.loadShapesClasses(jars);
             //platesFactory.put("/reddd.png", new BufferedImage[]{ImageIO.read(getClass().getResourceAsStream("/reddd.png"))});
             //platesFactory.put("/blueee.png", new BufferedImage[]{ImageIO.read(getClass().getResourceAsStream("/blueee.png"))});
             //platesFactory.put("/greennn.png", new BufferedImage[]{ImageIO.read(getClass().getResourceAsStream("/greennn.png"))});

@@ -6,6 +6,7 @@ import eg.edu.alexu.csd.oop.game.model.Strategy.IStrategy;
 import eg.edu.alexu.csd.oop.game.model.world.Circus;
 
 import javax.swing.*;
+import java.util.List;
 
 public class MenuBar {
 
@@ -13,13 +14,15 @@ public class MenuBar {
     private IStrategy strategy;
     private  int width;
     private int height;
+    private List<String> jars;
 
-    public MenuBar (World circus, IStrategy strategy, int width, int height) {
+    public MenuBar (World circus, IStrategy strategy, List<String> jars, int width, int height) {
 
         this.circus = circus;
         this.strategy = strategy;
         this.width = width;
         this.height = height;
+        this.jars = jars ;
     }
 
     public void generate() {
@@ -49,7 +52,7 @@ public class MenuBar {
 
         final GameEngine.GameController gameController = GameEngine.start("Game", circus, menuBar);
 
-        newMenuItem.addActionListener(e -> gameController.changeWorld(new Circus(width, height, strategy)));
+        newMenuItem.addActionListener(e -> gameController.changeWorld(new Circus(width, height, strategy, jars)));
 
         pauseMenuItem.addActionListener(e -> gameController.pause());
 

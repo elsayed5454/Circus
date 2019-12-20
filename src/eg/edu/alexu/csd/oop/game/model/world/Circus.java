@@ -45,16 +45,17 @@ public class Circus implements World {
     private IIterator movableIterator;
     private IList controllableList;
     private IIterator controllableIterator;
-    FlyweightImageFactory FlyweightimageFactory = new FlyweightImageFactory();
+    FlyweightImageFactory FlyweightimageFactory;
     ImagePool imagePool;
     IStrategy strategy;
     private List<IObserver> observers = new ArrayList<>();
     IObserver Scoreobserver, Timeobserver, Platesobserver;
 
-    public Circus(int width, int height, IStrategy strategy) {
+    public Circus(int width, int height, IStrategy strategy, List<String> jars) {
         this.width = width;
         this.height = height;
-        imagePool = new ImagePool(width, height);
+        imagePool = new ImagePool(width, height, jars);
+        FlyweightimageFactory = new FlyweightImageFactory(jars);
 
         //background
         constant.add(FlyweightimageFactory.getImageObject(0, 0, "/circus.jpg"));
