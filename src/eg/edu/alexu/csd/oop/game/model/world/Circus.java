@@ -45,8 +45,6 @@ public class Circus implements World {
     private final Random rand = new Random();
 
     private GameLogger gameLogger = GameLogger.getInstance();
-    private IList movableList;
-    private IIterator movableIterator;
     private IList controllableList;
     private IIterator controllableIterator;
     FlyweightImageFactory FlyweightimageFactory;
@@ -67,7 +65,7 @@ public class Circus implements World {
 
         FlyweightimageFactory = new FlyweightImageFactory(jars);
         try {
-            imagePool = new ImagePool(width, height, 7);
+            imagePool = new ImagePool(width, height, 14);
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
@@ -96,8 +94,6 @@ public class Circus implements World {
             }
         }*/
 
-
-
         controllableList = new GameObjectList(controllable);
         controllableIterator = controllableList.createIterator();
 
@@ -121,11 +117,11 @@ public class Circus implements World {
         rightStick.setX(clown.getX() + (int) (clown.getWidth() * 0.7));
         leftStick.setX(clown.getX() + (int) (clown.getWidth() * 0.18));
 
-        movable = imagePool.getMovingPlates();
-        movableList = new GameObjectList(movable);
-        movableIterator = movableList.createIterator();
+        movable = imagePool.getInUse();
+        IList movableList = new GameObjectList(movable);
+        IIterator movableIterator = movableList.createIterator();
 
-        while (movableIterator.hasNext()) {
+        while(movableIterator.hasNext()) {
             GameObject plate = movableIterator.currentItem();
             // If the plate is moving
             if (((ImageObject) plate).getState() == MOVING) {
@@ -148,8 +144,6 @@ public class Circus implements World {
             // If plate is caught by the clown
             else if (((ImageObject) plate).getState() == CAUGHT) {
 
-                imagePool.plateUsedByUser(plate);
-
                 // Set the new x
                 if (rightStickPlates.contains(plate)) {
                     plate.setX(rightStick.getX() - ((ImageObject) plate).getDistFromStick());
@@ -161,8 +155,6 @@ public class Circus implements World {
             // If plate is falling from the clown
             else if (((ImageObject) plate).getState() == FALLING) {
                 plate.setY(plate.getY() + 1);
-
-                imagePool.releaseToMovingPlates(plate);
 
                 if (plate.getY() == getHeight()) {
                     ((ImageObject) plate).setState(new Moving());
@@ -263,7 +255,7 @@ public class Circus implements World {
 
         int counter = 0, len = stickPlates.size();
         String color = ((ImageObject) stickPlates.get(len - 1)).getColor();
-        Object BoolObserver = false;
+        Object BoolObserver;
         // Check the last 3 plates if of same color
         for (int i = len - 1; i >= len - 3; i--) {
             if (color.equals(((ImageObject) stickPlates.get(i)).getColor())) {
@@ -295,6 +287,10 @@ public class Circus implements World {
             ((ImageObject) stickPlates.get(i)).setState(new Moving());
             stickPlates.get(i).setX(rand.nextInt(width - movable.get(i).getWidth()));
             stickPlates.get(i).setY(-1 * rand.nextInt(height));
+
+            // Release this plate back to pool
+            imagePool.releaseToPool(stickPlates.get(i));
+
             stickPlates.remove(i);
         }
         return stickPlates.isEmpty();

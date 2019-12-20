@@ -2,6 +2,7 @@ package eg.edu.alexu.csd.oop.game.model.Pool;
 
 import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
 import eg.edu.alexu.csd.oop.game.GameObject;
+import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
@@ -9,29 +10,26 @@ import java.util.*;
 // Object Pool Pattern to reuse created objects when time objects expire
 // or they reaches the height of the screen
 public class ImagePool {
-    private LinkedList<GameObject> available, movingPlates, caughtPlates;
+    private LinkedList<GameObject> available, inUse;
     private int sizeOnScreen;
     private int width, height;
     private Random rand = new Random();
 
     public ImagePool(int width, int height, int size) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-
         this.sizeOnScreen = size;
         this.width = width;
         this.height = height;
-
-
         initialize();
-
     }
 
     private void initialize() throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
         this.available = new LinkedList<>();
-        this.caughtPlates = new LinkedList<>();
-
-        this.movingPlates = new LinkedList<>();
+        this.inUse = new LinkedList<>();
+        for(int i = 0; i < 100; i++) {
+            available.add(createGameObject());
+        }
         for(int i = 0; i < sizeOnScreen; i++) {
-            movingPlates.add(createGameObject());
+            inUse.add(createGameObject());
         }
     }
 
@@ -42,10 +40,21 @@ public class ImagePool {
     }
 
     public void getGameObject() {
-        while (!available.isEmpty() && movingPlates.size() < sizeOnScreen) {
+
+        final int Moving = 0;       // Moving state
+        int movingPlatesNum = 0;    // Number of moving plates in game
+        for(GameObject plate : inUse) {
+            if(((ImageObject)plate).getState() == Moving) {
+                movingPlatesNum++;
+            }
+        }
+
+        // Add required number of plates on screen
+        while (!available.isEmpty() && movingPlatesNum < sizeOnScreen) {
             GameObject plate = available.getFirst();
             available.remove(available.getFirst());
-            movingPlates.add(plate);
+            inUse.add(plate);
+            movingPlatesNum++;
         }
     }
 
@@ -54,19 +63,13 @@ public class ImagePool {
         // Reset released gameObject
         po.setX(rand.nextInt(width - po.getWidth()));
         po.setY(-1 * rand.nextInt(height));
-
         available.add(po);
-        movingPlates.remove(po);
+        inUse.remove(po);
     }
 
-    public List<GameObject> getMovingPlates() {
+    public List<GameObject> getInUse() {
         getGameObject();
-        return movingPlates;
-    }
-
-    public void releaseToMovingPlates(GameObject plate) {
-        caughtPlates.remove(plate);
-        movingPlates.add(plate);
+        return inUse;
     }
 
     // Random the color of shape
@@ -81,7 +84,4 @@ public class ImagePool {
         }
     }
 
-    public void plateUsedByUser(GameObject plate) {
-        this.movingPlates.remove(plate);
-    }
 }
