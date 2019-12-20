@@ -1,7 +1,11 @@
 package eg.edu.alexu.csd.oop.game.model.world;
 
 import eg.edu.alexu.csd.oop.game.World;
-import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
+import eg.edu.alexu.csd.oop.game.model.AbstractFactory.ConstantObjectFactory;
+import eg.edu.alexu.csd.oop.game.model.AbstractFactory.ControllableObjectFactory;
+import eg.edu.alexu.csd.oop.game.model.AbstractFactory.GameObjectFactory;
+import eg.edu.alexu.csd.oop.game.model.AbstractFactory.MovableObjectFactory;
+import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightShapeFactory;
 import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
 import eg.edu.alexu.csd.oop.game.model.Observer.IObserver;
 import eg.edu.alexu.csd.oop.game.model.Observer.Plates;
@@ -18,11 +22,11 @@ import eg.edu.alexu.csd.oop.game.model.Iterator.GameObjectList;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IIterator;
 import eg.edu.alexu.csd.oop.game.model.Iterator.IList;
 import eg.edu.alexu.csd.oop.game.model.Pool.ImagePool;
-import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
+import eg.edu.alexu.csd.oop.game.model.objects.ControllableObject;
+import eg.edu.alexu.csd.oop.game.model.objects.MovableObject;
 import eg.edu.alexu.csd.oop.game.view.EndMenu;
 import eg.edu.alexu.csd.oop.game.view.ScreenResolution;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 public class Circus implements World {
@@ -47,13 +51,18 @@ public class Circus implements World {
     private final Random rand = new Random();
 
     private GameLogger gameLogger = GameLogger.getInstance();
-    FlyweightImageFactory FlyweightimageFactory;
+    FlyweightShapeFactory FlyweightimageFactory;
     ImagePool imagePool;
     IStrategy strategy;
     private List<IObserver> observers = new ArrayList<>();
     IObserver Scoreobserver, Timeobserver, Platesobserver;
     Caretaker caretaker = new Caretaker();
     Originator originator = new Originator();
+
+    // Factories
+    private GameObjectFactory constantFactory = new ConstantObjectFactory();
+    private GameObjectFactory controllableFactory = new ControllableObjectFactory();
+    GameObjectFactory movableFactory;
 
     int SavedFiles=0;
     int CurrentFile=0;
@@ -64,31 +73,27 @@ public class Circus implements World {
         this.width = width;
         this.height = height;
 
-        FlyweightimageFactory = new FlyweightImageFactory(jars);
-        try {
-            imagePool = new ImagePool(width, height, 14);
+        movableFactory = MovableObjectFactory.getInstance(jars);
+        imagePool = new ImagePool(width, height, 14);
 
-        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
-
-        //background
-        constant.add(FlyweightimageFactory.getImageObject(0, 0, "/circus.jpg"));
+        // Background
+        constant.add(constantFactory.getShape(0, 0, "/circus.jpg"));
 
         // The clown
-        controllable.add(FlyweightimageFactory.getImageObject(0, 0, "/clown.png"));
+        controllable.add(controllableFactory.getShape(0, 0, "/clown.png"));
         controllable.get(0).setX(width / 2 - controllable.get(0).getWidth() / 2);
         controllable.get(0).setY((int) (height * 0.96 - controllable.get(0).getHeight()));
-        ((ImageObject) controllable.get(0)).setHorizontalOnly();
+        ((ControllableObject) controllable.get(0)).setHorizontalOnly();
 
         // The two sticks
         int clownHandHeight = controllable.get(0).getY() + (int) (controllable.get(0).getHeight() * 0.01);
-        controllable.add(FlyweightimageFactory.getImageObject(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.7), clownHandHeight, "/rightStick.png"));
-        controllable.add(FlyweightimageFactory.getImageObject(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.18), clownHandHeight, "/leftStick.png"));
+        controllable.add(controllableFactory.getShape(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.7), clownHandHeight, "/rightStick.png"));
+        controllable.add(controllableFactory.getShape(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.18), clownHandHeight, "/leftStick.png"));
 
-        //game level constructor according to the strategy
+        // Game level constructor according to the strategy
         this.strategy = strategy;
 
+        // Observers
         Scoreobserver = new Score(this);
         Timeobserver = new Time(this);
         Platesobserver = new Plates(this);
@@ -113,7 +118,7 @@ public class Circus implements World {
         while(movableIterator.hasNext()) {
             GameObject plate = movableIterator.currentItem();
             // If the plate is moving
-            if (((ImageObject) plate).getState() == MOVING) {
+            if (((MovableObject) plate).getState() == MOVING) {
                 plate.setY(plate.getY() + 1);
 
                 // If the plate reaches bottom of the screen, reuse it
@@ -131,22 +136,22 @@ public class Circus implements World {
             }
 
             // If plate is caught by the clown
-            else if (((ImageObject) plate).getState() == CAUGHT) {
+            else if (((MovableObject) plate).getState() == CAUGHT) {
 
                 // Set the new x
                 if (rightStickPlates.contains(plate)) {
-                    plate.setX(rightStick.getX() - ((ImageObject) plate).getDistFromStick());
+                    plate.setX(rightStick.getX() - ((MovableObject) plate).getDistFromStick());
                 } else if (leftStickPlates.contains(plate)) {
-                    plate.setX(leftStick.getX() - ((ImageObject) plate).getDistFromStick());
+                    plate.setX(leftStick.getX() - ((MovableObject) plate).getDistFromStick());
                 }
             }
 
             // If plate is falling from the clown
-            else if (((ImageObject) plate).getState() == FALLING) {
+            else if (((MovableObject) plate).getState() == FALLING) {
                 plate.setY(plate.getY() + 1);
 
                 if (plate.getY() == getHeight()) {
-                    ((ImageObject) plate).setState(new Moving());
+                    ((MovableObject) plate).setState(new Moving());
                     imagePool.releaseToPool(plate);
                     //plate.setY(-1 * (int) (Math.random() * getHeight()));
                     //plate.setX((int) (Math.random() * getWidth()));
@@ -174,14 +179,14 @@ public class Circus implements World {
                 int difference = Math.abs(rightStick.getX() - plate.getX() - 27);
                 //catch the plate if the difference is acceptable
                 if (difference < strategy.differenceBetweenPlateAndStick()) {
-                    ((ImageObject) plate).setState(new Caught());
-                    ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
+                    ((MovableObject) plate).setState(new Caught());
+                    ((MovableObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                     rightStickPlates.add(plate);
                     this.registerOnly(Platesobserver);
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     isRightStickEmpty = false;
-                    gameLogger.logger.info(" The First "+((ImageObject)rightStickPlates.get(0)).getColor()+" Plate Touches The Right Stick ");
+                    gameLogger.logger.info(" The First "+((MovableObject)rightStickPlates.get(0)).getColor()+" Plate Touches The Right Stick ");
                 }
             }
         } else {
@@ -191,17 +196,17 @@ public class Circus implements World {
                 int difference = Math.abs(plate.getX() - (rightStickPlates.getLast().getX()));
                 //catch the plate if the difference is acceptable
                 if (difference < strategy.differenceBetweenPlateAndPlate()) {
-                    ((ImageObject) plate).setState(new Caught());
+                    ((MovableObject) plate).setState(new Caught());
                     this.registerOnly(Platesobserver);
                     this.notifyRegisteredUsers(1);
                     this.registerall();
-                    ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
+                    ((MovableObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                     rightStickPlates.add(plate);
-                    gameLogger.logger.info(" A New "+((ImageObject)rightStickPlates.get(rightStickPlates.size()-1)).getColor()+" Plate Touches The Right Stick ");
+                    gameLogger.logger.info(" A New "+((MovableObject)rightStickPlates.get(rightStickPlates.size()-1)).getColor()+" Plate Touches The Right Stick ");
                     //drop the plates if the difference isn't acceptable
                 } else if (difference < plate.getWidth() - 22) {
-                    ((ImageObject) plate).setState(new Falling());
-                    ((ImageObject) rightStickPlates.getLast()).setState(new Falling());
+                    ((MovableObject) plate).setState(new Falling());
+                    ((MovableObject) rightStickPlates.getLast()).setState(new Falling());
                     rightStickPlates.remove(rightStickPlates.size() - 1);
                     isRightStickEmpty = rightStickPlates.isEmpty();
                 }
@@ -211,30 +216,30 @@ public class Circus implements World {
             if (plate.getY() + plate.getHeight() == leftStick.getY()) {
                 int difference = Math.abs(leftStick.getX() - plate.getX() - 27);
                 if (difference < strategy.differenceBetweenPlateAndStick()) {
-                    ((ImageObject) plate).setState(new Caught());
-                    ((ImageObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
+                    ((MovableObject) plate).setState(new Caught());
+                    ((MovableObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
                     leftStickPlates.add(plate);
                     this.registerOnly(Platesobserver);
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     isLeftStickEmpty = false;
-                    gameLogger.logger.info(" The First "+((ImageObject)leftStickPlates.get(0)).getColor()+" Plate Touches The Left Stick ");
+                    gameLogger.logger.info(" The First "+((MovableObject)leftStickPlates.get(0)).getColor()+" Plate Touches The Left Stick ");
                 }
             }
         } else {
             if (plate.getY() + plate.getHeight() == leftStickPlates.getLast().getY()) {
                 int difference = Math.abs(plate.getX() - (leftStickPlates.getLast().getX()));
                 if (difference < strategy.differenceBetweenPlateAndPlate()) {
-                    ((ImageObject) plate).setState(new Caught());
-                    ((ImageObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
+                    ((MovableObject) plate).setState(new Caught());
+                    ((MovableObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
                     this.registerOnly(Platesobserver);
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     leftStickPlates.add(plate);
-                    gameLogger.logger.info(" A New "+((ImageObject)leftStickPlates.get(leftStickPlates.size()-1)).getColor()+" Plate Touches The Left Stick ");
+                    gameLogger.logger.info(" A New "+((MovableObject)leftStickPlates.get(leftStickPlates.size()-1)).getColor()+" Plate Touches The Left Stick ");
                 } else if (difference < plate.getWidth() - 22) {
-                    ((ImageObject) plate).setState(new Falling());
-                    ((ImageObject) leftStickPlates.getLast()).setState(new Falling());
+                    ((MovableObject) plate).setState(new Falling());
+                    ((MovableObject) leftStickPlates.getLast()).setState(new Falling());
                     leftStickPlates.remove(leftStickPlates.size() - 1);
                     isLeftStickEmpty = leftStickPlates.isEmpty();
                 }
@@ -249,11 +254,11 @@ public class Circus implements World {
         }
 
         int counter = 0, len = stickPlates.size();
-        String color = ((ImageObject) stickPlates.get(len - 1)).getColor();
+        String color = ((MovableObject) stickPlates.get(len - 1)).getColor();
         Object BoolObserver;
         // Check the last 3 plates if of same color
         for (int i = len - 1; i >= len - 3; i--) {
-            if (color.equals(((ImageObject) stickPlates.get(i)).getColor())) {
+            if (color.equals(((MovableObject) stickPlates.get(i)).getColor())) {
                 counter++;
             }
             if (counter == 3) {
@@ -279,7 +284,7 @@ public class Circus implements World {
     private boolean removeUpperThreePlates(LinkedList<GameObject> stickPlates) {
         int len = stickPlates.size();
         for (int i = len - 1; i >= len - 3; i--) {
-            ((ImageObject) stickPlates.get(i)).setState(new Moving());
+            ((MovableObject) stickPlates.get(i)).setState(new Moving());
             stickPlates.get(i).setX(rand.nextInt(width - movable.get(i).getWidth()));
             stickPlates.get(i).setY(-1 * rand.nextInt(height));
 
