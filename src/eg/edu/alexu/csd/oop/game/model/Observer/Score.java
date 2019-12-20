@@ -12,9 +12,9 @@ public class Score implements IObserver {
         game.register(this);
     }
     @Override
-    public void update(int updatedValue) {
+    public void update(Object updatedValue) {
 
         //System.out.println("Score: "+ updatedValue);
-        GameLogger.getInstance().logger.info("Score: "+ updatedValue );
+        GameLogger.getInstance().logger.info("Score: "+ (int)updatedValue );
     }
 }

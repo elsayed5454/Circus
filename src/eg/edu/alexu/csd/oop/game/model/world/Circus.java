@@ -241,7 +241,7 @@ public class Circus implements World {
 
         int counter = 0, len = stickPlates.size();
         String color = ((ImageObject)stickPlates.get(len - 1)).getColor();
-
+        Object BoolObserver=false;
         // Check the last 3 plates if of same color
         for (int i = len - 1; i >= len - 3; i--) {
             if (color.equals(((ImageObject)stickPlates.get(i)).getColor())) {
@@ -251,11 +251,13 @@ public class Circus implements World {
                 counter = 0;
                 if (stickPlates == rightStickPlates) {
                     isRightStickEmpty = removeUpperThreePlates(stickPlates);
+                    BoolObserver=isRightStickEmpty;
                 } else {
                     isLeftStickEmpty = removeUpperThreePlates(stickPlates);
+                    BoolObserver=isLeftStickEmpty;
                 }
                 this.registerOnly(Platesobserver);
-                this.notifyRegisteredUsers(2);
+                this.notifyRegisteredUsers(BoolObserver);
                 this.registerall();
                 score += 30;
                 this.registerOnly(Scoreobserver);
@@ -368,7 +370,7 @@ public class Circus implements World {
         observers.remove(observer);
     }
 
-    public void notifyRegisteredUsers(int updatedValue) {
+    public void notifyRegisteredUsers(Object updatedValue) {
         for (IObserver observer : observers)
             observer.update(updatedValue);
     }

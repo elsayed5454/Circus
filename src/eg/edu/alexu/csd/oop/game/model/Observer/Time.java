@@ -14,8 +14,8 @@ public class Time implements  IObserver {
         game.register(this);
     }
     @Override
-    public void update(int updatedValue) {
+    public void update(Object updatedValue) {
         //System.out.println("time updated: "+ updatedValue);
-        GameLogger.getInstance().logger.log(Level.WARNING,"Hurry!! time left is"+ updatedValue);
+        GameLogger.getInstance().logger.log(Level.WARNING,"Hurry!! time left is"+ (int)updatedValue);
     }
 }
