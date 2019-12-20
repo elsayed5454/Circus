@@ -42,11 +42,19 @@ public class MenuBar {
         //option for exiting the game
         JMenuItem exitMenuItem = new JMenuItem("Exit");
 
+        //option for undo the game
+        JMenuItem undoItem = new JMenuItem("Undo");
+
+        //option for redo the game
+        JMenuItem redoItem = new JMenuItem("Redo");
+
         menu.add(newMenuItem);
         menu.addSeparator();
         menu.add(pauseMenuItem);
         menu.add(resumeMenuItem);
         menu.add(exitMenuItem);
+        menu.add(undoItem);
+        menu.add(redoItem);
 
         menuBar.add(menu);
 
@@ -59,6 +67,13 @@ public class MenuBar {
         resumeMenuItem.addActionListener(e -> gameController.resume());
 
         exitMenuItem.addActionListener(e -> System.exit(0));
+
+        undoItem.addActionListener(e -> setCircus(((Circus)circus).Undo()));
+
+        redoItem.addActionListener(e -> setCircus(((Circus)circus).Redo()));
     }
 
+    public void setCircus(World circus) {
+        this.circus = circus;
+    }
 }

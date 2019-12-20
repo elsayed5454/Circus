@@ -1,8 +1,8 @@
 package eg.edu.alexu.csd.oop.game.model.Flyweight;
 
+import eg.edu.alexu.csd.oop.game.model.DynamicLinkage.DynamicLinkage;
 import eg.edu.alexu.csd.oop.game.model.State.Moving;
 import eg.edu.alexu.csd.oop.game.GameObject;
-import eg.edu.alexu.csd.oop.game.model.DynamicLinkage.DynamicLinkage;
 import eg.edu.alexu.csd.oop.game.model.Shapes.IShape;
 import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
 
