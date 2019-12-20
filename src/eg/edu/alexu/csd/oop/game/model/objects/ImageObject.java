@@ -94,6 +94,7 @@ public class ImageObject implements GameObject {
     public void setHorizontalOnly() {
         this.horizontalOnly = true;
     }
+
     public String getColor() {
         return color;
     }

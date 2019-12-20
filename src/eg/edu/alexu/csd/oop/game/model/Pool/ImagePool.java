@@ -3,80 +3,82 @@ package eg.edu.alexu.csd.oop.game.model.Pool;
 import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
 import eg.edu.alexu.csd.oop.game.GameObject;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.lang.reflect.InvocationTargetException;
+import java.util.*;
 
 // Object Pool Pattern to reuse created objects when time objects expire
 // or they reaches the height of the screen
 public class ImagePool {
-    public HashMap<GameObject, Long> available = new HashMap<>();
-    public HashMap<GameObject, Long> inUse = new HashMap<>();
+    private LinkedList<GameObject> available, movingPlates, caughtPlates;
+    private int sizeOnScreen;
     private int width, height;
     private Random rand = new Random();
-    private FlyweightImageFactory flyweightimageFactory;
 
-    public ImagePool(int width, int height, List<String> jars) {
+    public ImagePool(int width, int height, int size) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+
+        initialize();
+        this.sizeOnScreen = size;
         this.width = width;
         this.height = height;
-        flyweightimageFactory = new FlyweightImageFactory(jars);
     }
 
-    public GameObject getGameObject() {
-        long now = System.currentTimeMillis();
-        if (!available.isEmpty()) {
-            for (Map.Entry<GameObject, Long> entry : available.entrySet()) {
-                long expTime = 6000;
-                if (now - entry.getValue() > expTime) {
-                    popElement(available);
-                } else {
-                    GameObject po = popElement(available, entry.getKey());
-                    push(inUse, po, now);
-                    return po;
-                }
-            }
+    private void initialize() throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
+        this.available = new LinkedList<>();
+        this.caughtPlates = new LinkedList<>();
+
+        this.movingPlates = new LinkedList<>();
+        for(int i = 0; i < sizeOnScreen; i++) {
+            movingPlates.add(createGameObject());
         }
-        return createGameObject(now);
     }
 
-    private GameObject createGameObject(long now) {
-        GameObject po = flyweightimageFactory.getImageObject(0, -1 * rand.nextInt(height), randomPlate(rand.nextInt(3)));
+    private GameObject createGameObject() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        GameObject po = FlyweightImageFactory.getShape(0, -1 * rand.nextInt(height), randomColor(rand.nextInt(3)));
         po.setX(rand.nextInt(width - po.getWidth()));
-        push(inUse, po, now);
         return po;
     }
 
-    private void push(HashMap<GameObject, Long> map, GameObject po, long now) {
-        map.put(po, now);
+    public void getGameObject() {
+        while (!available.isEmpty() && movingPlates.size() < sizeOnScreen) {
+            GameObject plate = available.getFirst();
+            available.remove(available.getFirst());
+            movingPlates.add(plate);
+        }
     }
 
-    public void releaseObject(GameObject po) {
-        available.put(po, System.currentTimeMillis());
-        inUse.remove(po);
+    public void releaseToPool(GameObject po) {
+
+        // Reset released gameObject
+        po.setX(rand.nextInt(width - po.getWidth()));
+        po.setY(rand.nextInt(-1 * rand.nextInt(height)));
+
+        available.add(po);
+        movingPlates.remove(po);
     }
 
-    private GameObject popElement(HashMap<GameObject, Long> map) {
-        Map.Entry<GameObject, Long> entry = map.entrySet().iterator().next();
-        GameObject key = entry.getKey();
-        map.remove(entry.getKey());
-        return key;
+    public List<GameObject> getMovingPlates() {
+        getGameObject();
+        return movingPlates;
     }
 
-    private GameObject popElement(HashMap<GameObject, Long> map, GameObject key) {
-        map.remove(key);
-        return key;
+    public void releaseToMovingPlates(GameObject plate) {
+        caughtPlates.remove(plate);
+        movingPlates.add(plate);
     }
 
-    // Deciding the color
-    private String randomPlate(int color) {
+    // Random the color of shape
+    private String randomColor(int color) {
         switch (color) {
             case 0:
-                return "/reddd.png";
+                return "red";
             case 1:
-                return "/blueee.png";
+                return "blue";
             default:
-                return "/greennn.png";
+                return "green";
         }
+    }
+
+    public void plateUsedByUser(GameObject plate) {
+        this.movingPlates.remove(plate);
     }
 }

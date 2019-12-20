@@ -19,7 +19,6 @@ import eg.edu.alexu.csd.oop.game.model.Iterator.IList;
 import eg.edu.alexu.csd.oop.game.model.Pool.ImagePool;
 import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
 
-import java.awt.image.BufferedImage;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
@@ -28,7 +27,7 @@ public class Circus implements World {
     // The system time when the game starts
     private final long startTime = System.currentTimeMillis();
     private final List<GameObject> constant = new LinkedList<>();       // Non moving objects in the game
-    private final List<GameObject> movable = new LinkedList<>();        // Auto moving objects in the game
+    private List<GameObject> movable;        // Auto moving objects in the game
     private final List<GameObject> controllable = new LinkedList<>();   // Objects that the user control its movement in the game
     private final LinkedList<GameObject> rightStickPlates = new LinkedList<>();
     private final LinkedList<GameObject> leftStickPlates = new LinkedList<>();
@@ -54,13 +53,19 @@ public class Circus implements World {
     IObserver Scoreobserver, Timeobserver, Platesobserver;
     Caretaker caretaker = new Caretaker();
     Originator originator = new Originator();
-    int SavedFiles=0;
-    int CurrentFile=0;
+    int SavedFiles = 0;
+    int CurrentFile = 0;
 
     public Circus(int width, int height, IStrategy strategy, List<String> jars) {
         this.width = width;
         this.height = height;
-        imagePool = new ImagePool(width, height, jars);
+
+        try {
+            imagePool = new ImagePool(width, height, 7);
+        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+
         FlyweightimageFactory = new FlyweightImageFactory(jars);
 
         //background
@@ -78,16 +83,15 @@ public class Circus implements World {
         controllable.add(FlyweightimageFactory.getImageObject(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.18), clownHandHeight, "/leftStick.png"));
 
         // Plates with random place to appear at and random color
-        for (int i = 0; i < 14; i++) {
+        /*for (int i = 0; i < 14; i++) {
             //movable.add(imagePool.getGameObject());
             try {
                 movable.add(FlyweightImageFactory.getShape(rand.nextInt(width), -1 * rand.nextInt(height), randomColor()));
             } catch (NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
 
-        movableList = new GameObjectList(movable);
         controllableList = new GameObjectList(controllable);
         controllableIterator = controllableList.createIterator();
 
@@ -111,7 +115,9 @@ public class Circus implements World {
         rightStick.setX(clown.getX() + (int) (clown.getWidth() * 0.7));
         leftStick.setX(clown.getX() + (int) (clown.getWidth() * 0.18));
 
+        movableList = new GameObjectList(imagePool.getMovingPlates());
         movableIterator = movableList.createIterator();
+
         while (movableIterator.hasNext()) {
             GameObject plate = movableIterator.currentItem();
             // If the plate is moving
@@ -120,9 +126,9 @@ public class Circus implements World {
 
                 // If the plate reaches bottom of the screen, reuse it
                 if (plate.getY() == getHeight()) {
-                    imagePool.releaseObject(plate);
-                    plate.setY(-1 * (int) (Math.random() * getHeight()));
-                    plate.setX((int) (Math.random() * getWidth()));
+                    imagePool.releaseToPool(plate);
+                    //plate.setY(-1 * (int) (Math.random() * getHeight()));
+                    //plate.setX((int) (Math.random() * getWidth()));
                 }
 
                 // Check if a plate touches a stick or a plate and add it
@@ -134,7 +140,10 @@ public class Circus implements World {
 
             // If plate is caught by the clown
             else if (((ImageObject) plate).getState() == CAUGHT) {
-                //set the new x
+
+                imagePool.plateUsedByUser(plate);
+
+                // Set the new x
                 if (rightStickPlates.contains(plate)) {
                     plate.setX(rightStick.getX() - ((ImageObject) plate).getDistFromStick());
                 } else if (leftStickPlates.contains(plate)) {
@@ -145,11 +154,14 @@ public class Circus implements World {
             // If plate is falling from the clown
             else if (((ImageObject) plate).getState() == FALLING) {
                 plate.setY(plate.getY() + 1);
+
+                imagePool.releaseToMovingPlates(plate);
+
                 if (plate.getY() == getHeight()) {
-                    imagePool.releaseObject(plate);
-                    plate.setY(-1 * (int) (Math.random() * getHeight()));
-                    plate.setX((int) (Math.random() * getWidth()));
                     ((ImageObject) plate).setState(new Moving());
+                    imagePool.releaseToPool(plate);
+                    //plate.setY(-1 * (int) (Math.random() * getHeight()));
+                    //plate.setX((int) (Math.random() * getWidth()));
                 }
             }
             movableIterator.next();
@@ -240,21 +252,21 @@ public class Circus implements World {
         }
 
         int counter = 0, len = stickPlates.size();
-        String color = ((ImageObject)stickPlates.get(len - 1)).getColor();
-        Object BoolObserver=false;
+        String color = ((ImageObject) stickPlates.get(len - 1)).getColor();
+        Object BoolObserver = false;
         // Check the last 3 plates if of same color
         for (int i = len - 1; i >= len - 3; i--) {
-            if (color.equals(((ImageObject)stickPlates.get(i)).getColor())) {
+            if (color.equals(((ImageObject) stickPlates.get(i)).getColor())) {
                 counter++;
             }
             if (counter == 3) {
                 counter = 0;
                 if (stickPlates == rightStickPlates) {
                     isRightStickEmpty = removeUpperThreePlates(stickPlates);
-                    BoolObserver=isRightStickEmpty;
+                    BoolObserver = isRightStickEmpty;
                 } else {
                     isLeftStickEmpty = removeUpperThreePlates(stickPlates);
-                    BoolObserver=isLeftStickEmpty;
+                    BoolObserver = isLeftStickEmpty;
                 }
                 this.registerOnly(Platesobserver);
                 this.notifyRegisteredUsers(BoolObserver);
@@ -375,31 +387,30 @@ public class Circus implements World {
             observer.update(updatedValue);
     }
 
-    public Circus Undo(){
-     if(CurrentFile>=1){
-         CurrentFile--;
-     }
-         return originator.restoreFromMemento(caretaker.getMemento(CurrentFile));
+    public Circus Undo() {
+        if (CurrentFile >= 1) {
+            CurrentFile--;
+        }
+        return originator.restoreFromMemento(caretaker.getMemento(CurrentFile));
     }
 
-    public Circus Redo(){
+    public Circus Redo() {
 
-        if((SavedFiles-1)>=CurrentFile){
+        if ((SavedFiles - 1) >= CurrentFile) {
             CurrentFile++;
         }
         return originator.restoreFromMemento(caretaker.getMemento(CurrentFile));
     }
 
-    public void Save(){
-        if(SavedFiles==caretaker.getSizee()) {
+    public void Save() {
+        if (SavedFiles == caretaker.getSizee()) {
             originator.set(this);
             caretaker.addMemento(originator.storeInMemento());
             SavedFiles++;
             CurrentFile++;
-        }
-        else{
+        } else {
             caretaker.RemoveAfterIndex(CurrentFile);
-            SavedFiles=caretaker.getSizee();
+            SavedFiles = caretaker.getSizee();
             originator.set(this);
             caretaker.addMemento(originator.storeInMemento());
             SavedFiles++;
