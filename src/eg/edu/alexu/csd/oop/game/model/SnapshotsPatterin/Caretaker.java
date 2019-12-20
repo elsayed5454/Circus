@@ -17,7 +17,7 @@ public class Caretaker {
             SavedCircus.remove(i);
         }
     }
-    public int getSizee(){
+    public int getSize(){
         return SavedCircus.size();
     }
 }

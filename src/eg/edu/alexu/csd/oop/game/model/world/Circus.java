@@ -51,7 +51,7 @@ public class Circus implements World {
     ImagePool imagePool;
     IStrategy strategy;
     private List<IObserver> observers = new ArrayList<>();
-    IObserver Scoreobserver, Timeobserver, Platesobserver;
+    IObserver scoreObserver, timeObserver, plateObserver;
     Caretaker caretaker = new Caretaker();
     Originator originator = new Originator();
 
@@ -89,9 +89,9 @@ public class Circus implements World {
         //game level constructor according to the strategy
         this.strategy = strategy;
 
-        Scoreobserver = new Score(this);
-        Timeobserver = new Time(this);
-        Platesobserver = new Plates(this);
+        scoreObserver = new Score(this);
+        timeObserver = new Time(this);
+        plateObserver = new Plates(this);
     }
 
     @Override
@@ -103,8 +103,8 @@ public class Circus implements World {
         GameObject clown = controllable.get(0);
         GameObject rightStick = controllable.get(1);
         GameObject leftStick = controllable.get(2);
-        rightStick.setX(clown.getX() + (int) (clown.getWidth() * 0.7));
-        leftStick.setX(clown.getX() + (int) (clown.getWidth() * 0.18));
+        rightStick.setX(clown.getX() + (int) (clown.getWidth() * 0.82));
+        leftStick.setX(clown.getX() + (int) (clown.getWidth() * 0.01));
 
         movable = imagePool.getInUse();
         IList movableList = new GameObjectList(movable);
@@ -177,7 +177,7 @@ public class Circus implements World {
                     ((ImageObject) plate).setState(new Caught());
                     ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                     rightStickPlates.add(plate);
-                    this.registerOnly(Platesobserver);
+                    this.registerOnly(plateObserver);
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     isRightStickEmpty = false;
@@ -192,7 +192,7 @@ public class Circus implements World {
                 //catch the plate if the difference is acceptable
                 if (difference < strategy.differenceBetweenPlateAndPlate()) {
                     ((ImageObject) plate).setState(new Caught());
-                    this.registerOnly(Platesobserver);
+                    this.registerOnly(plateObserver);
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
@@ -214,7 +214,7 @@ public class Circus implements World {
                     ((ImageObject) plate).setState(new Caught());
                     ((ImageObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
                     leftStickPlates.add(plate);
-                    this.registerOnly(Platesobserver);
+                    this.registerOnly(plateObserver);
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     isLeftStickEmpty = false;
@@ -227,7 +227,7 @@ public class Circus implements World {
                 if (difference < strategy.differenceBetweenPlateAndPlate()) {
                     ((ImageObject) plate).setState(new Caught());
                     ((ImageObject) plate).setDistFromStick(leftStick.getX() - plate.getX());
-                    this.registerOnly(Platesobserver);
+                    this.registerOnly(plateObserver);
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     leftStickPlates.add(plate);
@@ -265,11 +265,11 @@ public class Circus implements World {
                     isLeftStickEmpty = removeUpperThreePlates(stickPlates);
                     BoolObserver = isLeftStickEmpty;
                 }
-                this.registerOnly(Platesobserver);
+                this.registerOnly(plateObserver);
                 this.notifyRegisteredUsers(BoolObserver);
                 this.registerall();
                 score += 30;
-                this.registerOnly(Scoreobserver);
+                this.registerOnly(scoreObserver);
                 this.notifyRegisteredUsers(score);
                 this.registerall();
             }
@@ -346,9 +346,9 @@ public class Circus implements World {
 
     public void registerall() {
         observers.clear();
-        observers.add(this.Scoreobserver);
-        observers.add(this.Timeobserver);
-        observers.add(this.Platesobserver);
+        observers.add(this.scoreObserver);
+        observers.add(this.timeObserver);
+        observers.add(this.plateObserver);
 
     }
 

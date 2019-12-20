@@ -46,25 +46,32 @@ public class MainMenu {
 
         //label works as a button for easy level
         //first button for before hovering
-        JLabel easyButton = buttonGenerator.generateFirst("EASY", width / 2 - 110, height / 2 - 45 , 220, 40);
+        JLabel easyButton = buttonGenerator.generateFirst("Easy", width / 2 - 110, height / 2 - 87 , 220, 40);
         bg.add(easyButton);
 
         //second buttons for after hovering
-        JLabel easyButton2 = buttonGenerator.generateSecond("EASY", width / 2 - 110, height / 2 - 45);
+        JLabel easyButton2 = buttonGenerator.generateSecond("Easy", width / 2 - 110, height / 2 - 87);
         bg.add(easyButton2);
 
 
-        JLabel mediumButton = buttonGenerator.generateFirst("MEDIUM", width / 2 - 110, height / 2, 220, 40);
+        JLabel mediumButton = buttonGenerator.generateFirst("Normal", width / 2 - 110, height / 2 - 42,  220, 40);
         bg.add(mediumButton);
 
-        JLabel mediumButton2 = buttonGenerator.generateSecond("MEDIUM", width / 2 - 110, height / 2);
+        JLabel mediumButton2 = buttonGenerator.generateSecond("Normal", width / 2 - 110, height / 2 - 42);
         bg.add(mediumButton2);
 
-        JLabel hardButton = buttonGenerator.generateFirst("HARD", width / 2 - 110 , height / 2 + 45 , 220, 40 );
+        JLabel hardButton = buttonGenerator.generateFirst("Hard", width / 2 - 110 , height / 2 + 3 , 220, 40 );
         bg.add(hardButton);
 
-        JLabel hardButton2 = buttonGenerator.generateSecond("HARD", width / 2 - 110 , height / 2 + 45);
+        JLabel hardButton2 = buttonGenerator.generateSecond("Hard", width / 2 - 110 , height / 2 + 3);
         bg.add(hardButton2);
+
+        JLabel loadButton = buttonGenerator.generateFirst("Load", width / 2 - 110, height / 2 + 80 , 220, 40);
+        JLabel loadButton2 = buttonGenerator.generateSecond("Load", width / 2 - 110, height / 2 + 80);
+        bg.add(loadButton);
+        bg.add(loadButton2);
+
+
 
         OptionsMenu optionsMenu = new OptionsMenu(width, height);
 
@@ -81,6 +88,31 @@ public class MainMenu {
         JLabel start2 = buttonGenerator.generateSecond("START", width / 2 - 110, height / 2 + 190);
         bg.add(start);
         bg.add(start2);
+
+        loadButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                loadButton.setSize(0,0);
+                loadButton2.setSize(220,40);
+            }
+        });
+
+        //when the mouse hovers out the button the second button vanishes and the first appears
+        loadButton2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                if (mediumButton.getWidth() != 0 && hardButton.getWidth() != 0 && easyButton.getWidth() != 0) {
+                    loadButton2.setSize(0, 0);
+                    loadButton2.setSize(220, 40);
+                }
+            }
+
+            //start the game at easy level
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+        });
 
         //when the mouse is hovering make the first button vanish and the second button appears
         easyButton.addMouseListener(new MouseAdapter() {
@@ -107,6 +139,7 @@ public class MainMenu {
                 easyButton2.setSize(0, 0);
                 mediumButton.setSize(0, 0);
                 hardButton.setSize(0, 0);
+                loadButton.setSize(0,0);
                 choose.setSize(800,60);
                 for (int i = 0 ; i < choices.length ; i++){
                     choices[i].setSize(90, 100);
@@ -138,6 +171,7 @@ public class MainMenu {
                 easyButton.setSize(0,0);
                 mediumButton2.setSize(0, 0);
                 hardButton.setSize(0,0);
+                loadButton.setSize(0,0);
                 choose.setSize(800,60);
                 for (int i = 0 ; i < choices.length ; i++){
                     choices[i].setSize(90, 100);
@@ -169,6 +203,7 @@ public class MainMenu {
                 easyButton.setSize(0,0);
                 mediumButton.setSize(0,0);
                 hardButton2.setSize(0, 0);
+                loadButton.setSize(0,0);
                 choose.setSize(800,60);
                 for (int i = 0 ; i < choices.length ; i++){
                     choices[i].setSize(90, 100);

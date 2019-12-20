@@ -14,13 +14,8 @@ public class GameObjectIterator implements IIterator {
     }
 
     @Override
-    public void first() {
-        position = 0;
-    }
-
-    @Override
-    public GameObject next() {
-        return List.get(position++);
+    public void next() {
+        position ++;
     }
 
     @Override
@@ -29,17 +24,8 @@ public class GameObjectIterator implements IIterator {
     }
 
     @Override
-    public GameObject get(int index) {
-        return List.get(index);
-    }
-
-    @Override
     public boolean hasNext() {
         return position < List.size();
     }
 
-    @Override
-    public int size() {
-        return (position + 1);
-    }
 }

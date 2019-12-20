@@ -47,19 +47,15 @@ public class MenuBar {
         //option for exiting the game
         JMenuItem exitMenuItem = new JMenuItem("Exit");
 
-        //option for undo the game
-        JMenuItem undoItem = new JMenuItem("Undo");
-
-        //option for redo the game
-        JMenuItem redoItem = new JMenuItem("Redo");
+        //option for saving the game
+        JMenuItem saveItem = new JMenuItem("Save");
 
         menu.add(newMenuItem);
         menu.addSeparator();
         menu.add(pauseMenuItem);
         menu.add(resumeMenuItem);
         menu.add(exitMenuItem);
-        menu.add(undoItem);
-        menu.add(redoItem);
+        menu.add(saveItem);
 
         menuBar.add(menu);
 
@@ -85,18 +81,13 @@ public class MenuBar {
             gameLogger.logger.info(" The User Exits From The Game ");
         });
 
-        undoItem.addActionListener(e -> {
-                    setCircus(((Circus) circus).Undo());
-                    gameController.changeWorld(circus);
-                    gameLogger.logger.info(" Undo Step is Done ");
+        saveItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
         });
 
-
-        redoItem.addActionListener(e -> {
-            setCircus(((Circus)circus).Redo());
-            gameController.changeWorld(circus);
-            gameLogger.logger.info(" Redo Step is Done ");
-        });
     }
 
     public void setCircus(World circus) {

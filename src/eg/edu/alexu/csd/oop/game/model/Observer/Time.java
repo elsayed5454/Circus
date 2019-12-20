@@ -7,10 +7,7 @@ import java.util.logging.Level;
 
 public class Time implements  IObserver {
 
-    private Circus game;
-
     public Time(Circus game) {
-        this.game = game;
         game.register(this);
     }
     @Override
