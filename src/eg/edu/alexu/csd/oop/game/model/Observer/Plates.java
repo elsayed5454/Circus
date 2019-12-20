@@ -13,14 +13,15 @@ public class Plates implements IObserver {
         game.register(this);
     }
     @Override
-    public void update(int updatedValue) {
-           if(updatedValue==1) {
-               //System.out.println("Intersection is happened");
-               GameLogger.getInstance().logger.info("Intersection is happened" );
-           }
-           else if (updatedValue==2){
+    public void update(Object updatedValue) {
+
+           if (updatedValue instanceof Boolean){
                //System.out.println("3 plates of same color ");
                GameLogger.getInstance().logger.info("3 plates of same color " );
            }
+        else  {
+            //System.out.println("Intersection is happened");
+            GameLogger.getInstance().logger.info("Intersection is happened" );
+        }
     }
 }
