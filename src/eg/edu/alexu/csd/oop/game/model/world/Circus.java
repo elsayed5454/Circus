@@ -27,13 +27,13 @@ public class Circus implements World {
     private final int MAX_TIME = 2 * 60 * 1000; // 2 minute
     // The system time when the game starts
     private final long startTime = System.currentTimeMillis();
-    private final List<GameObject> constant = new LinkedList<>();       // Non moving objects in the game
-    private final List<GameObject> movable = new LinkedList<>();        // Auto moving objects in the game
-    private final List<GameObject> controllable = new LinkedList<>();   // Objects that the user control its movement in the game
-    private final LinkedList<GameObject> rightStickPlates = new LinkedList<>();
-    private final LinkedList<GameObject> leftStickPlates = new LinkedList<>();
-    private final int width;    // The width of the screen
-    private final int height;   // The height of the screen
+    private  List<GameObject> constant = new LinkedList<>();       // Non moving objects in the game
+    private  List<GameObject> movable = new LinkedList<>();        // Auto moving objects in the game
+    private  List<GameObject> controllable = new LinkedList<>();   // Objects that the user control its movement in the game
+    private  LinkedList<GameObject> rightStickPlates = new LinkedList<>();
+    private  LinkedList<GameObject> leftStickPlates = new LinkedList<>();
+    private int width = 0;    // The width of the screen
+    private int height = 0;   // The height of the screen
     private int score = 0;      // Current score
     private static final int MOVING = 0;    // Plate is moving
     private static final int CAUGHT = 1;   // Plate is caught
@@ -56,11 +56,14 @@ public class Circus implements World {
     Originator originator = new Originator();
     int SavedFiles=0;
     int CurrentFile=0;
-    int count;
+    private List<String> jars;
+
+    private Circus (){}
 
     public Circus(int width, int height, IStrategy strategy, List<String> jars) {
         this.width = width;
         this.height = height;
+        this.jars = jars;
         imagePool = new ImagePool(width, height, jars);
         FlyweightimageFactory = new FlyweightImageFactory(jars);
 
@@ -392,7 +395,7 @@ public class Circus implements World {
 
     public void Save(){
         if(SavedFiles==caretaker.getSizee()) {
-            originator.set(this);
+            originator.set(clone(this));
             caretaker.addMemento(originator.storeInMemento());
             SavedFiles++;
             CurrentFile++;
@@ -400,12 +403,52 @@ public class Circus implements World {
         else{
             caretaker.RemoveAfterIndex(CurrentFile);
             SavedFiles=caretaker.getSizee();
-            originator.set(this);
+            originator.set(clone(this));
             caretaker.addMemento(originator.storeInMemento());
             SavedFiles++;
             CurrentFile++;
 
         }
+    }
+
+    public Circus clone (Circus circus){
+        Circus cloned = new Circus();
+        cloned.constant = circus.constant ;
+        for (GameObject gameObject : circus.movable){
+            cloned.movable.add(gameObject);
+        }
+        cloned.controllable = circus.controllable;
+        for (GameObject gameObject : circus.rightStickPlates){
+            cloned.rightStickPlates.add(gameObject);
+            cloned.isRightStickEmpty = false;
+        }
+        for (GameObject gameObject : circus.leftStickPlates){
+            cloned.leftStickPlates.add(gameObject);
+            cloned.isLeftStickEmpty = false;
+        }
+        cloned.width = circus.width;
+        cloned.height = circus.height;
+        cloned.score = circus.score;
+        cloned.Scoreobserver = new Score(cloned);
+        cloned.Timeobserver = new Time(cloned);
+        cloned.Platesobserver = new Plates(cloned);
+
+        cloned.movableList = new GameObjectList(cloned.movable);
+        cloned.controllableList = new GameObjectList(cloned.controllable);
+        cloned.controllableIterator = cloned.controllableList.createIterator();
+
+
+        cloned.caretaker = circus.caretaker;
+        cloned.originator = circus.originator;
+        cloned.SavedFiles = circus.SavedFiles;
+        cloned.CurrentFile = circus.CurrentFile;
+
+        cloned.jars = circus.jars;
+
+        cloned.FlyweightimageFactory = new FlyweightImageFactory(cloned.jars);
+        cloned.imagePool = new ImagePool(cloned.width, cloned.height, cloned.jars);
+        cloned.strategy = circus.strategy;
+        return cloned;
     }
 
 }

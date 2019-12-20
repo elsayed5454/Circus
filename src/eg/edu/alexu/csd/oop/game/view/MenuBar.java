@@ -6,6 +6,8 @@ import eg.edu.alexu.csd.oop.game.model.Strategy.IStrategy;
 import eg.edu.alexu.csd.oop.game.model.world.Circus;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public class MenuBar {
@@ -62,15 +64,22 @@ public class MenuBar {
 
         newMenuItem.addActionListener(e -> gameController.changeWorld(new Circus(width, height, strategy, jars)));
 
-        pauseMenuItem.addActionListener(e -> gameController.pause());
+        pauseMenuItem.addActionListener(actionEvent -> gameController.pause());
+
 
         resumeMenuItem.addActionListener(e -> gameController.resume());
 
         exitMenuItem.addActionListener(e -> System.exit(0));
 
-        undoItem.addActionListener(e -> setCircus(((Circus)circus).Undo()));
+        undoItem.addActionListener(e -> {
+            setCircus(((Circus)circus).Undo());
+            gameController.changeWorld(circus);
+        });
 
-        redoItem.addActionListener(e -> setCircus(((Circus)circus).Redo()));
+        redoItem.addActionListener(e -> {
+            setCircus(((Circus)circus).Redo());
+            gameController.changeWorld(circus);
+        });
     }
 
     public void setCircus(World circus) {

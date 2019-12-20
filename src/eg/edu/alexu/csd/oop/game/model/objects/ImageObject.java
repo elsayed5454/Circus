@@ -17,6 +17,8 @@ public class ImageObject implements GameObject {
     private boolean horizontalOnly;
     private String color = "white";
 
+    private ImageObject(){}
+
     public ImageObject(int posX, int posY, IState state, IShape shape) {
         this(posX, posY, state, false, shape.getImage());
         this.color = shape.getColor();
@@ -94,9 +96,23 @@ public class ImageObject implements GameObject {
     public void setHorizontalOnly() {
         this.horizontalOnly = true;
     }
+
     public String getColor() {
         return color;
     }
+
+//    public ImageObject clone() {
+//        ImageObject cloned = new ImageObject();
+//        cloned.spriteImages = this.spriteImages.clone();
+//        cloned.x = this.x ;
+//        cloned.y = this.y;
+//        cloned.state = this.state;
+//        cloned.distFromStick = this.distFromStick;
+//
+//
+//        return cloned;
+//
+//    }
 
 
 }
