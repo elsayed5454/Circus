@@ -27,9 +27,6 @@ public class FlyweightImageFactory {
             platesFactory.put("/circus.jpg", new BufferedImage[]{ImageIO.read(getClass().getResourceAsStream("/circus.jpg"))});
 
             shapesClasses = shapesLoader.loadShapesClasses(jars);
-            //platesFactory.put("/reddd.png", new BufferedImage[]{ImageIO.read(getClass().getResourceAsStream("/reddd.png"))});
-            //platesFactory.put("/blueee.png", new BufferedImage[]{ImageIO.read(getClass().getResourceAsStream("/blueee.png"))});
-            //platesFactory.put("/greennn.png", new BufferedImage[]{ImageIO.read(getClass().getResourceAsStream("/greennn.png"))});
 
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
