@@ -1,28 +1,31 @@
 package eg.edu.alexu.csd.oop.game.model.Pool;
 
-import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
 import eg.edu.alexu.csd.oop.game.GameObject;
-import eg.edu.alexu.csd.oop.game.model.objects.ImageObject;
+import eg.edu.alexu.csd.oop.game.model.AbstractFactory.MovableObjectFactory;
+import eg.edu.alexu.csd.oop.game.model.objects.MovableObject;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
 
 // Object Pool Pattern to reuse created objects when time objects expire
 // or they reaches the height of the screen
 public class ImagePool {
+    MovableObjectFactory movableFactory;
     private LinkedList<GameObject> available, inUse;
     private int sizeOnScreen;
     private int width, height;
     private Random rand = new Random();
 
-    public ImagePool(int width, int height, int size) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+    public ImagePool(int width, int height, int size) {
+        this.movableFactory = MovableObjectFactory.getInstance();
         this.sizeOnScreen = size;
         this.width = width;
         this.height = height;
         initialize();
     }
 
-    private void initialize() throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
+    private void initialize() {
         this.available = new LinkedList<>();
         this.inUse = new LinkedList<>();
         for(int i = 0; i < 100; i++) {
@@ -33,8 +36,8 @@ public class ImagePool {
         }
     }
 
-    private GameObject createGameObject() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-        GameObject po = FlyweightImageFactory.getShape(0, -1 * rand.nextInt(height), randomColor(rand.nextInt(3)));
+    private GameObject createGameObject() {
+        GameObject po = movableFactory.getShape(0, -1 * rand.nextInt(height), randomColor(rand.nextInt(3)));
         po.setX(rand.nextInt(width - po.getWidth()));
         return po;
     }
@@ -44,7 +47,7 @@ public class ImagePool {
         final int Moving = 0;       // Moving state
         int movingPlatesNum = 0;    // Number of moving plates in game
         for(GameObject plate : inUse) {
-            if(((ImageObject)plate).getState() == Moving) {
+            if(((MovableObject)plate).getState() == Moving) {
                 movingPlatesNum++;
             }
         }
