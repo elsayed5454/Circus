@@ -1,38 +1,34 @@
-Dec 20, 2019 2:26:06 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:35:23 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:26:06 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:35:26 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:26:06 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:35:38 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:26:13 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:35:42 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:26:40 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:35:43 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:26:43 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:35:43 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:26:45 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:41:50 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:26:48 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:41:53 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:26:55 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:43:06 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:27:05 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:43:10 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:27:20 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:44:52 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:27:30 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:44:57 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:27:30 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:45:01 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:27:45 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:45:01 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:27:47 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:46:56 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:28:02 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:47:00 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
-Dec 20, 2019 2:28:03 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 2:28:20 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
-INFO: Intersection is happened
-Dec 20, 2019 2:28:24 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+Dec 20, 2019 3:47:02 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened

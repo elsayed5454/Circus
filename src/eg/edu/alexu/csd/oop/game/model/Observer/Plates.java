@@ -22,6 +22,7 @@ public class Plates implements IObserver {
         else  {
             //System.out.println("Intersection is happened");
             GameLogger.getInstance().logger.info("Intersection is happened" );
+            game.Save();
         }
     }
 }
