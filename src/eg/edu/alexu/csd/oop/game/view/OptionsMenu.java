@@ -1,6 +1,7 @@
 package eg.edu.alexu.csd.oop.game.view;
 
 import eg.edu.alexu.csd.oop.game.control.GameMenu;
+import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
 import eg.edu.alexu.csd.oop.game.model.Strategy.IStrategy;
 
 import javax.swing.*;
@@ -11,7 +12,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class OptionsMenu {
-
+    private GameLogger gameLogger = GameLogger.getInstance();
     private int width;
     private int height;
 
@@ -83,15 +84,19 @@ public class OptionsMenu {
         List<String> jars = new LinkedList<>();
         if (chosen[0] == 1){
             jars.add("plateWithoutBase.jar");
+            gameLogger.logger.info(" the game starts with Plates without Base ");
         }
         if (chosen[1] == 1){
             jars.add("plateWithBase.jar");
+            gameLogger.logger.info(" the game starts with Plates with Base ");
         }
         if (chosen[2] == 1){
             jars.add("plateWithDeepBase.jar");
+            gameLogger.logger.info(" the game starts with Plates with Deep Base ");
         }
         if (chosen[3] == 1){
             jars.add("pot.jar");
+            gameLogger.logger.info(" the game starts with Pots ");
         }
 
         new GameMenu(jars, strategy, width, height).start();

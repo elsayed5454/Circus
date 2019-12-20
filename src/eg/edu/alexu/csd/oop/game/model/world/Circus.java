@@ -2,6 +2,7 @@ package eg.edu.alexu.csd.oop.game.model.world;
 
 import eg.edu.alexu.csd.oop.game.World;
 import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightImageFactory;
+import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
 import eg.edu.alexu.csd.oop.game.model.Observer.IObserver;
 import eg.edu.alexu.csd.oop.game.model.Observer.Plates;
 import eg.edu.alexu.csd.oop.game.model.Observer.Score;
@@ -43,6 +44,7 @@ public class Circus implements World {
 
     private final Random rand = new Random();
 
+    private GameLogger gameLogger = GameLogger.getInstance();
     private IList movableList;
     private IIterator movableIterator;
     private IList controllableList;
@@ -175,6 +177,7 @@ public class Circus implements World {
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     isRightStickEmpty = false;
+                    gameLogger.logger.info(" The First "+((ImageObject)rightStickPlates.get(0)).getColor()+" Plate Touches The Right Stick ");
                 }
             }
         } else {
@@ -190,6 +193,7 @@ public class Circus implements World {
                     this.registerall();
                     ((ImageObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                     rightStickPlates.add(plate);
+                    gameLogger.logger.info(" A New "+((ImageObject)rightStickPlates.get(rightStickPlates.size()-1)).getColor()+" Plate Touches The Right Stick ");
                     //drop the plates if the difference isn't acceptable
                 } else if (difference < plate.getWidth() - 22) {
                     ((ImageObject) plate).setState(new Falling());
@@ -210,6 +214,7 @@ public class Circus implements World {
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     isLeftStickEmpty = false;
+                    gameLogger.logger.info(" The First "+((ImageObject)leftStickPlates.get(0)).getColor()+" Plate Touches The Left Stick ");
                 }
             }
         } else {
@@ -222,6 +227,7 @@ public class Circus implements World {
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     leftStickPlates.add(plate);
+                    gameLogger.logger.info(" A New "+((ImageObject)leftStickPlates.get(leftStickPlates.size()-1)).getColor()+" Plate Touches The Left Stick ");
                 } else if (difference < plate.getWidth() - 22) {
                     ((ImageObject) plate).setState(new Falling());
                     ((ImageObject) leftStickPlates.getLast()).setState(new Falling());
