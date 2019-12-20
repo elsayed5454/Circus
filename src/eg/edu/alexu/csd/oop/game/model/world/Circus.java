@@ -6,6 +6,8 @@ import eg.edu.alexu.csd.oop.game.model.Observer.IObserver;
 import eg.edu.alexu.csd.oop.game.model.Observer.Plates;
 import eg.edu.alexu.csd.oop.game.model.Observer.Score;
 import eg.edu.alexu.csd.oop.game.model.Observer.Time;
+import eg.edu.alexu.csd.oop.game.model.SnapshotsPatterin.Caretaker;
+import eg.edu.alexu.csd.oop.game.model.SnapshotsPatterin.Originator;
 import eg.edu.alexu.csd.oop.game.model.State.Caught;
 import eg.edu.alexu.csd.oop.game.model.State.Falling;
 import eg.edu.alexu.csd.oop.game.model.State.Moving;
@@ -50,6 +52,10 @@ public class Circus implements World {
     IStrategy strategy;
     private List<IObserver> observers = new ArrayList<>();
     IObserver Scoreobserver, Timeobserver, Platesobserver;
+    Caretaker caretaker = new Caretaker();
+    Originator originator = new Originator();
+    int SavedFiles=0;
+    int CurrentFile=0;
 
     public Circus(int width, int height, IStrategy strategy) {
         this.width = width;
@@ -223,6 +229,8 @@ public class Circus implements World {
                 }
             }
         }
+
+        this.Save();
     }
 
     private void isThreeOfSameColor(LinkedList<GameObject> stickPlates) {
@@ -362,6 +370,39 @@ public class Circus implements World {
     public void notifyRegisteredUsers(int updatedValue) {
         for (IObserver observer : observers)
             observer.update(updatedValue);
+    }
+
+    public Circus Undo(){
+     if(CurrentFile>=1){
+         CurrentFile--;
+     }
+         return originator.restoreFromMemento(caretaker.getMemento(CurrentFile));
+    }
+
+    public Circus Redo(){
+
+        if((SavedFiles-1)>=CurrentFile){
+            CurrentFile++;
+        }
+        return originator.restoreFromMemento(caretaker.getMemento(CurrentFile));
+    }
+
+    public void Save(){
+        if(SavedFiles==caretaker.getSizee()) {
+            originator.set(this);
+            caretaker.addMemento(originator.storeInMemento());
+            SavedFiles++;
+            CurrentFile++;
+        }
+        else{
+            caretaker.RemoveAfterIndex(CurrentFile);
+            SavedFiles=caretaker.getSizee();
+            originator.set(this);
+            caretaker.addMemento(originator.storeInMemento());
+            SavedFiles++;
+            CurrentFile++;
+
+        }
     }
 
 }

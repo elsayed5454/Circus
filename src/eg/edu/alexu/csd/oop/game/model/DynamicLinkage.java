@@ -11,7 +11,7 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 public class DynamicLinkage {
-    private final String jarPath = "D:\\Main\\College\\Term_5\\2_16_33_47_circus\\Jars";
+    private final String jarPath = "C:\\Users\\ADMIN\\IdeaProjects\\2_16_33_47_circus\\Jars";
     private LinkedList<Class<?>> Shapes = new LinkedList<>();
 
     public DynamicLinkage() {}
