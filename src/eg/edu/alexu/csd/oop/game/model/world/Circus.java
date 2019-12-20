@@ -42,8 +42,7 @@ public class Circus implements World {
     private static final int MOVING = 0;    // Plate is moving
     private static final int CAUGHT = 1;   // Plate is caught
     private static final int FALLING = 2;   // Plate is falling
-    private boolean isRightStickEmpty = true;
-    private boolean isLeftStickEmpty = true;
+
 
     private final Random rand = new Random();
 
@@ -107,6 +106,18 @@ public class Circus implements World {
         IList movableList = new GameObjectList(movable);
         IIterator movableIterator = movableList.createIterator();
 
+        if (!rightStickPlates.isEmpty() && rightStickPlates.getLast().getY() <= 0 && !gameOver){
+            gameOver = true ;
+            new EndMenu(score, new ScreenResolution().getWidth(), new ScreenResolution().getHeight());
+            return false;
+        }
+
+        if (!leftStickPlates.isEmpty() && leftStickPlates.getLast().getY() <= 0 && !gameOver){
+            gameOver = true ;
+            new EndMenu(score, new ScreenResolution().getWidth(), new ScreenResolution().getHeight());
+            return false;
+        }
+
         while(movableIterator.hasNext()) {
             GameObject plate = movableIterator.currentItem();
             // If the plate is moving
@@ -145,8 +156,6 @@ public class Circus implements World {
                 if (plate.getY() == getHeight()) {
                     ((MovableObject) plate).setState(new Moving());
                     imagePool.releaseToPool(plate);
-                    //plate.setY(-1 * (int) (Math.random() * getHeight()));
-                    //plate.setX((int) (Math.random() * getWidth()));
                 }
             }
             if (movableIterator.hasNext()){
@@ -164,7 +173,7 @@ public class Circus implements World {
         GameObject rightStick = controllable.get(1);
         GameObject leftStick = controllable.get(2);
 
-        if (isRightStickEmpty) {
+        if (rightStickPlates.isEmpty()) {
             //check if plate touches the right stick
             if (plate.getY() + plate.getHeight() == rightStick.getY()) {
                 //the error between the center of the plate and the center of the stick
@@ -177,7 +186,6 @@ public class Circus implements World {
                     this.registerOnly(plateObserver);
                     this.notifyRegisteredUsers(1);
                     this.registerall();
-                    isRightStickEmpty = false;
                     gameLogger.logger.info(" The First "+((MovableObject)rightStickPlates.get(0)).getColor()+" Plate Touches The Right Stick ");
                 }
             }
@@ -197,14 +205,16 @@ public class Circus implements World {
                     gameLogger.logger.info(" A New "+((MovableObject)rightStickPlates.get(rightStickPlates.size()-1)).getColor()+" Plate Touches The Right Stick ");
                     //drop the plates if the difference isn't acceptable
                 } else if (difference < plate.getWidth() - 22) {
+                    if (score >= 10) {
+                        score -= 10 ;
+                    }
                     ((MovableObject) plate).setState(new Falling());
                     ((MovableObject) rightStickPlates.getLast()).setState(new Falling());
                     rightStickPlates.remove(rightStickPlates.size() - 1);
-                    isRightStickEmpty = rightStickPlates.isEmpty();
                 }
             }
         }
-        if (isLeftStickEmpty) {
+        if (leftStickPlates.isEmpty()) {
             if (plate.getY() + plate.getHeight() == leftStick.getY()) {
                 int difference = Math.abs(leftStick.getX() - plate.getX() - 27);
                 if (difference < strategy.differenceBetweenPlateAndStick()) {
@@ -214,7 +224,6 @@ public class Circus implements World {
                     this.registerOnly(plateObserver);
                     this.notifyRegisteredUsers(1);
                     this.registerall();
-                    isLeftStickEmpty = false;
                     gameLogger.logger.info(" The First "+((MovableObject)leftStickPlates.get(0)).getColor()+" Plate Touches The Left Stick ");
                 }
             }
@@ -230,10 +239,12 @@ public class Circus implements World {
                     leftStickPlates.add(plate);
                     gameLogger.logger.info(" A New "+((MovableObject)leftStickPlates.get(leftStickPlates.size()-1)).getColor()+" Plate Touches The Left Stick ");
                 } else if (difference < plate.getWidth() - 22) {
+                    if (score >= 10) {
+                        score -= 10 ;
+                    }
                     ((MovableObject) plate).setState(new Falling());
                     ((MovableObject) leftStickPlates.getLast()).setState(new Falling());
                     leftStickPlates.remove(leftStickPlates.size() - 1);
-                    isLeftStickEmpty = leftStickPlates.isEmpty();
                 }
             }
         }
@@ -256,11 +267,11 @@ public class Circus implements World {
             if (counter == 3) {
                 counter = 0;
                 if (stickPlates == rightStickPlates) {
-                    isRightStickEmpty = removeUpperThreePlates(stickPlates);
-                    BoolObserver = isRightStickEmpty;
+                    removeUpperThreePlates(stickPlates);
+                    BoolObserver = rightStickPlates.isEmpty();
                 } else {
-                    isLeftStickEmpty = removeUpperThreePlates(stickPlates);
-                    BoolObserver = isLeftStickEmpty;
+                    removeUpperThreePlates(stickPlates);
+                    BoolObserver = leftStickPlates.isEmpty();
                 }
                 this.registerOnly(plateObserver);
                 this.notifyRegisteredUsers(BoolObserver);
@@ -273,7 +284,7 @@ public class Circus implements World {
         }
     }
 
-    private boolean removeUpperThreePlates(LinkedList<GameObject> stickPlates) {
+    private void removeUpperThreePlates(LinkedList<GameObject> stickPlates) {
         int len = stickPlates.size();
         for (int i = len - 1; i >= len - 3; i--) {
             ((MovableObject) stickPlates.get(i)).setState(new Moving());
@@ -285,7 +296,6 @@ public class Circus implements World {
 
             stickPlates.remove(i);
         }
-        return stickPlates.isEmpty();
     }
 
     @Override
