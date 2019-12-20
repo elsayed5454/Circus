@@ -37,8 +37,4 @@ public class MovableObjectFactory implements GameObjectFactory {
         return new MovableObject(x, y, movingState, pathOrColor, shape.getImage());
     }
 
-    @Override
-    public void resetShape(GameObject gameObject) {
-
-    }
 }
