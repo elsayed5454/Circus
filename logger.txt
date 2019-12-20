@@ -172,3 +172,9 @@ Dec 20, 2019 3:02:15 AM eg.edu.alexu.csd.oop.game.model.Observer.Score update
 INFO: Score: 30
 Dec 20, 2019 3:02:17 AM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
 INFO: Intersection is happened
+Dec 20, 2019 2:11:05 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
+Dec 20, 2019 2:11:07 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
+Dec 20, 2019 2:11:10 PM eg.edu.alexu.csd.oop.game.model.Observer.Plates update
+INFO: Intersection is happened
