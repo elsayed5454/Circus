@@ -7,6 +7,7 @@ public class Caretaker {
 
     public void addMemento(Memento m){
         SavedCircus.add(m);
+        System.out.println(SavedCircus.size());
     }
     public Memento getMemento(int index){
         return SavedCircus.get(index);

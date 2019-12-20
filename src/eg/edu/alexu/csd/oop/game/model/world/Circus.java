@@ -58,6 +58,7 @@ public class Circus implements World {
     Originator originator = new Originator();
     int SavedFiles=0;
     int CurrentFile=0;
+    int count;
 
     public Circus(int width, int height, IStrategy strategy, List<String> jars) {
         this.width = width;
@@ -237,7 +238,6 @@ public class Circus implements World {
             }
         }
 
-        this.Save();
     }
 
     private void isThreeOfSameColor(LinkedList<GameObject> stickPlates) {
