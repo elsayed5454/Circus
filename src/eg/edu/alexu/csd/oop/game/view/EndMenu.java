@@ -1,12 +1,14 @@
 package eg.edu.alexu.csd.oop.game.view;
 
+import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class EndMenu {
-
+    private GameLogger gameLogger = GameLogger.getInstance();
     private int score ;
     private int width ;
     private int height;
@@ -76,6 +78,7 @@ public class EndMenu {
             public void mouseClicked(MouseEvent e) {
                 frame.setVisible(false);
                 new MainMenu(width, height);
+
             }
         });
 
@@ -97,6 +100,7 @@ public class EndMenu {
             @Override
             public void mouseClicked(MouseEvent e) {
                 System.exit(0);
+                gameLogger.logger.info(" Game is Ended ^_^ ");
             }
         });
 
