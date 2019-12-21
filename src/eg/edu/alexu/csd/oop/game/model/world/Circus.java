@@ -95,7 +95,7 @@ public class Circus implements World {
         // Time ends and game over
         boolean timeout = System.currentTimeMillis() - startTime > MAX_TIME;
         if(timeout){
-            gameLogger.logger.info("Game Over");
+            gameLogger.log.info("Game Over");
         }
         // Bound sticks to clown position
         GameObject clown = controllable.get(0);
@@ -111,12 +111,14 @@ public class Circus implements World {
         if (!rightStickPlates.isEmpty() && rightStickPlates.getLast().getY() <= 0 && !gameOver){
             gameOver = true ;
             new EndMenu(score, new ScreenResolution().getWidth(), new ScreenResolution().getHeight());
+            gameLogger.log.info(" Game Over ");
             return false;
         }
 
         if (!leftStickPlates.isEmpty() && leftStickPlates.getLast().getY() <= 0 && !gameOver){
             gameOver = true ;
             new EndMenu(score, new ScreenResolution().getWidth(), new ScreenResolution().getHeight());
+            gameLogger.log.info(" Game Over ");
             return false;
         }
 
@@ -167,6 +169,7 @@ public class Circus implements World {
         if (timeout && !gameOver){
             gameOver = true ;
             new EndMenu(score, new ScreenResolution().getWidth(), new ScreenResolution().getHeight());
+            gameLogger.log.info(" Game Over ");
         }
         return !timeout;
     }
@@ -188,7 +191,7 @@ public class Circus implements World {
                     this.registerOnly(plateObserver);
                     this.notifyRegisteredUsers(1);
                     this.registerall();
-                    gameLogger.logger.info(" The First "+((MovableObject)rightStickPlates.get(0)).getColor()+" Plate Touches The Right Stick ");
+                    gameLogger.log.info(" The First "+((MovableObject)rightStickPlates.get(0)).getColor()+" Plate Touches The Right Stick ");
                 }
             }
         } else {
@@ -204,10 +207,10 @@ public class Circus implements World {
                     this.registerall();
                     ((MovableObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                     rightStickPlates.add(plate);
-                    gameLogger.logger.info(" A New "+((MovableObject)rightStickPlates.get(rightStickPlates.size()-1)).getColor()+" Plate Touches The Right Stick ");
+                    gameLogger.log.info(" A New "+((MovableObject)rightStickPlates.get(rightStickPlates.size()-1)).getColor()+" Plate Touches The Right Stick ");
                     //drop the plates if the difference isn't acceptable
                 } else if (difference < plate.getWidth() - 22) {
-                    gameLogger.logger.info( "The "+((MovableObject)rightStickPlates.get(rightStickPlates.size()-1)).getColor()+" Plate is dropped");
+                    gameLogger.log.info( "The "+((MovableObject)rightStickPlates.get(rightStickPlates.size()-1)).getColor()+" Plate is dropped");
                     if (score >= 10) {
                         score -= 10 ;
                     }
@@ -227,7 +230,7 @@ public class Circus implements World {
                     this.registerOnly(plateObserver);
                     this.notifyRegisteredUsers(1);
                     this.registerall();
-                    gameLogger.logger.info(" The First "+((MovableObject)leftStickPlates.get(0)).getColor()+" Plate Touches The Left Stick ");
+                    gameLogger.log.info(" The First "+((MovableObject)leftStickPlates.get(0)).getColor()+" Plate Touches The Left Stick ");
                 }
             }
         } else {
@@ -240,9 +243,9 @@ public class Circus implements World {
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     leftStickPlates.add(plate);
-                    gameLogger.logger.info(" A New "+((MovableObject)leftStickPlates.get(leftStickPlates.size()-1)).getColor()+" Plate Touches The Left Stick ");
+                    gameLogger.log.info(" A New "+((MovableObject)leftStickPlates.get(leftStickPlates.size()-1)).getColor()+" Plate Touches The Left Stick ");
                 } else if (difference < plate.getWidth() - 22) {
-                    gameLogger.logger.info( "The "+((MovableObject)leftStickPlates.get(leftStickPlates.size()-1)).getColor()+" Plate is dropped");
+                    gameLogger.log.info( "The "+((MovableObject)leftStickPlates.get(leftStickPlates.size()-1)).getColor()+" Plate is dropped");
                     if (score >= 10) {
                         score -= 10 ;
                     }

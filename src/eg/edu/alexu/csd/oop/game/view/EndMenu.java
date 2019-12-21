@@ -100,7 +100,7 @@ public class EndMenu {
             @Override
             public void mouseClicked(MouseEvent e) {
                 System.exit(0);
-                gameLogger.logger.info(" Game is Ended ^_^ ");
+                gameLogger.log.info(" Game is Ended ^_^ ");
             }
         });
 

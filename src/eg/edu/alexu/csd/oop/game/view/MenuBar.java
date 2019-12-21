@@ -63,22 +63,22 @@ public class MenuBar {
 
         newMenuItem.addActionListener(e -> {
             gameController.changeWorld(new Circus(width, height, strategy, jars));
-            gameLogger.logger.info(" New Game is started ");
+            gameLogger.log.info(" New Game is started ");
         });
 
         pauseMenuItem.addActionListener(e -> {
             gameController.pause();
-            gameLogger.logger.info(" The Game is paused ");
+            gameLogger.log.info(" The Game is paused ");
         });
 
         resumeMenuItem.addActionListener(e -> {
             gameController.resume();
-            gameLogger.logger.info(" The Game is resumed");
+            gameLogger.log.info(" The Game is resumed");
         });
 
         exitMenuItem.addActionListener(e -> {
             System.exit(0);
-            gameLogger.logger.info(" The User Exits From The Game ");
+            gameLogger.log.info(" The User Exits From The Game ");
         });
 
         saveItem.addActionListener(new ActionListener() {

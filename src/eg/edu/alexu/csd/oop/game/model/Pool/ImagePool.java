@@ -2,11 +2,13 @@ package eg.edu.alexu.csd.oop.game.model.Pool;
 
 import eg.edu.alexu.csd.oop.game.GameObject;
 import eg.edu.alexu.csd.oop.game.model.AbstractFactory.MovableObjectFactory;
+import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
 import eg.edu.alexu.csd.oop.game.model.objects.MovableObject;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Level;
 
 // Object Pool Pattern to reuse created objects when time objects expire
 // or they reaches the height of the screen
@@ -16,6 +18,7 @@ public class ImagePool {
     private int sizeOnScreen;
     private int width, height;
     private Random rand = new Random();
+    private GameLogger gameLogger = GameLogger.getInstance();
 
     public ImagePool(int width, int height, int size) {
         this.movableFactory = MovableObjectFactory.getInstance();
@@ -39,6 +42,7 @@ public class ImagePool {
     private GameObject createGameObject() {
         GameObject po = movableFactory.getShape(0, -1 * rand.nextInt(height), randomColor(rand.nextInt(3)));
         po.setX(rand.nextInt(width - po.getWidth()));
+        gameLogger.log.debug( " A New Plate is Created ");
         return po;
     }
 
