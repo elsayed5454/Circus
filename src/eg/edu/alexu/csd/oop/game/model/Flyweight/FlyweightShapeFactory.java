@@ -43,7 +43,6 @@ public class FlyweightShapeFactory {
 
                     // Ex: key: "redPot" & value: its shape
                     shapesMap.put(color + clazz.getSimpleName(), tmpShape);
-                    gameLogger.log.debug(" Map Of Shapes is successfully Created ");
                 }
             }
         } catch (IOException | ClassNotFoundException e) {

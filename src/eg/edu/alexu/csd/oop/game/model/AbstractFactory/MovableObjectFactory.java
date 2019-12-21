@@ -2,7 +2,6 @@ package eg.edu.alexu.csd.oop.game.model.AbstractFactory;
 
 import eg.edu.alexu.csd.oop.game.GameObject;
 import eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightShapeFactory;
-import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
 import eg.edu.alexu.csd.oop.game.model.Shapes.IShape;
 import eg.edu.alexu.csd.oop.game.model.State.IState;
 import eg.edu.alexu.csd.oop.game.model.State.Moving;
@@ -12,7 +11,6 @@ import java.util.List;
 
 public class MovableObjectFactory implements GameObjectFactory {
     private final IState movingState = new Moving();
-    private GameLogger gameLogger = GameLogger.getInstance();
     FlyweightShapeFactory shapeFactory;
     private static MovableObjectFactory instance;
 
@@ -36,7 +34,6 @@ public class MovableObjectFactory implements GameObjectFactory {
     @Override
     public GameObject getShape(int x, int y, String pathOrColor) {
         IShape shape = shapeFactory.getShape(pathOrColor);
-        gameLogger.log.debug(" The Plates are Successfully Created ");
         return new MovableObject(x, y, movingState, pathOrColor, shape.getImage());
     }
 

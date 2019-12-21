@@ -72,6 +72,7 @@ public class Circus implements World {
         // The clown
         GameObjectFactory controllableFactory = new ControllableObjectFactory();
         controllable.add(controllableFactory.getShape(0, 0, "/clown.png"));
+        gameLogger.log.debug(" The Clown is Successfully Created ");
         controllable.get(0).setX(width / 2 - controllable.get(0).getWidth() / 2);
         controllable.get(0).setY((int) (height * 0.96 - controllable.get(0).getHeight()));
         ((ControllableObject) controllable.get(0)).setHorizontalOnly();
@@ -79,7 +80,9 @@ public class Circus implements World {
         // The two sticks
         int clownHandHeight = controllable.get(0).getY() + (int) (controllable.get(0).getHeight() * 0.01);
         controllable.add(controllableFactory.getShape(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.7), clownHandHeight, "/rightStick.png"));
+        gameLogger.log.debug(" The Right Stick is Successfully Created ");
         controllable.add(controllableFactory.getShape(controllable.get(0).getX() + (int) (controllable.get(0).getWidth() * 0.18), clownHandHeight, "/leftStick.png"));
+        gameLogger.log.debug(" The Left Stick is Successfully Created ");
 
         // Game level constructor according to the strategy
         this.strategy = strategy;
@@ -94,9 +97,6 @@ public class Circus implements World {
     public boolean refresh() {
         // Time ends and game over
         boolean timeout = System.currentTimeMillis() - startTime > MAX_TIME;
-        if(timeout){
-            gameLogger.log.info("Game Over");
-        }
         // Bound sticks to clown position
         GameObject clown = controllable.get(0);
         GameObject rightStick = controllable.get(1);
