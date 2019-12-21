@@ -37,7 +37,7 @@ public class MainMenu {
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
         //label covering the frame for the background
-        ImageIcon bgImg = new ImageIcon(getClass().getResource("/background1.jpg"));
+        ImageIcon bgImg = new ImageIcon(getClass().getResource("/background.jpg"));
         JLabel bg = new JLabel("" ,  bgImg , JLabel.CENTER) ;
         bg.setSize(width, height);
         frame.add(bg);

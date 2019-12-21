@@ -12,6 +12,5 @@ public class GameMain {
 
         //start main menu
         new MainMenu(sr.getWidth(), sr.getHeight());
-
     }
 }

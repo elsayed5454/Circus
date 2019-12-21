@@ -127,8 +127,7 @@ public class Circus implements World {
                 // If the plate reaches bottom of the screen, reuse it
                 if (plate.getY() == getHeight()) {
                     imagePool.releaseToPool(plate);
-                    //plate.setY(-1 * (int) (Math.random() * getHeight()));
-                    //plate.setX((int) (Math.random() * getWidth()));
+
                 }
 
                 // Check if a plate touches a stick or a plate and add it
