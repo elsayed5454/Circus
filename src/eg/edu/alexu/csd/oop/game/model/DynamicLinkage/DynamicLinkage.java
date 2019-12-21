@@ -1,5 +1,7 @@
 package eg.edu.alexu.csd.oop.game.model.DynamicLinkage;
 
+import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -14,6 +16,7 @@ import java.util.jar.JarFile;
 public class DynamicLinkage {
     private final String jarPath = new File("").getAbsolutePath() + "\\Jars" ;
     private LinkedList<Class<?>> Shapes = new LinkedList<>();
+    private GameLogger gameLogger = GameLogger.getInstance();
 
     public DynamicLinkage() {}
 
@@ -24,7 +27,7 @@ public class DynamicLinkage {
                 JarFile jar = new JarFile(file);
                 Enumeration<JarEntry> e = jar.entries();
 
-                 URL[] urls = {new URL("jar:file:" + file.getPath() + "!/")};
+                URL[] urls = {new URL("jar:file:" + file.getPath() + "!/")};
                 URLClassLoader classLoader = URLClassLoader.newInstance(urls);
 
                 while (e.hasMoreElements()) {
@@ -44,6 +47,7 @@ public class DynamicLinkage {
                 }
             }
         }
+        gameLogger.log.debug(" The Jar is Successfully loaded ");
         return Shapes;
     }
 }

@@ -180,7 +180,7 @@ public class MainMenu {
                 }
                 start.setSize(220,40);
                 strategy = new MediumStrategy();
-                gameLogger.log.info(" the game is in Medium Mode -_- ");
+                gameLogger.log.info(" the game is in Normal Mode -_- ");
             }
         });
 
@@ -238,6 +238,7 @@ public class MainMenu {
 
             @Override
             public void mouseClicked(MouseEvent e) {
+                gameLogger.log.info(" Game is Ended ^_^ ");
                 System.exit(0);
             }
         });
