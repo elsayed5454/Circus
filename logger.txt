@@ -1,0 +1,374 @@
+2019-12-21 04:49:58,858 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 04:50:00,877  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 215 -  the game is in Hard Mode '_' 
+2019-12-21 04:50:04,474  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 04:50:04,475  INFO [AWT-EventQueue-0] - MainLog.start 128 -  the game starts with Pots 
+2019-12-21 04:50:04,514 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 04:50:04,911 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 04:50:04,965 DEBUG [AWT-EventQueue-0] - MainLog.<init> 75 -  The Clown is Successfully Created 
+2019-12-21 04:50:04,970 DEBUG [AWT-EventQueue-0] - MainLog.<init> 83 -  The Right Stick is Successfully Created 
+2019-12-21 04:50:04,974 DEBUG [AWT-EventQueue-0] - MainLog.<init> 85 -  The Left Stick is Successfully Created 
+2019-12-21 04:50:05,034  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 04:50:08,034 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 04:50:08,034  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 04:50:08,034  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 194 -  The First green Plate Touches The Right Stick 
+2019-12-21 04:50:10,319 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 04:50:10,319  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 04:50:10,319  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 210 -  A New green Plate Touches The Right Stick 
+2019-12-21 04:50:17,057 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 04:50:17,057  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 04:50:17,057  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 210 -  A New green Plate Touches The Right Stick 
+2019-12-21 04:50:17,057  INFO [AWT-EventQueue-0] - MainLog.update 20 - 3 plates of same color 
+2019-12-21 04:50:17,057  INFO [AWT-EventQueue-0] - MainLog.update 18 - Score: 30
+2019-12-21 04:50:18,878 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 04:50:18,878  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 04:50:18,879  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 233 -  The First red Plate Touches The Left Stick 
+2019-12-21 04:50:20,936 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 04:50:20,936  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 04:50:20,936  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 246 -  A New red Plate Touches The Left Stick 
+2019-12-21 04:50:21,626 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 04:50:21,626  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 04:50:21,626  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 194 -  The First blue Plate Touches The Right Stick 
+2019-12-21 04:50:22,701 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 04:50:22,701  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 04:50:22,701  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 246 -  A New red Plate Touches The Left Stick 
+2019-12-21 04:50:22,701  INFO [AWT-EventQueue-0] - MainLog.update 20 - 3 plates of same color 
+2019-12-21 04:50:22,701  INFO [AWT-EventQueue-0] - MainLog.update 18 - Score: 60
+2019-12-21 04:50:23,491  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 213 - The blue Plate is dropped
+2019-12-21 04:50:26,405 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 04:50:26,405  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 04:50:26,405  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 194 -  The First red Plate Touches The Right Stick 
+2019-12-21 04:50:29,980 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 04:50:29,980  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 04:50:29,980  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 210 -  A New blue Plate Touches The Right Stick 
+2019-12-21 04:58:03,456 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 04:58:05,068  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 215 -  the game is in Hard Mode '_' 
+2019-12-21 04:58:08,578  INFO [AWT-EventQueue-0] - MainLog.start 118 -  the game starts with Plates with Base 
+2019-12-21 04:58:08,579  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 04:58:08,579  INFO [AWT-EventQueue-0] - MainLog.start 128 -  the game starts with Pots 
+2019-12-21 04:58:08,634 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 04:58:09,018 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 04:58:09,067 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 04:58:09,069 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 04:58:09,070 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 04:58:09,118  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 04:58:12,228 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 04:58:12,228  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 04:58:12,228  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 243 -  The First blue Plate Touches The Left Stick 
+2019-12-21 04:58:22,014  INFO [AWT-EventQueue-0] - MainLog.lambda$start$4 86 -  The User saves The Game 
+2019-12-21 05:01:04,338 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 05:01:06,437  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 183 -  the game is in Normal Mode -_- 
+2019-12-21 05:01:09,377  INFO [AWT-EventQueue-0] - MainLog.start 113 -  the game starts with Plates without Base 
+2019-12-21 05:01:09,377  INFO [AWT-EventQueue-0] - MainLog.start 118 -  the game starts with Plates with Base 
+2019-12-21 05:01:09,378  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 05:01:09,393 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 05:01:09,767 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 05:01:09,809 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 05:01:09,812 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 05:01:09,814 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 05:01:13,201  INFO [AWT-EventQueue-0] - MainLog.start 113 -  the game starts with Plates without Base 
+2019-12-21 05:01:13,202  INFO [AWT-EventQueue-0] - MainLog.start 118 -  the game starts with Plates with Base 
+2019-12-21 05:01:13,202  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 05:01:13,202 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 05:01:13,251 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 05:01:13,252 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 05:01:13,255 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 05:03:48,057 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 05:03:49,713  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 183 -  the game is in Normal Mode -_- 
+2019-12-21 05:03:51,977  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 05:03:51,977  INFO [AWT-EventQueue-0] - MainLog.start 128 -  the game starts with Pots 
+2019-12-21 05:03:51,987 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 05:03:52,337 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 05:03:52,379 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 05:03:52,381 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 05:03:52,383 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 05:03:52,425  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 05:03:57,345 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:03:57,345  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:03:57,345  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First red Plate Touches The Right Stick 
+2019-12-21 05:04:00,462 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:04:00,462  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:04:00,462  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New green Plate Touches The Right Stick 
+2019-12-21 05:04:02,547 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:04:02,547  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:04:02,547  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 243 -  The First red Plate Touches The Left Stick 
+2019-12-21 05:04:05,084 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:04:05,084  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:04:05,084  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New green Plate Touches The Right Stick 
+2019-12-21 05:04:07,680 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:04:07,680  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:04:07,680  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New green Plate Touches The Right Stick 
+2019-12-21 05:04:07,680  INFO [AWT-EventQueue-0] - MainLog.update 20 - 3 plates of same color 
+2019-12-21 05:04:07,680  INFO [AWT-EventQueue-0] - MainLog.update 18 - Score: 30
+2019-12-21 05:04:09,218 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:04:09,218  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:04:09,219  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New blue Plate Touches The Left Stick 
+2019-12-21 05:04:11,709 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:04:11,709  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:04:11,709  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New red Plate Touches The Right Stick 
+2019-12-21 05:04:14,622 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:04:14,622  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:04:14,622  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New red Plate Touches The Right Stick 
+2019-12-21 05:04:14,622  INFO [AWT-EventQueue-0] - MainLog.update 20 - 3 plates of same color 
+2019-12-21 05:04:14,622  INFO [AWT-EventQueue-0] - MainLog.update 18 - Score: 60
+2019-12-21 05:04:26,999 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:04:26,999  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:04:26,999  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New blue Plate Touches The Left Stick 
+2019-12-21 05:04:34,261 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:04:34,261  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:04:34,261  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First green Plate Touches The Right Stick 
+2019-12-21 05:04:36,326  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The green Plate is dropped
+2019-12-21 05:04:39,062  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The blue Plate is dropped
+2019-12-21 05:04:39,692  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The blue Plate is dropped
+2019-12-21 05:04:40,912  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The red Plate is dropped
+2019-12-21 05:04:47,498 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:04:47,498  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:04:47,498  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First red Plate Touches The Right Stick 
+2019-12-21 05:04:48,308  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The red Plate is dropped
+2019-12-21 05:04:50,721 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:04:50,721  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:04:50,721  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 243 -  The First red Plate Touches The Left Stick 
+2019-12-21 05:04:52,011  INFO [AWT-EventQueue-0] - MainLog.refresh 179 -  Game Over 
+2019-12-21 05:05:00,342  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The red Plate is dropped
+2019-12-21 05:05:02,776 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:05:02,776  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:05:02,776  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 243 -  The First blue Plate Touches The Left Stick 
+2019-12-21 05:05:10,195  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The blue Plate is dropped
+2019-12-21 05:05:17,944 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:05:17,944  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:05:17,944  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 243 -  The First blue Plate Touches The Left Stick 
+2019-12-21 05:05:18,167  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The blue Plate is dropped
+2019-12-21 05:05:19,637 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:05:19,637  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:05:19,637  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 243 -  The First red Plate Touches The Left Stick 
+2019-12-21 05:05:23,280 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:05:23,280  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:05:23,280  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First green Plate Touches The Right Stick 
+2019-12-21 05:05:24,918 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:05:24,918  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:05:24,918  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New green Plate Touches The Right Stick 
+2019-12-21 05:05:30,209 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:05:30,209  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:05:30,209  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New blue Plate Touches The Left Stick 
+2019-12-21 05:05:38,455 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:05:38,455  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:05:38,455  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New blue Plate Touches The Left Stick 
+2019-12-21 05:05:41,463  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The blue Plate is dropped
+2019-12-21 05:05:45,048 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:05:45,048  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:05:45,048  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New blue Plate Touches The Left Stick 
+2019-12-21 05:05:45,200  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The green Plate is dropped
+2019-12-21 05:05:47,267  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The green Plate is dropped
+2019-12-21 05:05:51,612 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:05:51,612  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:05:51,612  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First green Plate Touches The Right Stick 
+2019-12-21 05:05:53,486  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The blue Plate is dropped
+2019-12-21 05:05:55,592 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:05:55,592  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:05:55,592  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New red Plate Touches The Left Stick 
+2019-12-21 05:06:00,002  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The green Plate is dropped
+2019-12-21 05:06:05,930 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:06:05,930  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:06:05,930  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First red Plate Touches The Right Stick 
+2019-12-21 05:06:07,758 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:06:07,758  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:06:07,758  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New blue Plate Touches The Left Stick 
+2019-12-21 05:06:08,283 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:06:08,283  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:06:08,283  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New red Plate Touches The Right Stick 
+2019-12-21 05:06:08,468 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:06:08,468  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:06:08,468  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New red Plate Touches The Right Stick 
+2019-12-21 05:06:08,468  INFO [AWT-EventQueue-0] - MainLog.update 20 - 3 plates of same color 
+2019-12-21 05:06:08,468  INFO [AWT-EventQueue-0] - MainLog.update 18 - Score: 30
+2019-12-21 05:06:11,847 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:06:11,847  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:06:11,847  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First green Plate Touches The Right Stick 
+2019-12-21 05:06:12,958 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:06:12,958  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:06:12,958  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New green Plate Touches The Left Stick 
+2019-12-21 05:06:13,598 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:06:13,598  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:06:13,598  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New blue Plate Touches The Right Stick 
+2019-12-21 05:06:14,513 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:06:14,513  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:06:14,513  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New blue Plate Touches The Right Stick 
+2019-12-21 05:06:23,559  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The green Plate is dropped
+2019-12-21 05:06:24,831  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The blue Plate is dropped
+2019-12-21 05:06:30,039 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:06:30,039  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:06:30,039  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New blue Plate Touches The Right Stick 
+2019-12-21 05:06:30,039  INFO [AWT-EventQueue-0] - MainLog.update 20 - 3 plates of same color 
+2019-12-21 05:06:30,039  INFO [AWT-EventQueue-0] - MainLog.update 18 - Score: 40
+2019-12-21 05:06:32,301 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:06:32,301  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:06:32,301  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New green Plate Touches The Left Stick 
+2019-12-21 05:06:37,609  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The green Plate is dropped
+2019-12-21 05:06:43,851  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The red Plate is dropped
+2019-12-21 05:06:47,455 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:06:47,455  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:06:47,455  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New blue Plate Touches The Right Stick 
+2019-12-21 05:06:49,023  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The blue Plate is dropped
+2019-12-21 05:06:50,392 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:06:50,392  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:06:50,392  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New red Plate Touches The Left Stick 
+2019-12-21 05:06:52,629 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:06:52,629  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:06:52,629  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New red Plate Touches The Right Stick 
+2019-12-21 05:06:56,570  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The red Plate is dropped
+2019-12-21 05:07:00,179  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The red Plate is dropped
+2019-12-21 05:07:05,952  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The blue Plate is dropped
+2019-12-21 05:07:07,492 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:07:07,492  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:07:07,492  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New blue Plate Touches The Right Stick 
+2019-12-21 05:07:07,968 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:07:07,968  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:07:07,968  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New green Plate Touches The Left Stick 
+2019-12-21 05:07:11,005  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The green Plate is dropped
+2019-12-21 05:07:20,866  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The red Plate is dropped
+2019-12-21 05:07:25,136 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:07:25,136  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:07:25,136  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New red Plate Touches The Right Stick 
+2019-12-21 05:07:27,169  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The red Plate is dropped
+2019-12-21 05:07:35,650  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The blue Plate is dropped
+2019-12-21 05:07:52,012 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:07:52,012  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:07:52,012  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 243 -  The First green Plate Touches The Left Stick 
+2019-12-21 05:07:55,901 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:07:55,901  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:07:55,901  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New blue Plate Touches The Right Stick 
+2019-12-21 05:08:03,358  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The blue Plate is dropped
+2019-12-21 05:08:04,270  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The green Plate is dropped
+2019-12-21 05:08:19,191 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:08:19,191  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:08:19,191  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New blue Plate Touches The Left Stick 
+2019-12-21 05:08:21,367 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:08:21,367  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:08:21,367  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First green Plate Touches The Right Stick 
+2019-12-21 05:08:32,989  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The green Plate is dropped
+2019-12-21 05:08:34,397 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:08:34,397  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:08:34,397  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First green Plate Touches The Right Stick 
+2019-12-21 05:08:36,178 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:08:36,178  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:08:36,178  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New green Plate Touches The Left Stick 
+2019-12-21 05:08:37,626  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The green Plate is dropped
+2019-12-21 05:08:40,937 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:08:40,937  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:08:40,937  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First red Plate Touches The Right Stick 
+2019-12-21 05:08:41,337  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The green Plate is dropped
+2019-12-21 05:08:46,340  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The red Plate is dropped
+2019-12-21 05:09:04,740  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The blue Plate is dropped
+2019-12-21 05:09:22,695 DEBUG [AWT-EventQueue-0] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 05:09:25,345  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 183 -  the game is in Normal Mode -_- 
+2019-12-21 05:09:27,257  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 05:09:27,257  INFO [AWT-EventQueue-0] - MainLog.start 128 -  the game starts with Pots 
+2019-12-21 05:09:27,257 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 05:09:27,303 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 05:09:27,305 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 05:09:27,307 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 05:09:27,324  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 05:09:30,004  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The green Plate is dropped
+2019-12-21 05:09:30,989 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:30,989  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:30,989  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First green Plate Touches The Right Stick 
+2019-12-21 05:09:32,936 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:32,936  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:32,936  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 243 -  The First blue Plate Touches The Left Stick 
+2019-12-21 05:09:34,129  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The green Plate is dropped
+2019-12-21 05:09:35,452 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:35,452  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:35,452  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 243 -  The First red Plate Touches The Left Stick 
+2019-12-21 05:09:35,799 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:35,799  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:35,799  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First green Plate Touches The Right Stick 
+2019-12-21 05:09:35,874 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:35,874  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:35,874  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New red Plate Touches The Left Stick 
+2019-12-21 05:09:35,979 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:35,979  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:35,979  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First blue Plate Touches The Right Stick 
+2019-12-21 05:09:37,725 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:37,725  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:37,725  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New green Plate Touches The Right Stick 
+2019-12-21 05:09:38,995 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:38,995  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:38,995  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New red Plate Touches The Left Stick 
+2019-12-21 05:09:39,446  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The green Plate is dropped
+2019-12-21 05:09:39,965 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:39,965  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:39,965  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New red Plate Touches The Left Stick 
+2019-12-21 05:09:42,180 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:42,180  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:42,180  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New green Plate Touches The Right Stick 
+2019-12-21 05:09:43,415 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:43,415  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:43,415  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New blue Plate Touches The Left Stick 
+2019-12-21 05:09:43,966 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:43,966  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:43,966  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New red Plate Touches The Left Stick 
+2019-12-21 05:09:43,966  INFO [AWT-EventQueue-0] - MainLog.update 20 - 3 plates of same color 
+2019-12-21 05:09:43,966  INFO [AWT-EventQueue-0] - MainLog.update 18 - Score: 30
+2019-12-21 05:09:46,567  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The green Plate is dropped
+2019-12-21 05:09:46,732 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:46,732  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:46,732  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New green Plate Touches The Right Stick 
+2019-12-21 05:09:49,409  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The green Plate is dropped
+2019-12-21 05:09:50,245 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:50,245  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:50,245  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New blue Plate Touches The Left Stick 
+2019-12-21 05:09:53,379  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The blue Plate is dropped
+2019-12-21 05:09:54,507  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The blue Plate is dropped
+2019-12-21 05:09:55,511 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:55,511  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:55,511  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 243 -  The First blue Plate Touches The Left Stick 
+2019-12-21 05:09:57,077 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:57,077  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:57,077  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New blue Plate Touches The Right Stick 
+2019-12-21 05:09:59,300 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:09:59,300  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:09:59,300  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New red Plate Touches The Right Stick 
+2019-12-21 05:10:02,173  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The blue Plate is dropped
+2019-12-21 05:10:04,574 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:10:04,574  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:10:04,574  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New blue Plate Touches The Right Stick 
+2019-12-21 05:10:04,662  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The red Plate is dropped
+2019-12-21 05:10:05,311 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:10:05,311  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:10:05,311  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New green Plate Touches The Left Stick 
+2019-12-21 05:10:37,915 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 05:10:39,161  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 215 -  the game is in Hard Mode '_' 
+2019-12-21 05:10:40,976  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 05:10:40,977  INFO [AWT-EventQueue-0] - MainLog.start 128 -  the game starts with Pots 
+2019-12-21 05:10:40,995 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 05:10:41,346 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 05:10:41,388 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 05:10:41,390 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 05:10:41,392 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 05:10:41,428  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 05:10:46,704 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:10:46,704  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:10:46,705  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First blue Plate Touches The Right Stick 
+2019-12-21 05:10:48,997 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:10:48,997  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:10:48,997  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New blue Plate Touches The Right Stick 
+2019-12-21 05:10:53,738  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The blue Plate is dropped
+2019-12-21 05:10:55,566 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:10:55,566  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:10:55,566  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New blue Plate Touches The Right Stick 
+2019-12-21 05:11:01,001 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:11:01,001  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:11:01,001  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 243 -  The First blue Plate Touches The Left Stick 
+2019-12-21 05:11:02,044 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:11:02,044  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:11:02,044  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 256 -  A New green Plate Touches The Left Stick 
+2019-12-21 05:11:04,087  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The blue Plate is dropped
+2019-12-21 05:11:04,498 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:11:04,498  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:11:04,498  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 220 -  A New blue Plate Touches The Right Stick 
+2019-12-21 05:11:04,649  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The green Plate is dropped
+2019-12-21 05:11:04,985  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The blue Plate is dropped
+2019-12-21 05:11:05,695  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 258 - The blue Plate is dropped
+2019-12-21 05:11:09,276  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The blue Plate is dropped
+2019-12-21 05:11:15,303 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:11:15,303  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:11:15,303  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 243 -  The First blue Plate Touches The Left Stick 

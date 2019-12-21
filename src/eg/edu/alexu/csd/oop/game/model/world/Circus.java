@@ -10,6 +10,8 @@ import eg.edu.alexu.csd.oop.game.model.Observer.IObserver;
 import eg.edu.alexu.csd.oop.game.model.Observer.Plates;
 import eg.edu.alexu.csd.oop.game.model.Observer.Score;
 import eg.edu.alexu.csd.oop.game.model.Observer.Time;
+import eg.edu.alexu.csd.oop.game.model.Snapshot.Caretaker;
+import eg.edu.alexu.csd.oop.game.model.Snapshot.Originator;
 import eg.edu.alexu.csd.oop.game.model.State.Caught;
 import eg.edu.alexu.csd.oop.game.model.State.Falling;
 import eg.edu.alexu.csd.oop.game.model.State.Moving;
@@ -27,7 +29,7 @@ import eg.edu.alexu.csd.oop.game.view.ScreenResolution;
 import java.util.*;
 
 public class Circus implements World {
-    private final int MAX_TIME =  60 * 1000; // 1 minute
+    private final int MAX_TIME = 60 * 1000; // 1 minute
     // The system time when the game starts
     private final long startTime = System.currentTimeMillis();
     private final List<GameObject> constant = new LinkedList<>();       // Non moving objects in the game
@@ -51,6 +53,8 @@ public class Circus implements World {
     IStrategy strategy;
     private List<IObserver> observers = new ArrayList<>();
     IObserver scoreObserver, timeObserver, plateObserver;
+    Originator originator = Originator.getInstance();
+    Caretaker caretaker = Caretaker.getInstance();
 
     GameObjectFactory movableFactory;
 
@@ -95,8 +99,10 @@ public class Circus implements World {
 
     @Override
     public boolean refresh() {
+
         // Time ends and game over
         boolean timeout = System.currentTimeMillis() - startTime > MAX_TIME;
+
         // Bound sticks to clown position
         GameObject clown = controllable.get(0);
         GameObject rightStick = controllable.get(1);
@@ -108,22 +114,23 @@ public class Circus implements World {
         IList movableList = new GameObjectList(movable);
         IIterator movableIterator = movableList.createIterator();
 
-        if (!rightStickPlates.isEmpty() && rightStickPlates.getLast().getY() <= 0 && !gameOver){
-            gameOver = true ;
+        if (!rightStickPlates.isEmpty() && rightStickPlates.getLast().getY() <= 0 && !gameOver) {
+            gameOver = true;
             new EndMenu(score, new ScreenResolution().getWidth(), new ScreenResolution().getHeight());
             gameLogger.log.info(" Game Over ");
             return false;
         }
 
-        if (!leftStickPlates.isEmpty() && leftStickPlates.getLast().getY() <= 0 && !gameOver){
-            gameOver = true ;
+        if (!leftStickPlates.isEmpty() && leftStickPlates.getLast().getY() <= 0 && !gameOver) {
+            gameOver = true;
             new EndMenu(score, new ScreenResolution().getWidth(), new ScreenResolution().getHeight());
             gameLogger.log.info(" Game Over ");
             return false;
         }
 
-        while(movableIterator.hasNext()) {
+        while (movableIterator.hasNext()) {
             GameObject plate = movableIterator.currentItem();
+
             // If the plate is moving
             if (((MovableObject) plate).getState() == MOVING) {
                 plate.setY(plate.getY() + 1);
@@ -162,12 +169,12 @@ public class Circus implements World {
                     imagePool.releaseToPool(plate);
                 }
             }
-            if (movableIterator.hasNext()){
+            if (movableIterator.hasNext()) {
                 movableIterator.next();
             }
         }
-        if (timeout && !gameOver){
-            gameOver = true ;
+        if (timeout && !gameOver) {
+            gameOver = true;
             new EndMenu(score, new ScreenResolution().getWidth(), new ScreenResolution().getHeight());
             gameLogger.log.info(" Game Over ");
         }
@@ -179,10 +186,13 @@ public class Circus implements World {
         GameObject leftStick = controllable.get(2);
 
         if (rightStickPlates.isEmpty()) {
+
             //check if plate touches the right stick
             if (plate.getY() + plate.getHeight() == rightStick.getY()) {
+
                 //the error between the center of the plate and the center of the stick
                 int difference = Math.abs(rightStick.getX() - plate.getX() - 27);
+
                 //catch the plate if the difference is acceptable
                 if (difference < strategy.differenceBetweenPlateAndStick()) {
                     ((MovableObject) plate).setState(new Caught());
@@ -191,7 +201,7 @@ public class Circus implements World {
                     this.registerOnly(plateObserver);
                     this.notifyRegisteredUsers(1);
                     this.registerall();
-                    gameLogger.log.info(" The First "+((MovableObject)rightStickPlates.get(0)).getColor()+" Plate Touches The Right Stick ");
+                    gameLogger.log.info(" The First " + ((MovableObject) rightStickPlates.get(0)).getColor() + " Plate Touches The Right Stick ");
                 }
             }
         } else {
@@ -207,12 +217,12 @@ public class Circus implements World {
                     this.registerall();
                     ((MovableObject) plate).setDistFromStick(rightStick.getX() - plate.getX());
                     rightStickPlates.add(plate);
-                    gameLogger.log.info(" A New "+((MovableObject)rightStickPlates.get(rightStickPlates.size()-1)).getColor()+" Plate Touches The Right Stick ");
+                    gameLogger.log.info(" A New " + ((MovableObject) rightStickPlates.get(rightStickPlates.size() - 1)).getColor() + " Plate Touches The Right Stick ");
                     //drop the plates if the difference isn't acceptable
                 } else if (difference < plate.getWidth() - 22) {
-                    gameLogger.log.info( "The "+((MovableObject)rightStickPlates.get(rightStickPlates.size()-1)).getColor()+" Plate is dropped");
+                    gameLogger.log.info("The " + ((MovableObject) rightStickPlates.get(rightStickPlates.size() - 1)).getColor() + " Plate is dropped");
                     if (score >= 10) {
-                        score -= 10 ;
+                        score -= 10;
                     }
                     ((MovableObject) plate).setState(new Falling());
                     ((MovableObject) rightStickPlates.getLast()).setState(new Falling());
@@ -230,7 +240,7 @@ public class Circus implements World {
                     this.registerOnly(plateObserver);
                     this.notifyRegisteredUsers(1);
                     this.registerall();
-                    gameLogger.log.info(" The First "+((MovableObject)leftStickPlates.get(0)).getColor()+" Plate Touches The Left Stick ");
+                    gameLogger.log.info(" The First " + ((MovableObject) leftStickPlates.get(0)).getColor() + " Plate Touches The Left Stick ");
                 }
             }
         } else {
@@ -243,11 +253,11 @@ public class Circus implements World {
                     this.notifyRegisteredUsers(1);
                     this.registerall();
                     leftStickPlates.add(plate);
-                    gameLogger.log.info(" A New "+((MovableObject)leftStickPlates.get(leftStickPlates.size()-1)).getColor()+" Plate Touches The Left Stick ");
+                    gameLogger.log.info(" A New " + ((MovableObject) leftStickPlates.get(leftStickPlates.size() - 1)).getColor() + " Plate Touches The Left Stick ");
                 } else if (difference < plate.getWidth() - 22) {
-                    gameLogger.log.info( "The "+((MovableObject)leftStickPlates.get(leftStickPlates.size()-1)).getColor()+" Plate is dropped");
+                    gameLogger.log.info("The " + ((MovableObject) leftStickPlates.get(leftStickPlates.size() - 1)).getColor() + " Plate is dropped");
                     if (score >= 10) {
-                        score -= 10 ;
+                        score -= 10;
                     }
                     ((MovableObject) plate).setState(new Falling());
                     ((MovableObject) leftStickPlates.getLast()).setState(new Falling());
@@ -346,7 +356,6 @@ public class Circus implements World {
     }
 
 
-
     public void register(IObserver observer) {
         //GameLogger.getInstance().log.debug("Observer registered");
         observers.add(observer);
@@ -369,6 +378,11 @@ public class Circus implements World {
     public void notifyRegisteredUsers(Object updatedValue) {
         for (IObserver observer : observers)
             observer.update(updatedValue);
+    }
+
+    public void Save() {
+        originator.set(this);
+        caretaker.addMemento(originator.storeInMemento());
     }
 
 }
