@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.3" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <interface id="1" language="java" name="eg.edu.alexu.csd.oop.game.model.Strategy.IStrategy" 
+    project="2_16_33_47_circus" file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Strategy/IStrategy.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="142" width="247" x="3926" y="1174"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="2" language="java" name="eg.edu.alexu.csd.oop.game.model.objects.MovableObject" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/objects/MovableObject.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="448" width="321" x="6436" y="1174"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="eg.edu.alexu.csd.oop.game.model.Observer.Plates" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Observer/Plates.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="253" x="5466" y="350"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="eg.edu.alexu.csd.oop.game.model.Strategy.EasyStrategy" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Strategy/EasyStrategy.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="160" width="247" x="3352" y="560"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="5" language="java" name="eg.edu.alexu.csd.oop.game.model.State.IState" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/State/IState.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="88" width="231" x="6700" y="1916"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="6" language="java" name="eg.edu.alexu.csd.oop.game.model.Strategy.MediumStrategy" 
+    project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Strategy/MediumStrategy.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="160" width="247" x="3639" y="560"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="eg.edu.alexu.csd.oop.game.view.OptionsMenu" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/view/OptionsMenu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="210" x="3655" y="1916"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="eg.edu.alexu.csd.oop.game.model.Flyweight.FlyweightShapeFactory" 
+    project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Flyweight/FlyweightShapeFactory.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="142" width="312" x="5194" y="1916"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="eg.edu.alexu.csd.oop.game.control.GameMenu" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/control/GameMenu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="263" x="3926" y="560"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="eg.edu.alexu.csd.oop.game.model.Snapshot.Memento" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Snapshot/Memento.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="256" x="6618" y="350"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="eg.edu.alexu.csd.oop.game.model.State.Falling" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/State/Falling.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="231" x="5499" y="1662"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="eg.edu.alexu.csd.oop.game.model.Observer.Time" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Observer/Time.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="253" x="5527" y="560"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="eg.edu.alexu.csd.oop.game.view.MainMenu" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/view/MainMenu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="189" x="3123" y="560"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="eg.edu.alexu.csd.oop.game.model.DynamicLinkage.DynamicLinkage" 
+    project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/DynamicLinkage/DynamicLinkage.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="142" width="355" x="4234" y="1916"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="eg.edu.alexu.csd.oop.game.model.Pool.ImagePool" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Pool/ImagePool.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="268" width="228" x="6063" y="1174"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="eg.edu.alexu.csd.oop.game.model.Iterator.GameObjectIterator" 
+    project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Iterator/GameObjectIterator.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="160" width="257" x="5169" y="1174"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="eg.edu.alexu.csd.oop.game.view.EndMenu" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/view/EndMenu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="189" x="4629" y="1916"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="eg.edu.alexu.csd.oop.game.model.AbstractFactory.ConstantObjectFactory" 
+    project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/AbstractFactory/ConstantObjectFactory.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="286" x="5152" y="1662"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="19" language="java" name="eg.edu.alexu.csd.oop.game.model.Observer.IObserver" 
+    project="2_16_33_47_circus" file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Observer/IObserver.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="88" width="253" x="5466" y="1174"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="20" language="java" name="eg.edu.alexu.csd.oop.game.model.Shapes.PlateWithBase" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Shapes/PlateWithBase.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="160" width="246" x="5556" y="1916"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="eg.edu.alexu.csd.oop.game.view.ScreenResolution" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/view/ScreenResolution.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="160" width="189" x="3643" y="150"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="eg.edu.alexu.csd.oop.game.model.world.Circus" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/world/Circus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="574" width="352" x="6312" y="560"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="eg.edu.alexu.csd.oop.game.model.Iterator.GameObjectList" 
+    project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Iterator/GameObjectList.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="241" x="4605" y="1174"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="24" language="java" name="eg.edu.alexu.csd.oop.game.model.Iterator.IIterator" 
+    project="2_16_33_47_circus" file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Iterator/IIterator.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="241" x="4579" y="1662"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="25" language="java" name="eg.edu.alexu.csd.oop.game.model.Snapshot.Caretaker" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Snapshot/Caretaker.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="142" width="256" x="6895" y="150"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="eg.edu.alexu.csd.oop.game.model.Shapes.PlateWithDeepBase" 
+    project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Shapes/PlateWithDeepBase.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="160" width="246" x="5842" y="1916"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="eg.edu.alexu.csd.oop.game.model.Shapes.Pot" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Shapes/Pot.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="246" x="6128" y="1916"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="eg.edu.alexu.csd.oop.game.model.AbstractFactory.MovableObjectFactory" 
+    project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/AbstractFactory/MovableObjectFactory.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="142" width="305" x="6041" y="1662"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="29" language="java" name="eg.edu.alexu.csd.oop.game.model.Iterator.IList" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Iterator/IList.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="88" width="241" x="4277" y="1662"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="30" language="java" name="eg.edu.alexu.csd.oop.game.model.objects.ControllableObject" 
+    project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/objects/ControllableObject.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="358" width="243" x="4886" y="1174"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="31" language="java" name="eg.edu.alexu.csd.oop.game.model.Shapes.IShape" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Shapes/IShape.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="246" x="5842" y="2152"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="32" language="java" name="eg.edu.alexu.csd.oop.game.model.State.Moving" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/State/Moving.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="231" x="5770" y="1662"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="eg.edu.alexu.csd.oop.game.model.Strategy.HardStrategy" 
+    project="2_16_33_47_circus" file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Strategy/HardStrategy.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="247" x="4229" y="560"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="eg.edu.alexu.csd.oop.game.GameMain" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/GameMain.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="162" x="5252" y="150"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="eg.edu.alexu.csd.oop.game.model.Shapes.PlateWithoutBase" 
+    project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Shapes/PlateWithoutBase.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="160" width="246" x="6414" y="1916"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="36" language="java" name="eg.edu.alexu.csd.oop.game.GameObject" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/GameObject.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="214" width="222" x="6396" y="1662"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="37" language="java" name="eg.edu.alexu.csd.oop.game.model.objects.ConstantObject" 
+    project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/objects/ConstantObject.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="322" width="243" x="5759" y="1174"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="eg.edu.alexu.csd.oop.game.view.MenuBar" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/view/MenuBar.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="178" width="286" x="4516" y="560"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="39" language="java" name="eg.edu.alexu.csd.oop.game.model.Snapshot.Originator" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Snapshot/Originator.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="160" width="256" x="6312" y="350"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="40" language="java" name="eg.edu.alexu.csd.oop.game.model.Observer.Score" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Observer/Score.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="253" x="5759" y="350"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="41" language="java" name="eg.edu.alexu.csd.oop.game.view.ButtonGenerator" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/view/ButtonGenerator.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="257" x="6231" y="150"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="42" language="java" name="eg.edu.alexu.csd.oop.game.model.Logger.GameLogger" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Logger/GameLogger.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="242" x="4839" y="2152"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="43" language="java" name="eg.edu.alexu.csd.oop.game.model.AbstractFactory.ControllableObjectFactory" 
+    project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/AbstractFactory/ControllableObjectFactory.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="286" x="6664" y="1662"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="44" language="java" name="eg.edu.alexu.csd.oop.game.model.State.Caught" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/State/Caught.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="231" x="4860" y="1662"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="45" language="java" name="eg.edu.alexu.csd.oop.game.model.AbstractFactory.GameObjectFactory" 
+    project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/AbstractFactory/GameObjectFactory.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="88" width="286" x="6971" y="1916"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="46" language="java" name="eg.edu.alexu.csd.oop.game.World" project="2_16_33_47_circus" 
+    file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/World.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="232" width="276" x="4289" y="1174"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <association id="47">    
+    <bendpoint x="6384" y="1174"/>    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="48" name="controllable"/>      
+      <multiplicity id="49" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <end type="SOURCE" refId="39" navigable="false">      
+      <attribute id="51" name="instance"/>      
+      <multiplicity id="52" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="53">    
+    <bendpoint x="4869" y="1916"/>    
+    <end type="SOURCE" refId="44" navigable="false">      
+      <attribute id="54" name="gameLogger"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="56">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="57" name="observers"/>      
+      <multiplicity id="58" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="59">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="60" name="strategy"/>      
+      <multiplicity id="61" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="62">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="63" name="gameLogger"/>      
+      <multiplicity id="64" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="65">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="66" name="instance"/>      
+      <multiplicity id="67" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="68">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="69">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <association id="70">    
+    <bendpoint x="6363" y="1174"/>    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="71" name="leftStickPlates"/>      
+      <multiplicity id="72" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="73">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="46"/>  
+  </realization>  
+  <realization id="74">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <association id="75">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="76" name="available"/>      
+      <multiplicity id="77" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="78">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="31"/>  
+  </realization>  
+  <association id="79">    
+    <bendpoint x="3895" y="1174"/>    
+    <bendpoint x="3895" y="1662"/>    
+    <bendpoint x="3895" y="1916"/>    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="80" name="gameLogger"/>      
+      <multiplicity id="81" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="82">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="19"/>  
+  </realization>  
+  <realization id="83">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <association id="84">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="85" name="state"/>      
+      <multiplicity id="86" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="87">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="88" name="game"/>      
+      <multiplicity id="89" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="90">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="36"/>  
+  </realization>  
+  <association id="91">    
+    <end type="SOURCE" refId="40" navigable="false">      
+      <attribute id="92" name="game"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="94">    
+    <bendpoint x="6904" y="350"/>    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="95" name="caretaker"/>      
+      <multiplicity id="96" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="97">    
+    <bendpoint x="4203" y="1174"/>    
+    <bendpoint x="4203" y="1662"/>    
+    <bendpoint x="4203" y="1916"/>    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="98" name="gameLogger"/>      
+      <multiplicity id="99" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="100">    
+    <bendpoint x="6032" y="1174"/>    
+    <bendpoint x="5468" y="1662"/>    
+    <bendpoint x="5163" y="1916"/>    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="101" name="gameLogger"/>      
+      <multiplicity id="102" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="103">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="104" name="strategy"/>      
+      <multiplicity id="105" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="106">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="29"/>  
+  </realization>  
+  <association id="107">    
+    <bendpoint x="6405" y="1174"/>    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="108" name="movable"/>      
+      <multiplicity id="109" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="110">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="111" name="gameLogger"/>      
+      <multiplicity id="112" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="113">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="114" name="strategy"/>      
+      <multiplicity id="115" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="116">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="117" name="originator"/>      
+      <multiplicity id="118" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="119">    
+    <bendpoint x="5142" y="1916"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="120" name="gameLogger"/>      
+      <multiplicity id="121" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="122">    
+    <bendpoint x="4548" y="1662"/>    
+    <bendpoint x="4848" y="1916"/>    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="123" name="gameLogger"/>      
+      <multiplicity id="124" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="125">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <association id="126">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="127" name="timeObserver"/>      
+      <multiplicity id="128" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="129">    
+    <end type="SOURCE" refId="42" navigable="false">      
+      <attribute id="130" name="instance"/>      
+      <multiplicity id="131" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="132">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="133" name="List"/>      
+      <multiplicity id="134" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="135">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <realization id="136">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="31"/>  
+  </realization>  
+  <association id="137">    
+    <bendpoint x="5121" y="1662"/>    
+    <bendpoint x="5121" y="1916"/>    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="138" name="gameLogger"/>      
+      <multiplicity id="139" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="140">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="141" name="scoreObserver"/>      
+      <multiplicity id="142" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="143">    
+    <bendpoint x="5475" y="560"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="19"/>  
+  </realization>  
+  <association id="144">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="145" name="gameLogger"/>      
+      <multiplicity id="146" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="147">    
+    <bendpoint x="6321" y="1174"/>    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="148" name="constant"/>      
+      <multiplicity id="149" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="150">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="45"/>  
+  </realization>  
+  <association id="151">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="152" name="shapeFactory"/>      
+      <multiplicity id="153" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="154">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="155" name="SavedCircus"/>      
+      <multiplicity id="156" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="157">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="36"/>  
+  </realization>  
+  <realization id="158">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="31"/>  
+  </realization>  
+  <association id="159">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="160" name="plateObserver"/>      
+      <multiplicity id="161" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="162">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="163" name="instance"/>      
+      <multiplicity id="164" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="165">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="166" name="List"/>      
+      <multiplicity id="167" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="168">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="169" name="movableFactory"/>      
+      <multiplicity id="170" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="171">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="172" name="movingState"/>      
+      <multiplicity id="173" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="174">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="175" name="shapesMap"/>      
+      <multiplicity id="176" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="177">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="31"/>  
+  </realization>  
+  <association id="178">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="179" name="inUse"/>      
+      <multiplicity id="180" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="181">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="24"/>  
+  </realization>  
+  <realization id="182">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="45"/>  
+  </realization>  
+  <realization id="183">    
+    <bendpoint x="5496" y="560"/>    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="19"/>  
+  </realization>  
+  <association id="184">    
+    <bendpoint x="6980" y="1174"/>    
+    <bendpoint x="6980" y="1662"/>    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="185" name="movableFactory"/>      
+      <multiplicity id="186" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="187">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="188" name="gameLogger"/>      
+      <multiplicity id="189" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="190">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="191" name="circus"/>      
+      <multiplicity id="192" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="193">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="194" name="imagePool"/>      
+      <multiplicity id="195" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="196">    
+    <end type="SOURCE" refId="39" navigable="false">      
+      <attribute id="197" name="state"/>      
+      <multiplicity id="198" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="199">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="36"/>  
+  </realization>  
+  <association id="200">    
+    <bendpoint x="6342" y="1174"/>    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="201" name="rightStickPlates"/>      
+      <multiplicity id="202" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="203">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="45"/>  
+  </realization>  
+  <association id="204">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="205" name="strategy"/>      
+      <multiplicity id="206" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="207">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="208" name="instance"/>      
+      <multiplicity id="209" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
