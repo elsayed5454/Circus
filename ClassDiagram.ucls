@@ -4,7 +4,7 @@
   <interface id="1" language="java" name="eg.edu.alexu.csd.oop.game.model.Strategy.IStrategy" 
     project="2_16_33_47_circus" file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Strategy/IStrategy.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="142" width="247" x="3926" y="1174"/>    
+    <position height="-1" width="-1" x="3958" y="422"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -14,7 +14,7 @@
   <class id="2" language="java" name="eg.edu.alexu.csd.oop.game.model.objects.MovableObject" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/objects/MovableObject.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="448" width="321" x="6436" y="1174"/>    
+    <position height="-1" width="-1" x="6189" y="1624"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -24,7 +24,7 @@
   <class id="3" language="java" name="eg.edu.alexu.csd.oop.game.model.Observer.Plates" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Observer/Plates.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="106" width="253" x="5466" y="350"/>    
+    <position height="-1" width="-1" x="5274" y="297"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -34,7 +34,7 @@
   <class id="4" language="java" name="eg.edu.alexu.csd.oop.game.model.Strategy.EasyStrategy" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Strategy/EasyStrategy.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="160" width="247" x="3352" y="560"/>    
+    <position height="-1" width="-1" x="3671" y="643"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -43,7 +43,7 @@
   </class>  
   <interface id="5" language="java" name="eg.edu.alexu.csd.oop.game.model.State.IState" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/State/IState.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="88" width="231" x="6700" y="1916"/>    
+    <position height="-1" width="-1" x="5334" y="1780"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -54,7 +54,7 @@
     project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Strategy/MediumStrategy.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="160" width="247" x="3639" y="560"/>    
+    <position height="-1" width="-1" x="3956" y="639"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -74,7 +74,7 @@
     project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Flyweight/FlyweightShapeFactory.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="142" width="312" x="5194" y="1916"/>    
+    <position height="-1" width="-1" x="6712" y="1610"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -83,7 +83,7 @@
   </class>  
   <class id="9" language="java" name="eg.edu.alexu.csd.oop.game.control.GameMenu" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/control/GameMenu.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="160" width="263" x="3926" y="560"/>    
+    <position height="-1" width="-1" x="3824" y="960"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +93,7 @@
   <class id="10" language="java" name="eg.edu.alexu.csd.oop.game.model.Snapshot.Memento" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Snapshot/Memento.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="106" width="256" x="6618" y="350"/>    
+    <position height="-1" width="-1" x="6815" y="417"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -103,7 +103,7 @@
   <class id="11" language="java" name="eg.edu.alexu.csd.oop.game.model.State.Falling" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/State/Falling.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="106" width="231" x="5499" y="1662"/>    
+    <position height="-1" width="-1" x="5335" y="1650"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -113,7 +113,7 @@
   <class id="12" language="java" name="eg.edu.alexu.csd.oop.game.model.Observer.Time" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Observer/Time.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="106" width="253" x="5527" y="560"/>    
+    <position height="-1" width="-1" x="5582" y="303"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -133,7 +133,7 @@
     project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/DynamicLinkage/DynamicLinkage.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="142" width="355" x="4234" y="1916"/>    
+    <position height="-1" width="-1" x="6721" y="1962"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -143,7 +143,7 @@
   <class id="15" language="java" name="eg.edu.alexu.csd.oop.game.model.Pool.ImagePool" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Pool/ImagePool.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="268" width="228" x="6063" y="1174"/>    
+    <position height="-1" width="-1" x="5897" y="1748"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -154,7 +154,7 @@
     project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Iterator/GameObjectIterator.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="160" width="257" x="5169" y="1174"/>    
+    <position height="-1" width="-1" x="4486" y="1524"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -174,7 +174,7 @@
     project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/AbstractFactory/ConstantObjectFactory.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="286" x="5152" y="1662"/>    
+    <position height="-1" width="-1" x="6703" y="1131"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -184,7 +184,7 @@
   <interface id="19" language="java" name="eg.edu.alexu.csd.oop.game.model.Observer.IObserver" 
     project="2_16_33_47_circus" file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Observer/IObserver.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="88" width="253" x="5466" y="1174"/>    
+    <position height="-1" width="-1" x="5553" y="125"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -213,7 +213,7 @@
   </class>  
   <class id="22" language="java" name="eg.edu.alexu.csd.oop.game.model.world.Circus" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/world/Circus.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="574" width="352" x="6312" y="560"/>    
+    <position height="-1" width="-1" x="5594" y="723"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -224,7 +224,7 @@
     project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Iterator/GameObjectList.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="106" width="241" x="4605" y="1174"/>    
+    <position height="-1" width="-1" x="4126" y="1535"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -234,7 +234,7 @@
   <interface id="24" language="java" name="eg.edu.alexu.csd.oop.game.model.Iterator.IIterator" 
     project="2_16_33_47_circus" file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Iterator/IIterator.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="124" width="241" x="4579" y="1662"/>    
+    <position height="-1" width="-1" x="4454" y="1714"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -244,7 +244,7 @@
   <class id="25" language="java" name="eg.edu.alexu.csd.oop.game.model.Snapshot.Caretaker" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Snapshot/Caretaker.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="142" width="256" x="6895" y="150"/>    
+    <position height="-1" width="-1" x="7010" y="207"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -255,7 +255,7 @@
     project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Shapes/PlateWithDeepBase.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="160" width="246" x="5842" y="1916"/>    
+    <position height="-1" width="-1" x="5263" y="2080"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -264,7 +264,7 @@
   </class>  
   <class id="27" language="java" name="eg.edu.alexu.csd.oop.game.model.Shapes.Pot" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Shapes/Pot.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="160" width="246" x="6128" y="1916"/>    
+    <position height="-1" width="-1" x="5549" y="2080"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -275,7 +275,7 @@
     project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/AbstractFactory/MovableObjectFactory.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="142" width="305" x="6041" y="1662"/>    
+    <position height="-1" width="-1" x="6714" y="1370"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -285,7 +285,7 @@
   <interface id="29" language="java" name="eg.edu.alexu.csd.oop.game.model.Iterator.IList" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Iterator/IList.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="88" width="241" x="4277" y="1662"/>    
+    <position height="-1" width="-1" x="4117" y="1716"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -306,7 +306,7 @@
   <interface id="31" language="java" name="eg.edu.alexu.csd.oop.game.model.Shapes.IShape" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Shapes/IShape.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="106" width="246" x="5842" y="2152"/>    
+    <position height="-1" width="-1" x="6709" y="1806"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -315,7 +315,7 @@
   </interface>  
   <class id="32" language="java" name="eg.edu.alexu.csd.oop.game.model.State.Moving" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/State/Moving.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="231" x="5770" y="1662"/>    
+    <position height="-1" width="-1" x="5633" y="1644"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -325,7 +325,7 @@
   <class id="33" language="java" name="eg.edu.alexu.csd.oop.game.model.Strategy.HardStrategy" 
     project="2_16_33_47_circus" file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Strategy/HardStrategy.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="160" width="247" x="4229" y="560"/>    
+    <position height="-1" width="-1" x="4253" y="640"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -334,7 +334,7 @@
   </class>  
   <class id="34" language="java" name="eg.edu.alexu.csd.oop.game.GameMain" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/GameMain.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="162" x="5252" y="150"/>    
+    <position height="-1" width="-1" x="4956" y="701"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -345,7 +345,7 @@
     project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Shapes/PlateWithoutBase.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="160" width="246" x="6414" y="1916"/>    
+    <position height="-1" width="-1" x="5835" y="2080"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -354,7 +354,7 @@
   </class>  
   <interface id="36" language="java" name="eg.edu.alexu.csd.oop.game.GameObject" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/GameObject.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="214" width="222" x="6396" y="1662"/>    
+    <position height="-1" width="-1" x="4289" y="1314"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -384,7 +384,7 @@
   <class id="39" language="java" name="eg.edu.alexu.csd.oop.game.model.Snapshot.Originator" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Snapshot/Originator.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="160" width="256" x="6312" y="350"/>    
+    <position height="-1" width="-1" x="6674" y="214"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -394,7 +394,7 @@
   <class id="40" language="java" name="eg.edu.alexu.csd.oop.game.model.Observer.Score" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/Observer/Score.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="106" width="253" x="5759" y="350"/>    
+    <position height="-1" width="-1" x="5896" y="307"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -404,7 +404,7 @@
   <class id="41" language="java" name="eg.edu.alexu.csd.oop.game.view.ButtonGenerator" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/view/ButtonGenerator.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="124" width="257" x="6231" y="150"/>    
+    <position height="-1" width="-1" x="4757" y="541"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -425,7 +425,7 @@
     project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/AbstractFactory/ControllableObjectFactory.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="286" x="6664" y="1662"/>    
+    <position height="-1" width="-1" x="6591" y="975"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -434,7 +434,7 @@
   </class>  
   <class id="44" language="java" name="eg.edu.alexu.csd.oop.game.model.State.Caught" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/State/Caught.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="106" width="231" x="4860" y="1662"/>    
+    <position height="-1" width="-1" x="5031" y="1647"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -445,7 +445,7 @@
     project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/model/AbstractFactory/GameObjectFactory.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="88" width="286" x="6971" y="1916"/>    
+    <position height="-1" width="-1" x="6982" y="890"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -454,7 +454,7 @@
   </interface>  
   <interface id="46" language="java" name="eg.edu.alexu.csd.oop.game.World" project="2_16_33_47_circus" 
     file="/2_16_33_47_circus/src/eg/edu/alexu/csd/oop/game/World.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="232" width="276" x="4289" y="1174"/>    
+    <position height="-1" width="-1" x="4178" y="1025"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
