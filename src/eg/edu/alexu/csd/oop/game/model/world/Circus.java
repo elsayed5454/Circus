@@ -58,7 +58,6 @@ public class Circus implements World {
 
     GameObjectFactory movableFactory;
 
-
     boolean gameOver = false;
 
     public Circus(int width, int height, IStrategy strategy, List<String> jars) {

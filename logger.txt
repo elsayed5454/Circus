@@ -372,3 +372,157 @@
 2019-12-21 05:11:15,303 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
 2019-12-21 05:11:15,303  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
 2019-12-21 05:11:15,303  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 243 -  The First blue Plate Touches The Left Stick 
+2019-12-21 05:30:05,574 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 05:30:06,984  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 215 -  the game is in Hard Mode '_' 
+2019-12-21 05:30:13,487  INFO [AWT-EventQueue-0] - MainLog.start 118 -  the game starts with Plates with Base 
+2019-12-21 05:30:13,487  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 05:30:13,488  INFO [AWT-EventQueue-0] - MainLog.start 128 -  the game starts with Pots 
+2019-12-21 05:30:13,505 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 05:30:13,872 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 05:30:13,914 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 05:30:13,915 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 05:30:13,917 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 05:30:13,952  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 05:30:17,202 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:30:17,202  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:30:17,202  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First blue Plate Touches The Right Stick 
+2019-12-21 05:30:21,641  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The blue Plate is dropped
+2019-12-21 05:35:19,550 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 05:35:20,727  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 215 -  the game is in Hard Mode '_' 
+2019-12-21 05:35:22,151  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 05:35:22,159 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 05:35:22,490 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 05:35:22,534 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 05:35:22,536 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 05:35:22,538 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 05:35:22,570  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 05:47:01,525 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 05:47:02,790  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 215 -  the game is in Hard Mode '_' 
+2019-12-21 05:47:04,429  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 05:47:04,438 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 05:47:04,772 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 05:47:04,817 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 05:47:04,819 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 05:47:04,821 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 05:47:04,854  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 05:47:08,734 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:47:08,734  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:47:08,734  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 243 -  The First green Plate Touches The Left Stick 
+2019-12-21 05:50:42,454 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 05:50:43,261  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 215 -  the game is in Hard Mode '_' 
+2019-12-21 05:50:44,413  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 05:50:44,422 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 05:50:44,755 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 05:50:44,799 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 05:50:44,801 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 05:50:44,803 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 05:50:44,839  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 05:58:09,624 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 05:58:11,030  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 215 -  the game is in Hard Mode '_' 
+2019-12-21 05:58:12,325  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 05:58:12,332 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 05:58:12,671 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 05:58:12,721 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 05:58:12,723 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 05:58:12,726 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 05:58:12,780  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 05:58:36,464 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 05:58:37,966  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 215 -  the game is in Hard Mode '_' 
+2019-12-21 05:58:39,893  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 05:58:39,893  INFO [AWT-EventQueue-0] - MainLog.start 128 -  the game starts with Pots 
+2019-12-21 05:58:39,900 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 05:58:40,254 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 05:58:40,298 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 05:58:40,300 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 05:58:40,302 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 05:58:40,366  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 05:59:44,286 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 05:59:46,421  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 215 -  the game is in Hard Mode '_' 
+2019-12-21 05:59:47,869  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 05:59:47,875 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 05:59:48,205 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 05:59:48,249 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 05:59:48,251 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 05:59:48,253 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 05:59:48,288  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 05:59:51,836 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 05:59:51,837  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 05:59:51,837  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First blue Plate Touches The Right Stick 
+2019-12-21 06:00:25,546 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 06:00:26,428  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 215 -  the game is in Hard Mode '_' 
+2019-12-21 06:00:30,302  INFO [AWT-EventQueue-0] - MainLog.start 118 -  the game starts with Plates with Base 
+2019-12-21 06:00:30,311 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 06:00:30,639 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 06:00:30,687 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 06:00:30,689 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 06:00:30,692 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 06:00:30,729  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 06:07:09,437 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 06:07:10,277  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 215 -  the game is in Hard Mode '_' 
+2019-12-21 06:07:11,788  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 06:07:11,796 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 06:07:12,132 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 06:07:12,180 DEBUG [AWT-EventQueue-0] - MainLog.<init> 79 -  The Clown is Successfully Created 
+2019-12-21 06:07:12,182 DEBUG [AWT-EventQueue-0] - MainLog.<init> 87 -  The Right Stick is Successfully Created 
+2019-12-21 06:07:12,184 DEBUG [AWT-EventQueue-0] - MainLog.<init> 89 -  The Left Stick is Successfully Created 
+2019-12-21 06:07:12,217  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 06:07:16,151 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 06:07:16,151  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 06:07:16,151  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First red Plate Touches The Right Stick 
+2019-12-21 06:07:17,792  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The red Plate is dropped
+2019-12-21 06:07:18,692 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 06:07:18,692  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 06:07:18,692  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 204 -  The First red Plate Touches The Right Stick 
+2019-12-21 06:07:20,100  INFO [AWT-EventQueue-0] - MainLog.lambda$start$4 86 -  The User saves The Game 
+2019-12-21 06:07:23,354  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 223 - The red Plate is dropped
+2019-12-21 06:11:52,405 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 06:12:09,707  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 241 -  Game is Ended ^_^ 
+2019-12-21 06:21:52,798 DEBUG [main] - MainLog.start 41 - Main Menu Started Successfully 
+2019-12-21 06:22:33,758 DEBUG [main] - MainLog.start 41 - Main Menu Started Successfully 
+2019-12-21 06:23:31,214 DEBUG [main] - MainLog.start 41 - Main Menu Started Successfully 
+2019-12-21 06:23:46,985 DEBUG [main] - MainLog.start 41 - Main Menu Started Successfully 
+2019-12-21 06:24:58,171 DEBUG [main] - MainLog.start 41 - Main Menu Started Successfully 
+2019-12-21 06:26:52,652  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 254 -  Game is Ended ^_^ 
+2019-12-21 06:28:02,193 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 06:28:13,443  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 183 -  the game is in Normal Mode -_- 
+2019-12-21 06:28:16,394  INFO [AWT-EventQueue-0] - MainLog.start 118 -  the game starts with Plates with Base 
+2019-12-21 06:28:16,395  INFO [AWT-EventQueue-0] - MainLog.start 123 -  the game starts with Plates with Deep Base 
+2019-12-21 06:28:16,395  INFO [AWT-EventQueue-0] - MainLog.start 128 -  the game starts with Pots 
+2019-12-21 06:28:16,407 DEBUG [AWT-EventQueue-0] - MainLog.loadShapesClasses 50 -  The Jar is Successfully loaded 
+2019-12-21 06:28:16,772 DEBUG [AWT-EventQueue-0] - MainLog.getShape 12 -  The Background is Successfully Created 
+2019-12-21 06:28:16,814 DEBUG [AWT-EventQueue-0] - MainLog.<init> 78 -  The Clown is Successfully Created 
+2019-12-21 06:28:16,815 DEBUG [AWT-EventQueue-0] - MainLog.<init> 86 -  The Right Stick is Successfully Created 
+2019-12-21 06:28:16,817 DEBUG [AWT-EventQueue-0] - MainLog.<init> 88 -  The Left Stick is Successfully Created 
+2019-12-21 06:28:16,856  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 266 -  The Game starts successfully ^_^ 
+2019-12-21 06:28:20,743 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 06:28:20,744  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 06:28:20,744  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 242 -  The First blue Plate Touches The Left Stick 
+2019-12-21 06:28:20,789 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 06:28:20,789  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 06:28:20,790  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 255 -  A New blue Plate Touches The Left Stick 
+2019-12-21 06:28:21,713 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 06:28:21,713  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 06:28:21,713  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 255 -  A New green Plate Touches The Left Stick 
+2019-12-21 06:28:27,485 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 06:28:27,485  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 06:28:27,485  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 203 -  The First blue Plate Touches The Right Stick 
+2019-12-21 06:28:31,683 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 06:28:31,683  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 06:28:31,683  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 219 -  A New blue Plate Touches The Right Stick 
+2019-12-21 06:28:35,990 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 06:28:35,990  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 06:28:35,990  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 219 -  A New blue Plate Touches The Right Stick 
+2019-12-21 06:28:35,990  INFO [AWT-EventQueue-0] - MainLog.update 20 - 3 plates of same color 
+2019-12-21 06:28:35,990  INFO [AWT-EventQueue-0] - MainLog.update 18 - Score: 30
+2019-12-21 06:28:38,313 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 06:28:38,313  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 06:28:38,313  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 255 -  A New green Plate Touches The Left Stick 
+2019-12-21 06:28:43,440 DEBUG [AWT-EventQueue-0] - MainLog.setState 10 -  The Plate is caught 
+2019-12-21 06:28:43,440  INFO [AWT-EventQueue-0] - MainLog.update 24 - Intersection is happened
+2019-12-21 06:28:43,440  INFO [AWT-EventQueue-0] - MainLog.plateTouchesStick 255 -  A New green Plate Touches The Left Stick 
+2019-12-21 06:28:43,440  INFO [AWT-EventQueue-0] - MainLog.update 20 - 3 plates of same color 
+2019-12-21 06:28:43,440  INFO [AWT-EventQueue-0] - MainLog.update 18 - Score: 60
+2019-12-21 06:28:56,910 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 06:29:12,298  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 241 -  Game is Ended ^_^ 
+2019-12-21 06:44:08,181 DEBUG [main] - MainLog.start 39 - Main Menu Started Successfully 
+2019-12-21 06:44:09,609  INFO [AWT-EventQueue-0] - MainLog.mouseClicked 241 -  Game is Ended ^_^ 

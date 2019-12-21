@@ -8,16 +8,17 @@ import eg.edu.alexu.csd.oop.game.model.world.Circus;
 import java.io.*;
 
 public class JSON {
-    private Circus circus;
 
     public JSON() {
-        Originator originator = Originator.getInstance();
-        Caretaker caretaker = Caretaker.getInstance();
-        circus = originator.restoreFromMemento(caretaker.getMemento(0));
+
     }
 
     // Saving the circus object in JSON format
     public void save() {
+
+        Originator originator = Originator.getInstance();
+        Caretaker caretaker = Caretaker.getInstance();
+        Circus circus = originator.restoreFromMemento(caretaker.getMemento(0));
 
         // Using Gson library to convert circus to JSON
         Gson gson = new Gson();
@@ -28,7 +29,7 @@ public class JSON {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        gson.toJson(circus, writer);
+        gson.toJson(circus.getMovableObjects(), writer);
     }
 
     // Loading the contents from a JSON file
@@ -37,13 +38,13 @@ public class JSON {
         // Using Gson library to convert JSON to circus object
         Gson gson = new Gson();
         String path = new File("").getAbsolutePath() + "\\saveFile.json";
-        Object object = null;
+        Circus loadedCircus = null;
         try {
-            object = gson.toJson(new FileReader(path), Object.class);
+            loadedCircus = gson.fromJson(new FileReader(path), Circus.class);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
-        return (Circus)object;
+        return loadedCircus;
     }
 }
