@@ -17,11 +17,11 @@ public class Plates implements IObserver {
 
            if (updatedValue instanceof Boolean){
                //System.out.println("3 plates of same color ");
-               GameLogger.getInstance().logger.info("3 plates of same color " );
+               GameLogger.getInstance().log.info("3 plates of same color " );
            }
         else  {
             //System.out.println("Intersection is happened");
-            GameLogger.getInstance().logger.info("Intersection is happened" );
+            GameLogger.getInstance().log.info("Intersection is happened" );
             //game.Save();
         }
     }

@@ -36,6 +36,8 @@ public class MainMenu {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
+        gameLogger.log.debug("Main Menu Started Successfully ");
+
         //label covering the frame for the background
         ImageIcon bgImg = new ImageIcon(getClass().getResource("/background.jpg"));
         JLabel bg = new JLabel("" ,  bgImg , JLabel.CENTER) ;
@@ -146,7 +148,7 @@ public class MainMenu {
                 }
                 start.setSize(220,40);
                 strategy = new EasyStrategy();
-                gameLogger.logger.info(" the game is in Easy Mode ^_^ ");
+                gameLogger.log.info(" the game is in Easy Mode ^_^ ");
             }
         });
 
@@ -178,7 +180,7 @@ public class MainMenu {
                 }
                 start.setSize(220,40);
                 strategy = new MediumStrategy();
-                gameLogger.logger.info(" the game is in Medium Mode -_- ");
+                gameLogger.log.info(" the game is in Normal Mode -_- ");
             }
         });
 
@@ -210,7 +212,7 @@ public class MainMenu {
                 }
                 start.setSize(220,40);
                 strategy = new HardStrategy();
-                gameLogger.logger.info(" the game is in Hard Mode '_' ");
+                gameLogger.log.info(" the game is in Hard Mode '_' ");
             }
         });
 
@@ -236,6 +238,7 @@ public class MainMenu {
 
             @Override
             public void mouseClicked(MouseEvent e) {
+                gameLogger.log.info(" Game is Ended ^_^ ");
                 System.exit(0);
             }
         });
@@ -260,7 +263,7 @@ public class MainMenu {
             @Override
             public void mouseClicked(MouseEvent e) {
                 optionsMenu.start(chosen, strategy, frame);
-                gameLogger.logger.info(" The Game starts successfully ^_^ ");
+                gameLogger.log.info(" The Game starts successfully ^_^ ");
             }
         });
 

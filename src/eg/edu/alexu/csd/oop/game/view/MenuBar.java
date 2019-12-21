@@ -2,30 +2,29 @@ package eg.edu.alexu.csd.oop.game.view;
 
 import eg.edu.alexu.csd.oop.game.GameEngine;
 import eg.edu.alexu.csd.oop.game.World;
+import eg.edu.alexu.csd.oop.game.model.JSON.JSON;
 import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
 import eg.edu.alexu.csd.oop.game.model.Strategy.IStrategy;
 import eg.edu.alexu.csd.oop.game.model.world.Circus;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 
 public class MenuBar {
     private GameLogger gameLogger = GameLogger.getInstance();
     private World circus;
     private IStrategy strategy;
-    private  int width;
+    private int width;
     private int height;
     private List<String> jars;
 
-    public MenuBar (World circus, IStrategy strategy, List<String> jars, int width, int height) {
+    public MenuBar(World circus, IStrategy strategy, List<String> jars, int width, int height) {
 
         this.circus = circus;
         this.strategy = strategy;
         this.width = width;
         this.height = height;
-        this.jars = jars ;
+        this.jars = jars;
 
         start();
     }
@@ -63,29 +62,28 @@ public class MenuBar {
 
         newMenuItem.addActionListener(e -> {
             gameController.changeWorld(new Circus(width, height, strategy, jars));
-            gameLogger.logger.info(" New Game is started ");
+            gameLogger.log.info(" New Game is started ");
         });
 
         pauseMenuItem.addActionListener(e -> {
             gameController.pause();
-            gameLogger.logger.info(" The Game is paused ");
+            gameLogger.log.info(" The Game is paused ");
         });
 
         resumeMenuItem.addActionListener(e -> {
             gameController.resume();
-            gameLogger.logger.info(" The Game is resumed");
+            gameLogger.log.info(" The Game is resumed");
         });
 
         exitMenuItem.addActionListener(e -> {
             System.exit(0);
-            gameLogger.logger.info(" The User Exits From The Game ");
+            gameLogger.log.info(" The User Exits From The Game ");
         });
 
-        saveItem.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
+        saveItem.addActionListener(e -> {
+            ((Circus) circus).Save();
+            new JSON().save();
+            gameLogger.log.info(" The User saves The Game ");
         });
 
     }

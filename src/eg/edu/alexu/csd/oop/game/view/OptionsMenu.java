@@ -110,22 +110,22 @@ public class OptionsMenu {
         if (chosen[0] == 1){
             valid = true;
             jars.add("plateWithoutBase.jar");
-            gameLogger.logger.info(" the game starts with Plates without Base ");
+            gameLogger.log.info(" the game starts with Plates without Base ");
         }
         if (chosen[1] == 1){
             valid = true ;
             jars.add("plateWithBase.jar");
-            gameLogger.logger.info(" the game starts with Plates with Base ");
+            gameLogger.log.info(" the game starts with Plates with Base ");
         }
         if (chosen[2] == 1){
             valid = true;
             jars.add("plateWithDeepBase.jar");
-            gameLogger.logger.info(" the game starts with Plates with Deep Base ");
+            gameLogger.log.info(" the game starts with Plates with Deep Base ");
         }
         if (chosen[3] == 1){
             valid = true;
             jars.add("pot.jar");
-            gameLogger.logger.info(" the game starts with Pots ");
+            gameLogger.log.info(" the game starts with Pots ");
         }
 
         if (valid){

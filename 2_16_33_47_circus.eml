@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/out/test/2_16_33_47_circus"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="engine_v3.jar" scope="COMPILE">
+		<srcroot url="jar://$MODULE_DIR$/lib/engine_v3.jar!/"/>
+		<relative-module-src project-related="jar://$PROJECT_DIR$/lib/engine_v3.jar!/"/>
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/engine_v3.jar!/"/>
+	</lib>
+	<lib name="log4j-1.2.17.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/Jars/log4j-1.2.17.jar!/"/>
+	</lib>
+</component>

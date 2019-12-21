@@ -1,6 +1,7 @@
 package eg.edu.alexu.csd.oop.game.model.objects;
 
 import eg.edu.alexu.csd.oop.game.GameObject;
+import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -8,6 +9,7 @@ import java.io.IOException;
 
 public class ControllableObject implements GameObject {
     private static final int MAX_MSTATE = 1;
+    private GameLogger gameLogger = GameLogger.getInstance();
 
     // An array of sprite images that are drawn sequentially
     private BufferedImage[] spriteImages = new BufferedImage[MAX_MSTATE];
@@ -26,6 +28,7 @@ public class ControllableObject implements GameObject {
             spriteImages[0] = ImageIO.read(getClass().getResourceAsStream(path));
         } catch (IOException e) {
             e.printStackTrace();
+            gameLogger.log.debug(" The Clown Image is Not Placed Into The Array ");
         }
     }
 

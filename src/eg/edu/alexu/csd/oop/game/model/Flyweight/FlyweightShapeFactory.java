@@ -1,6 +1,7 @@
 package eg.edu.alexu.csd.oop.game.model.Flyweight;
 
 import eg.edu.alexu.csd.oop.game.model.DynamicLinkage.DynamicLinkage;
+import eg.edu.alexu.csd.oop.game.model.Logger.GameLogger;
 import eg.edu.alexu.csd.oop.game.model.Shapes.IShape;
 
 import java.io.IOException;
@@ -11,6 +12,7 @@ import java.util.*;
 // a hash map and get them faster
 public class FlyweightShapeFactory {
 
+    private GameLogger gameLogger = GameLogger.getInstance();
     private LinkedList<Class<?>> shapesClasses = new LinkedList<>();
     private Map<String, IShape> shapesMap = new HashMap<>();
     private static FlyweightShapeFactory instance;
@@ -45,6 +47,7 @@ public class FlyweightShapeFactory {
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
+            gameLogger.log.debug(" Map Of Shapes is Not Created ");
         }
     }
 
