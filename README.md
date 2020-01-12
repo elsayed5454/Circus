@@ -22,3 +22,7 @@ same stick regardless of their shape till the time ends.
 - Sequence Diagram
 - Further details about usage of each design pattern with UML diagrams
 ## Screenshots
+![start_game](screenshots/start_game.jpeg)
+![choose_plate](screenshots/choose_plate.jpeg)
+![game](screenshots/game.jpeg)
+![score_menu](screenshots/score_menu.jpeg)
