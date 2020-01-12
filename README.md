@@ -8,7 +8,7 @@ same stick regardless of their shape till the time ends.
 4. Iterator
 5. Dynamic Linkage
 6. Snapshot (Not completed)
-7. Snapshot
+7. State
 8. Strategy
 9. Flyweight
 10. Observer
